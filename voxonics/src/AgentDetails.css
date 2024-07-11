@@ -1,5 +1,6 @@
 .a_details{
     background-color: rgb(42, 37, 37);
+    border: 2px solid gray;
     justify-content: center;
     display: flex;
     align-items: center;
