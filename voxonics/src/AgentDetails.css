@@ -1,0 +1,17 @@
+.a_details{
+    background-color: rgb(42, 37, 37);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    grid-template-rows: auto;
+
+    /* <Grid container spacing={2}>
+    margin: 'auto';
+    maxWidth: 500;
+    flexGrow: 1;
+    backgroundColor:"dark" '#1A2027' : '#fff', */
+}
+
+.btn_ready{
+    variant:"outlined"
+}
