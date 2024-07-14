@@ -1,18 +1,11 @@
-.a_details{
-    background-color: rgb(42, 37, 37);
-    border: 2px solid gray;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    grid-template-rows: auto;
+.div_in_details{
+        text-align: center;
+        padding: auto;
+         display: grid; 
+/* margin-right: auto; */
+/* row-gap: 12px; */
+align-items: center;
+        justify-content: center;
+  }
+    
 
-    /* <Grid container spacing={2}>
-    margin: 'auto';
-    maxWidth: 500;
-    flexGrow: 1;
-    backgroundColor:"dark" '#1A2027' : '#fff', */
-}
-
-.btn_ready{
-    variant:"outlined"
-}
