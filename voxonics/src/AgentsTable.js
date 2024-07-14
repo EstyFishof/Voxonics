@@ -10,18 +10,11 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import Box from '@mui/material/Box';
-
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 const darkTheme = createTheme({
     palette: {
         mode: 'dark',
-        // primary: {
-        //   main: '#263238',
-        // },
-        // secondary: {
-        //   main: '#263238',
-        // },
         background: {
             default: '#263238',
             paper: '#263238',
@@ -30,9 +23,9 @@ const darkTheme = createTheme({
 });
 
 const AgentsTable = () => {
-    function createData(AgentName, Role, AgentId, Status, Duration, AVGTalkingTime, Calls) {
+    const createData = (AgentName, Role, AgentId, Status, Duration, AVGTalkingTime, Calls) => {
         return { AgentName, Role, AgentId, Status, Duration, AVGTalkingTime, Calls };
-    }
+    };
 
     const rows = [
         createData('abc', "admin", "123456789", "Waiting", 2.48, "2m 3s", 91),
@@ -42,17 +35,9 @@ const AgentsTable = () => {
         createData('mno', "Agent", "753428619", "Talking", 1.9, "2m 3s", 39),
         createData('pqr', "Admin", "852963741", "Waiting", 3.0, "2m 3s", 65),
         createData('mno', "Agent", "753428619", "Talking", 1.9, "2m 3s", 65),
-        createData('mno', "Agent", "753428619", "Talking", 1.9, "2m 3s", 65),
-        createData('mno', "Agent", "753428619", "Talking", 1.9, "2m 3s", 65),
-        createData('mno', "Agent", "753428619", "Talking", 1.9, "2m 3s", 65),
-        createData('mno', "Agent", "753428619", "Talking", 1.9, "2m 3s", 65),
-        createData('mno', "Agent", "753428619", "Talking", 1.9, "2m 3s", 65),
-        createData('mno', "Agent", "753428619", "Talking", 1.9, "2m 3s", 65),
-        createData('mno', "Agent", "753428619", "Talking", 1.9, "2m 3s", 65),
-        createData('mno', "Agent", "753428619", "Talking", 1.9, "2m 3s", 65),
-        createData('mno', "Agent", "753428619", "Talking", 1.9, "2m 3s", 65),
-        createData('mno', "Agent", "753428619", "Talking", 1.9, "2m 3s", 65),
+        // Add more rows as needed
     ];
+
     const rowsHeadArr = ["AgentName", "Role", "AgentId", "Status", "Duration", "AVGTalkingTime", "Calls", "Actions"];
     const ActionsArr = ["SPY", "WHISPER", "MERGE"];
 
@@ -67,7 +52,7 @@ const AgentsTable = () => {
                         </TableRow>
                         <TableRow>
                             {rowsHeadArr.map((rowHead, index) => (
-                                <TableCell align='center' key={index}>{rowHead}{<MdOutlineKeyboardArrowDown />}</TableCell>
+                                <TableCell align='center' key={index}>{rowHead}<MdOutlineKeyboardArrowDown /></TableCell>
                             ))}
                         </TableRow>
                     </TableHead>
@@ -77,7 +62,6 @@ const AgentsTable = () => {
                                 {rowsHeadArr.map((head, idx) => (
                                     <TableCell sx={{ textAlign: 'center' }} key={idx}>{row[head]}</TableCell>
                                 ))}
-
                                 <TableCell>
                                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', '& > *': { m: 1 } }}>
                                         <ButtonGroup variant="outlined" aria-label="Basic button group">
@@ -91,22 +75,13 @@ const AgentsTable = () => {
                         ))}
                     </TableBody>
                 </Table>
-
-                <TableRow
-                // sx={{ backgroundColor: '#37474f' }}
-                >
-
+                <TableRow>
                     <TableCell colSpan={rowsHeadArr.length + 1} sx={{
                         borderBottom: 'none', display: 'flex', flexDirection: 'row',
                         backgroundColor: '#37474f', padding: '6px', alignItems: 'center', '& > *': { ml: 2 }
                     }}>
-
-
                         <TableCell colSpan={rowsHeadArr.length} align='left' sx={{ fontWeight: 'bold', backgroundColor: '#37474f', padding: '6px' }}>Filter by:</TableCell>
-
                         <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', '& > *': { ml: 2 } }}>
-
-                            {/* <Button variant="contained" size="small" sx={{ textTransform: 'none', backgroundColor: '#455a64', color: 'white', ml: 2, '& .MuiButton-endIcon': { color: '#01579b' } }}> */}
                             <Button variant="contained" size="small" sx={{ textTransform: 'none', backgroundColor: '#455a64', color: 'white' }}>
                                 Agent Name
                                 <MdOutlineKeyboardArrowDown sx={{ color: '#01579b' }} />
@@ -130,7 +105,7 @@ const AgentsTable = () => {
                     <TableHead>
                         <TableRow>
                             {rowsHeadArr.map((rowHead, index) => (
-                                <TableCell align='center' key={index}>{rowHead}{<MdOutlineKeyboardArrowDown />}</TableCell>
+                                <TableCell align='center' key={index}>{rowHead}<MdOutlineKeyboardArrowDown /></TableCell>
                             ))}
                         </TableRow>
                     </TableHead>
@@ -140,7 +115,6 @@ const AgentsTable = () => {
                                 {rowsHeadArr.map((head, idx) => (
                                     <TableCell sx={{ textAlign: 'center' }} key={idx}>{row[head]}</TableCell>
                                 ))}
-
                                 <TableCell>
                                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', '& > *': { m: 1 } }}>
                                         <ButtonGroup variant="outlined" aria-label="Basic button group">
@@ -157,6 +131,6 @@ const AgentsTable = () => {
             </TableContainer>
         </ThemeProvider>
     );
-}
+};
 
 export default AgentsTable;
