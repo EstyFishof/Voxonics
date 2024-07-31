@@ -1,4 +1,3 @@
-
 <template>
   <div class="container">
     <div class="tables-container">
@@ -31,10 +30,7 @@
           </thead>
           <tbody>
             <tr v-for="agent in filteredAgents" :key="agent.id">
-              <label>
-        <input type="checkbox" v-model="selectedInSelectedTable" :value="agent" />
-        <span></span>
-      </label>
+              <td><input type="checkbox" v-model="selectedAgents" :value="agent" /></td>
               <td>{{ agent.name }}</td>
               <td>{{ agent.id }}</td>
               <td>{{ agent.department }}</td>
@@ -105,10 +101,7 @@ export default {
         { name: "avi", id: 11, department: "sales", position: "manager" },
         { name: "dani", id: 22, department: "sales", position: "manager" },
         { name: "beny", id: 33, department: "sales", position: "manager" },
-        { name: "natan", id: 44, department: "support", position: "manager" },
-        { name: "moshe", id: 55, department: "sales", position: "manager" },
-        { name: "levi", id: 66, department: "support", position: "manager" }
-
+        { name: "natan", id: 44, department: "support", position: "manager" }
       ],
       filters: {
         name: "",
@@ -238,8 +231,8 @@ export default {
   text-align: left;
 }
 .header-row {
-  background-color: #4f6e96; /* צבע רקע לשורה הראשונה */
-  color: white; /* צבע טקסט */
+  background-color: #4f6e96; /* Header row background color */
+  color: white; /* Header row text color */
 }
 
 .filter-row th {
@@ -250,10 +243,10 @@ export default {
 .filter-row input,
 .filter-row select {
   width: 100%;
-  background-color: #333; /* צבע הרקע החדש */
-  color: #fff; /* צבע הטקסט */
-  border: 1px solid #555; /* גבול הקלט */
-  padding: 3px; /* ריפוד פנימי */
+  background-color: #333; /* New background color */
+  color: #fff; /* Text color */
+  border: 1px solid #555; /* Input border */
+  padding: 3px; /* Internal padding */
 }
 
 button {
@@ -328,7 +321,32 @@ button:hover {
 .sort-desc::after {
   content: ' ↓';
 }
-.selected-table input[type="checkbox"]:checked {
+input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #4f6e96;
+}
+/* input[type="checkbox"]:checked {
   background-color: red;
+} */
+
+input[type="checkbox"]:checked::before {
+  content: '✔';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 14px;
 }
 </style>
