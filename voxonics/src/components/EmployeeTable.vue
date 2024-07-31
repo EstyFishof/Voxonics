@@ -336,6 +336,10 @@ input[type="checkbox"] {
 input[type="checkbox"]:checked {
   background-color: #4f6e96;
 }
+.selected-table input[type="checkbox"]:checked {
+  background-color: rgb(255, 255, 255);
+}
+
 /* input[type="checkbox"]:checked {
   background-color: red;
 } */
@@ -346,7 +350,99 @@ input[type="checkbox"]:checked::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: red;
   font-size: 14px;
 }
+/* סטיילינג של checkbox בטבלה הימנית */
+.selected-table input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  outline: none;
+  cursor: pointer;
+  background-color: #fff;
+  position: relative;
+}
+
+
+.selected-table input[type="checkbox"]:checked {
+  background-color: #555; 
+}
+
+
+.selected-table input[type="checkbox"]:checked::before {
+  content: '✔';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+  font-size: 14px;
+  background-color: #333;
+  
+
+}
+
+
+/* סטיילינג של checkbox בטבלה השמאלית */
+.main-table input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #4f6e96; 
+  cursor: pointer;
+  background-color: rgb(39, 40, 40); 
+  position: relative;
+}
+
+
+.main-table input[type="checkbox"]:checked {
+  background-color: #4f6e96; 
+}
+.main-table input[type="checkbox"]:checked::before {
+  content: '✔';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(251, 251, 251); /* צבע לבן */
+  font-size: 14px;
+}
+
+/* סטיילינג של checkbox בטבלה הימנית */
+.selected-table input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid red;
+  outline: none;
+  cursor: pointer;
+  background-color: rgb(39, 40, 40); /* צבע האפור של הטבלה */
+  position: relative;
+}
+
+/* סטיילינג של checkbox  בטבלה הימנית */
+.selected-table input[type="checkbox"]:checked {
+  background-color: #333;
+  border: 2px solid red;
+  
+}
+
+
+.selected-table input[type="checkbox"]:checked::before {
+  content: '✔';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  border: none;
+  background: none;
+
+}
+
 </style>
