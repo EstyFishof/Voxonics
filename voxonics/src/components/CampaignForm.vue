@@ -93,7 +93,7 @@ h1 {
   max-width: 100%;
   margin: 0 auto;
   padding: 20px;
-  background-color: #000;
+  background-color: #1c1d21;
   color: #fff;
 }
 .form-row {
@@ -121,7 +121,7 @@ input[type="text"] {
   width: 80%;
   padding: 4px;
   box-sizing: border-box;
-  background-color: rgb(160, 159, 161);
+  background-color: rgb(208, 205, 212);
 }
 .custom-file-input {
   position: relative;

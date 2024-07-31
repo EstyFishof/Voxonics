@@ -22,9 +22,9 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;
   color: #0f365c;
-  background-color: rgb(8, 8, 8);
+  background-color: #1c1d21
 }
 body {
-  background-color: #000;
+  background-color: #1c1d21
 }
 </style>

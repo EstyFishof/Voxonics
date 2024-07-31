@@ -31,7 +31,10 @@
           </thead>
           <tbody>
             <tr v-for="agent in filteredAgents" :key="agent.id">
-              <td><input type="checkbox" v-model="selectedAgents" :value="agent" /></td>
+              <label>
+        <input type="checkbox" v-model="selectedInSelectedTable" :value="agent" />
+        <span></span>
+      </label>
               <td>{{ agent.name }}</td>
               <td>{{ agent.id }}</td>
               <td>{{ agent.department }}</td>
@@ -201,7 +204,7 @@ export default {
 
 <style scoped>
 .container {
-  background-color: black;
+  background-color: #1c1d21;
   color:#e0e3e6;
   padding: 20px;
 }
