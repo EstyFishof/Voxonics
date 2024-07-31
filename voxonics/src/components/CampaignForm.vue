@@ -59,7 +59,8 @@ export default {
         campaignDialLevel: '',
         campaignFile: null
       },
-      isRight: false
+      isRight: false,
+      employees: [] //הוספת מערך עובדים
     };
   },
   methods: {
@@ -74,6 +75,9 @@ export default {
     },
     togglePosition() {
       this.isRight = !this.isRight;
+    },
+    addEmployee() {
+      this.employees.push({ name: '', role: '', age: '' });
     }
   }
 };
@@ -81,7 +85,7 @@ export default {
 
 <style scoped>
 h1 {
-  color: rgb(188, 186, 194);
+  color:rgb(118, 117, 119);
   margin-right: 1000px;
   font-size: large;
 }
@@ -117,7 +121,7 @@ input[type="text"] {
   width: 80%;
   padding: 4px;
   box-sizing: border-box;
-  background-color: rgb(188, 186, 194);
+  background-color: rgb(160, 159, 161);
 }
 .custom-file-input {
   position: relative;
@@ -130,19 +134,19 @@ input[type="text"] {
   width: 100%;
   padding: 40px;
   box-sizing: border-box;
-  background-color: rgb(188, 186, 194);
+  background-color: rgb(118, 117, 119);
   cursor: pointer;
   text-align: center;
   font-size: medium;
 }
 .divider {
   height: 1px;
-  background-color: rgb(188, 186, 194);
+  background-color: rgb(118, 117, 119);
   margin-left: 165px;
   margin-right: 30px;
 }
 .divider-container span {
-  color: rgb(188, 186, 194);
+  color: rgb(118, 117, 119);
   margin-right: 1100px;
   padding: 0px;
 }
