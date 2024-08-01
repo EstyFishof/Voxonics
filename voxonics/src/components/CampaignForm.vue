@@ -163,26 +163,26 @@ input[type="text"] {
 }
 .slider {
   width: 34px;
-  height: 13px;
+  height: 15px;
   background-color: #2b4b74;;
-  border-radius: 25px;
+  border-radius: 8px;
   position: relative;
   cursor: pointer;
-  margin: 0 20px;
+  margin: 0 15px;
   transition: background-color 0.3s;
 }
 .slider-circle {
-  width: 20px;
+  width: 10px;
   height: 19px;
   background-color: #4f6e96;;
   border-radius: 50%;
   position: absolute;
-  top: 1px;
-  left: 0.5px;
+  top: 0.9px;
+  left: 0.2px;
   transition: transform 0.3s;
 }
 .slider-circle.right {
-  transform: translateX(25px);
+  transform: translateX(15px);
   background-color: #4f6e96;;
 }
 .slider.right {

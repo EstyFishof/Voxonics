@@ -408,7 +408,7 @@ input[type="checkbox"]:checked::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: rgb(251, 251, 251); /* צבע לבן */
+  color: rgb(251, 251, 251); 
   font-size: 14px;
 }
 
@@ -421,7 +421,7 @@ input[type="checkbox"]:checked::before {
   border: 2px solid red;
   outline: none;
   cursor: pointer;
-  background-color: rgb(39, 40, 40); /* צבע האפור של הטבלה */
+  background-color: rgb(39, 40, 40); 
   position: relative;
 }
 
