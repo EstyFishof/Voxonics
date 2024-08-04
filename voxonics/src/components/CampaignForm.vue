@@ -38,12 +38,13 @@
     <span>Agent assigned</span>
   </div>
   <div class="highlight-container">
-    <span :class="{'highlight': !isRight}">Real agent</span>
+    <span :class="{'highlight': !isRight, 'unhighlight': isRight}">Real agent</span>
     <div class="slider" @click="togglePosition">
       <div class="slider-circle" :class="{'right': isRight}"></div>
     </div>
-    <span :class="{'highlight': isRight}">Virtual agent</span>
+    <span :class="{'highlight': isRight, 'unhighlight': !isRight}">Virtual agent</span>
   </div>
+
 </template>
 
 <script>
@@ -94,7 +95,7 @@ h1 {
   margin: 0 auto;
   padding: 20px;
   background-color: #1c1d21;
-  color: #fff;
+  color: #c7c2c2;
 }
 .form-row {
   display: flex;
@@ -121,7 +122,7 @@ input[type="text"] {
   width: 80%;
   padding: 4px;
   box-sizing: border-box;
-  background-color: rgb(208, 205, 212);
+  background-color: rgb(168, 165, 171);
 }
 .custom-file-input {
   position: relative;
@@ -161,6 +162,9 @@ input[type="text"] {
   font-weight: bold;
   color: #4f6e96;
 }
+.unhighlight {
+  color: #b5aeae;
+}
 .slider {
   width: 34px;
   height: 15px;
@@ -172,8 +176,8 @@ input[type="text"] {
   transition: background-color 0.3s;
 }
 .slider-circle {
-  width: 10px;
-  height: 19px;
+  width: 17px;
+  height: 15.1px;
   background-color: #4f6e96;;
   border-radius: 50%;
   position: absolute;

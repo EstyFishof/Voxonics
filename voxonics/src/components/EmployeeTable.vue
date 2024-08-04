@@ -5,8 +5,8 @@
         <table class="agents-table">
           <thead>
             <tr class="header-row">
-              <th></th>
-              <th @click="sort('name')"> Name<i :class="getSortIcon('name')"></i></th>
+              <th><input type="checkbox" @click="toggleSelectAllAgents" /></th>
+              <th @click="sort('name')">Name <i :class="getSortIcon('name')"></i></th>
               <th @click="sort('id')">ID <i :class="getSortIcon('id')"></i></th>
               <th @click="sort('department')">Department <i :class="getSortIcon('department')"></i></th>
               <th @click="sort('position')">Position <i :class="getSortIcon('position')"></i></th>
@@ -18,14 +18,19 @@
               <th><input type="text" v-model="filters.id" placeholder="Filter by ID" /></th>
               <th>
                 <select v-model="filters.department">
-                  <option value="">Select Departments</option>
+                  <option value="">Select Department</option>
                   <option value="sales">Sales</option>
                   <option value="marketing">Marketing</option>
                   <option value="support">Support</option>
                 </select>
               </th>
-              <th></th>
-              <th></th>
+              <th>
+                <select v-model="filters.position">
+                  <option value="">Select Position</option>
+                  <option value="manager">Manager</option>
+                  <option value="agent">Agent</option>
+                </select>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -60,17 +65,23 @@
             </tr>
             <tr class="filter-row">
               <th>Select</th>
-              <th><input type="text" v-model="selectedFilters.id" placeholder="Filter by ID" /></th>
               <th><input type="text" v-model="selectedFilters.name" placeholder="Filter by Name" /></th>
+              <th><input type="text" v-model="selectedFilters.id" placeholder="Filter by ID" /></th>
               <th>
                 <select v-model="selectedFilters.department">
-                  <option value="">Select Departments</option>
+                  <option value="">Select Department</option>
                   <option value="sales">Sales</option>
                   <option value="marketing">Marketing</option>
                   <option value="support">Support</option>
                 </select>
               </th>
-              <th></th>
+              <th>
+                <select v-model="selectedFilters.position">
+                  <option value="">Select Position</option>
+                  <option value="manager">Manager</option>
+                  <option value="agent">Agent</option>
+                </select>
+              </th>
               <th></th>
             </tr>
           </thead>
@@ -98,78 +109,82 @@ export default {
   data() {
     return {
       agents: [
-        { name: "avi", id: 11, department: "sales", position: "manager" },
-        { name: "dani", id: 22, department: "sales", position: "manager" },
-        { name: "beny", id: 33, department: "sales", position: "manager" },
-        { name: "natan", id: 44, department: "support", position: "manager" }
+        { name: "Avi", id: 11, department: "Sales", position: "Manager" },
+        { name: "Dani", id: 22, department: "Sales", position: "Manager" },
+        { name: "Benny", id: 33, department: "Sales", position: "Manager" },
+        { name: "Natan", id: 44, department: "Support", position: "Agent" }
       ],
       filters: {
         name: "",
         id: "",
-        department: ""
+        department: "",
+        position: ""
       },
       selectedAgents: [],
       addedAgents: [],
       selectedFilters: {
         name: "",
         id: "",
-        department: ""
+        department: "",
+        position: ""
       },
       selectedInSelectedTable: [],
       sortConfig: {
         column: '',
-        direction: 'asc', // or 'desc'
-        table: 'agents' // Default to the main table
+        direction: 'asc',
+        table: 'agents'
       }
     };
   },
   computed: {
-    filteredAgents() {
-      let agents = [...this.agents];
-      if (this.sortConfig.table === 'agents' && this.sortConfig.column) {
-        agents.sort((a, b) => {
-          let valueA = a[this.sortConfig.column];
-          let valueB = b[this.sortConfig.column];
-          if (this.sortConfig.direction === 'asc') {
-            return valueA > valueB ? 1 : -1;
-          } else {
-            return valueA < valueB ? 1 : -1;
-          }
-        });
-      }
-      return agents.filter(agent => {
-        return (
-          (this.filters.name === "" || agent.name.includes(this.filters.name)) &&
-          (this.filters.id === "" || agent.id.toString().includes(this.filters.id)) &&
-          (this.filters.department === "" || agent.department === this.filters.department)
-        );
-      });
-    },
-    filteredSelectedAgents() {
-      let agents = [...this.addedAgents];
-      if (this.sortConfig.table === 'addedAgents' && this.sortConfig.column) {
-        agents.sort((a, b) => {
-          let valueA = a[this.sortConfig.column];
-          let valueB = b[this.sortConfig.column];
-          if (this.sortConfig.direction === 'asc') {
-            return valueA > valueB ? 1 : -1;
-          } else {
-            return valueA < valueB ? 1 : -1;
-          }
-        });
-      }
-      return agents.filter(agent => {
-        return (
-          (this.selectedFilters.name === "" || agent.name.includes(this.selectedFilters.name)) &&
-          (this.selectedFilters.id === "" || agent.id.toString().includes(this.selectedFilters.id)) &&
-          (this.selectedFilters.department === "" || agent.department === this.selectedFilters.department)
-        );
+  filteredAgents() {
+    let agents = [...this.agents];
+    if (this.sortConfig.table === 'agents' && this.sortConfig.column) {
+      agents.sort((a, b) => {
+        let valueA = a[this.sortConfig.column].toString().toLowerCase();
+        let valueB = b[this.sortConfig.column].toString().toLowerCase();
+        if (this.sortConfig.direction === 'asc') {
+          return valueA > valueB ? 1 : -1;
+        } else {
+          return valueA < valueB ? 1 : -1;
+        }
       });
     }
+    return agents.filter(agent => {
+      return (
+        (this.filters.name === "" || agent.name.toLowerCase().includes(this.filters.name.toLowerCase())) &&
+        (this.filters.id === "" || agent.id.toString().includes(this.filters.id)) &&
+        (this.filters.department === "" || agent.department.toLowerCase() === this.filters.department.toLowerCase()) &&
+        (this.filters.position === "" || agent.position.toLowerCase() === this.filters.position.toLowerCase())
+      );
+    });
   },
+  filteredSelectedAgents() {
+    let agents = [...this.addedAgents];
+    if (this.sortConfig.table === 'addedAgents' && this.sortConfig.column) {
+      agents.sort((a, b) => {
+        let valueA = a[this.sortConfig.column].toString().toLowerCase();
+        let valueB = b[this.sortConfig.column].toString().toLowerCase();
+        if (this.sortConfig.direction === 'asc') {
+          return valueA > valueB ? 1 : -1;
+        } else {
+          return valueA < valueB ? 1 : -1;
+        }
+      });
+    }
+    return agents.filter(agent => {
+      return (
+        (this.selectedFilters.name === "" || agent.name.toLowerCase().includes(this.selectedFilters.name.toLowerCase())) &&
+        (this.selectedFilters.id === "" || agent.id.toString().includes(this.selectedFilters.id)) &&
+        (this.selectedFilters.department === "" || agent.department.toLowerCase() === this.selectedFilters.department.toLowerCase()) &&
+        (this.selectedFilters.position === "" || agent.position.toLowerCase() === this.selectedFilters.position.toLowerCase())
+      );
+    });
+  }
+},
+
   methods: {
     addAgents() {
-      // Remove duplicates before adding
       const uniqueSelected = [...new Set([...this.addedAgents, ...this.selectedAgents])];
       this.addedAgents = uniqueSelected;
       this.selectedAgents = [];
@@ -190,6 +205,13 @@ export default {
     getSortIcon(column, isSelectedTable = false) {
       if (this.sortConfig.table !== (isSelectedTable ? 'addedAgents' : 'agents') || this.sortConfig.column !== column) return '';
       return this.sortConfig.direction === 'asc' ? 'icon-sort-up' : 'icon-sort-down';
+    },
+    toggleSelectAllAgents() {
+      if (this.selectedAgents.length === this.filteredAgents.length) {
+        this.selectedAgents = [];
+      } else {
+        this.selectedAgents = [...this.filteredAgents];
+      }
     }
   }
 };
@@ -198,7 +220,7 @@ export default {
 <style scoped>
 .container {
   background-color: #1c1d21;
-  color:#e0e3e6;
+  color:#a3a9af;
   padding: 20px;
 }
 
@@ -232,7 +254,7 @@ export default {
 }
 .header-row {
   background-color: #4f6e96; /* Header row background color */
-  color: white; /* Header row text color */
+  color: rgb(194, 188, 188); /* Header row text color */
 }
 
 .filter-row th {
@@ -244,7 +266,7 @@ export default {
 .filter-row select {
   width: 100%;
   background-color: #333; /* New background color */
-  color: #fff; /* Text color */
+  color: #bbb3b3; /* Text color */
   border: 1px solid #555; /* Input border */
   padding: 3px; /* Internal padding */
 }
@@ -269,7 +291,7 @@ button:hover {
 
 .remove-agent-btn {
   background-color: red;
-  color: white;
+  color: rgb(194, 187, 187);
 }
 
 .button-container {
@@ -329,7 +351,7 @@ input[type="checkbox"] {
   border: 2px solid #555;
   outline: none;
   cursor: pointer;
-  background-color: #fff;
+  background-color: #b3a6a6;
   position: relative;
 }
 
@@ -337,7 +359,7 @@ input[type="checkbox"]:checked {
   background-color: #4f6e96;
 }
 .selected-table input[type="checkbox"]:checked {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(201, 192, 192);
 }
 
 /* input[type="checkbox"]:checked {
@@ -362,7 +384,7 @@ input[type="checkbox"]:checked::before {
   border: 2px solid #555;
   outline: none;
   cursor: pointer;
-  background-color: #fff;
+  background-color: #b7b1b1;
   position: relative;
 }
 
@@ -408,7 +430,7 @@ input[type="checkbox"]:checked::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: rgb(251, 251, 251); 
+  color: rgb(182, 178, 178); 
   font-size: 14px;
 }
 
@@ -445,4 +467,4 @@ input[type="checkbox"]:checked::before {
 
 }
 
-</style>
+</style> 
