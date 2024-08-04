@@ -1,0 +1,432 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Managers settings ==> AvailableQueues should snapshot 1`] = `
+<section
+  class="table-container"
+>
+  <div
+    class="table-title"
+  >
+    Available Queues
+  </div>
+   
+  <div
+    class="wrap-table"
+  >
+    <ul
+      class="table-header"
+    >
+      <li
+        class="header-item"
+      >
+        Name of Department
+      </li>
+       
+      <li
+        class="header-item-action"
+      >
+        Actions
+      </li>
+    </ul>
+     
+    <div>
+      <div
+        class="list-group"
+      />
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Managers settings ==> Departments / edit check snapshot dep 1`] = `
+<section
+  class="table-container"
+>
+  <div
+    class="managed"
+  >
+    <div
+      class="table-title"
+    >
+      <span>
+        In Departments
+      </span>
+       
+      <button
+        class="btn-edit"
+        content="Edit mode"
+      >
+        <img
+          alt=""
+          src="@/assets/img/icons/edit.svg"
+        />
+      </button>
+    </div>
+     
+    <div
+      class="wrap-table"
+    >
+      <div
+        class="table-title subtitle"
+        style="display: none;"
+      >
+        <button
+          class="btn-edit btn-add"
+          content="Show/hide list"
+        >
+          <img
+            alt=""
+            src="@/assets/img/icons/list.svg"
+          />
+        </button>
+         
+        <div>
+          <input
+            placeholder="Search Departments"
+            type="text"
+          />
+           
+          <ul
+            class="listRelDeps"
+            style="display: none;"
+          />
+        </div>
+      </div>
+       
+      <div
+        class="br"
+      >
+        <div
+          class="list-group"
+        >
+          <ul
+            class="list-group-item"
+          >
+            <li
+              class="department-name"
+            >
+              <button
+                class="btn-del"
+                style="display: none;"
+              >
+                -
+              </button>
+              
+              Manage
+            
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="managed"
+  >
+    <div
+      class="table-title"
+    >
+      <span>
+        Managing Departments
+      </span>
+       
+      <button
+        class="btn-edit"
+        content="Edit mode"
+      >
+        <img
+          alt=""
+          src="@/assets/img/icons/edit.svg"
+        />
+      </button>
+    </div>
+     
+    <div
+      class="wrap-table"
+    >
+      <div
+        class="table-title subtitle"
+        style="display: none;"
+      >
+        <button
+          class="btn-edit btn-add"
+          content="Show/hide list"
+        >
+          <img
+            alt=""
+            src="@/assets/img/icons/list.svg"
+          />
+        </button>
+         
+        <div>
+          <input
+            placeholder="Search Departments"
+            type="text"
+          />
+           
+          <ul
+            class="listRelDeps"
+            style="display: none;"
+          />
+        </div>
+      </div>
+       
+      <div
+        class="br"
+      >
+        <div
+          class="list-group"
+        >
+          <ul
+            class="list-group-item"
+          >
+            <li
+              class="department-name"
+            >
+              <button
+                class="btn-del"
+                style="display: none;"
+              >
+                -
+              </button>
+              
+              Manage
+              
+              <img
+                class="setting-img"
+                src="@/assets/img/icons/setting.svg"
+              />
+            </li>
+             
+            <li
+              class="action"
+            >
+              <label
+                class="label-container"
+              >
+                <input
+                  checked="checked"
+                  class="view"
+                  disabled="disabled"
+                  type="checkbox"
+                />
+                 
+                <span
+                  class="check"
+                />
+                 
+                <span
+                  class="text"
+                >
+                  View
+                </span>
+              </label>
+               
+              <label
+                class="label-container"
+              >
+                <input
+                  class="edit"
+                  type="checkbox"
+                />
+                 
+                <span
+                  class="check"
+                />
+                 
+                <span
+                  class="text"
+                >
+                  Edit
+                </span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Managers settings ==> QManaging should snapshot 1`] = `
+<div
+  class="queues-managing"
+>
+  <div
+    class="queues-managing__title"
+  >
+    
+    Available Queues
+  
+  </div>
+   
+  <div
+    class="table-content"
+  >
+    <div
+      class="table-content__sticky"
+    >
+      <ul
+        class="table-content__list-header"
+      >
+        <li
+          class="table-content__header-item"
+        >
+          <button
+            class="edit-close-btn"
+          >
+            <img
+              alt=""
+              content="Edit mode"
+              height="10.67"
+              src="@/assets/img/icons/edit.svg"
+              width="10.67"
+            />
+             
+            <!---->
+          </button>
+        </li>
+         
+        <li
+          class="table-content__header-item"
+        >
+          Name of Queue
+        </li>
+         
+        <li
+          class="table-content__header-item"
+        >
+          Queue Number
+        </li>
+         
+        <li
+          class="table-content__header-item"
+        >
+          Actions
+        </li>
+      </ul>
+       
+      <!---->
+    </div>
+     
+    <ul
+      class="table-content__list-main"
+    >
+      <li
+        class="table-content__list-item delete"
+        content="Remove item"
+        style="display: none;"
+      >
+        <span
+          class="delete-span"
+        />
+      </li>
+       
+      <li
+        class="table-content__list-item"
+      >
+        Manage queue
+      </li>
+       
+      <li
+        class="table-content__list-item"
+      >
+        1001
+      </li>
+       
+      <li
+        class="table-content__list-item"
+      >
+        <label
+          class="table-content__label"
+        >
+          <input
+            type="checkbox"
+          />
+           
+          <span
+            class="check"
+          />
+           
+          <span
+            class="text"
+          >
+            Edit
+          </span>
+        </label>
+         
+        <span
+          class="table-content__img-settings"
+        >
+          <img
+            height="20"
+            src="@/assets/img/icons/setting.png"
+            width="20"
+          />
+        </span>
+      </li>
+    </ul>
+    <ul
+      class="table-content__list-main"
+    >
+      <li
+        class="table-content__list-item delete"
+        content="Remove item"
+        style="display: none;"
+      >
+        <span
+          class="delete-span"
+        />
+      </li>
+       
+      <li
+        class="table-content__list-item"
+      >
+        Manage queue
+      </li>
+       
+      <li
+        class="table-content__list-item"
+      >
+        1002
+      </li>
+       
+      <li
+        class="table-content__list-item"
+      >
+        <label
+          class="table-content__label"
+        >
+          <input
+            type="checkbox"
+          />
+           
+          <span
+            class="check"
+          />
+           
+          <span
+            class="text"
+          >
+            Edit
+          </span>
+        </label>
+         
+        <span
+          class="table-content__img-settings"
+        >
+          <img
+            height="20"
+            src="@/assets/img/icons/setting.png"
+            width="20"
+          />
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Managers settings Check snapshot 1`] = `<!---->`;

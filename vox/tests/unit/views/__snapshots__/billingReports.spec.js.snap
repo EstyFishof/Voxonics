@@ -1,0 +1,744 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Charges Check snapshot 1`] = `
+<div>
+  <div
+    class="top-block"
+  >
+    <billingmenu-stub />
+  </div>
+   
+  <div
+    class="wrap-table"
+  >
+    <table>
+      <thead>
+        <tr
+          class="header"
+        >
+          <th>
+            Date & Time 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th>
+            Purpose 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th
+            class="v-number"
+          >
+            V-number 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th
+            class="description"
+          >
+            Description 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th>
+            Charged 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th>
+            Amount 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th>
+            Сurrency
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th>
+            ID
+          </th>
+           
+          <th>
+            Info
+          </th>
+        </tr>
+      </thead>
+       
+      <!---->
+    </table>
+     
+    <paginator-stub
+      methods="[object Object]"
+      paginator="[object Object]"
+    />
+  </div>
+</div>
+`;
+
+exports[`Payments Check snapshot 1`] = `
+<div>
+  <billingmenu-stub />
+   
+  <div
+    class="wrap-table"
+  >
+    <table>
+      <thead>
+        <tr
+          class="header"
+        >
+          <th>
+            Date & Time 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th>
+            Method 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th>
+            Amount 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th>
+            Сurrency 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th>
+            VAT/Tax 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th>
+            Status 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th>
+            Paid at 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th>
+            Total Paid 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th>
+            Сurrency 
+            <img
+              src="@/assets/img/icons/sort-arrow.svg"
+            />
+          </th>
+           
+          <th
+            class="invoice"
+          >
+            Invoice
+          </th>
+           
+          <th
+            class="invoice-id question-id"
+          >
+            
+            ID
+            
+            <img
+              class="question"
+              src="@/assets/img/icons/question.svg"
+            />
+          </th>
+           
+          <th>
+            Receipt
+          </th>
+           
+          <th
+            class="question-id"
+          >
+            
+            ID
+            
+            <img
+              class="question"
+              src="@/assets/img/icons/question.svg"
+            />
+          </th>
+        </tr>
+      </thead>
+       
+      <!---->
+    </table>
+     
+    <paginator-stub
+      methods="[object Object]"
+      paginator="[object Object]"
+    />
+  </div>
+</div>
+`;
+
+exports[`Statement Check snapshot 1`] = `
+<div>
+  <billingmenu-stub />
+   
+  <div
+    class="statement-block"
+  >
+    <div
+      class="left-sector"
+    >
+      <div
+        class="balance-block"
+      >
+        <div
+          class="company-name"
+        >
+          
+          
+        
+        </div>
+         
+        <span
+          class="deposit-title"
+        >
+          Your deposit balance
+        </span>
+         
+        <span
+          class="deposit-cost"
+        >
+          400.00    USD
+        </span>
+         
+        <span
+          class="refill"
+        >
+          Last refill   USD
+        </span>
+         
+        <span
+          class="deposit-btn"
+        >
+          Account topup
+        </span>
+      </div>
+       
+      <!---->
+       
+      <div
+        class="last-month"
+      >
+        <span
+          class="last-month-title"
+        >
+          Last month spent
+        </span>
+         
+        <span
+          class="last-month-value"
+        >
+          $ 
+        </span>
+      </div>
+    </div>
+     
+    <div
+      class="right-sector"
+    >
+      <ul
+        class="common-data"
+      >
+        <li
+          class="common-data-item"
+        >
+          <span
+            class="common-data-title"
+          >
+            Next 10 day’s charges
+          </span>
+           
+          <div
+            class="common-data-price"
+          >
+            
+            $ 
+            
+            <img
+              alt="changes"
+              src="@/assets/img/icons/next-charges.svg"
+            />
+          </div>
+        </li>
+         
+        <li
+          class="common-data-item"
+        >
+          <span
+            class="common-data-title"
+          >
+            Avarage usage per day
+          </span>
+           
+          <div
+            class="common-data-price"
+          >
+            
+            $ 
+            
+            <img
+              alt="changes"
+              src="@/assets/img/icons/avarage-usage.svg"
+            />
+             
+            <!---->
+          </div>
+        </li>
+         
+        <li
+          class="common-data-item"
+        >
+          <span
+            class="common-data-title"
+          >
+            Agents
+          </span>
+           
+          <div
+            class="common-data-price common-data-counter"
+          >
+            
+            
+            
+            <img
+              alt="changes"
+              src="@/assets/img/icons/agents-statement.svg"
+            />
+          </div>
+        </li>
+         
+        <li
+          class="common-data-item"
+        >
+          <span
+            class="common-data-title"
+          >
+            V-Numbers
+          </span>
+           
+          <div
+            class="common-data-price common-data-counter"
+          >
+            
+            
+            
+            <img
+              alt="changes"
+              src="@/assets/img/icons/v-numbers-statement.svg"
+            />
+          </div>
+        </li>
+      </ul>
+       
+      <div
+        class="tables-block"
+      >
+        <div
+          class="tables-block-top"
+        >
+          <div
+            class="table-name"
+          >
+            <img
+              src="@/assets/img/icons/payments-white.svg"
+            />
+             
+            <!---->
+            
+            Last payments
+          
+          </div>
+           
+          <router-link-stub
+            ariacurrentvalue="page"
+            class="tables-block-top-btn"
+            event="click"
+            tag="a"
+            to="/reports/payments"
+          >
+            
+            View all
+            
+            <img
+              src="@/assets/img/icons/statement-view-all.svg"
+            />
+             
+            <!---->
+          </router-link-stub>
+        </div>
+         
+        <div
+          class="wrap-table"
+        >
+          <table>
+            <thead>
+              <tr
+                class="header"
+              >
+                <th>
+                  
+                Invoice #
+                
+                  <img
+                    src="@/assets/img/icons/sort-arrow.svg"
+                  />
+                   
+                  <img
+                    src="@/assets/img/icons/sort-arrow-white.png"
+                    style="display: none;"
+                  />
+                </th>
+                <th>
+                  
+                Issued
+                
+                  <img
+                    src="@/assets/img/icons/sort-arrow.svg"
+                  />
+                   
+                  <img
+                    src="@/assets/img/icons/sort-arrow-white.png"
+                    style="display: none;"
+                  />
+                </th>
+                <th>
+                  
+                Method
+                
+                  <img
+                    src="@/assets/img/icons/sort-arrow.svg"
+                  />
+                   
+                  <img
+                    src="@/assets/img/icons/sort-arrow-white.png"
+                    style="display: none;"
+                  />
+                </th>
+                <th>
+                  
+                Status
+                
+                  <img
+                    src="@/assets/img/icons/sort-arrow.svg"
+                  />
+                   
+                  <img
+                    src="@/assets/img/icons/sort-arrow-white.png"
+                    style="display: none;"
+                  />
+                </th>
+                <th>
+                  
+                Total Paid
+                
+                  <img
+                    src="@/assets/img/icons/sort-arrow.svg"
+                  />
+                   
+                  <img
+                    src="@/assets/img/icons/sort-arrow-white.png"
+                    style="display: none;"
+                  />
+                </th>
+                <th>
+                  
+                Currency
+                
+                  <img
+                    src="@/assets/img/icons/sort-arrow.svg"
+                  />
+                   
+                  <img
+                    src="@/assets/img/icons/sort-arrow-white.png"
+                    style="display: none;"
+                  />
+                </th>
+                <th>
+                  
+                Paid at
+                
+                  <img
+                    src="@/assets/img/icons/sort-arrow.svg"
+                  />
+                   
+                  <img
+                    src="@/assets/img/icons/sort-arrow-white.png"
+                    style="display: none;"
+                  />
+                </th>
+                 
+                <th>
+                  Invoice
+                </th>
+                 
+                <th>
+                  Receipt
+                </th>
+              </tr>
+            </thead>
+             
+            <tbody>
+              <tr>
+                <td>
+                  
+                </td>
+                 
+                <td>
+                  
+                </td>
+                 
+                <td />
+                 
+                <td
+                  class="status"
+                >
+                  <img
+                    content="success"
+                    src=""
+                    tabindex="0"
+                  />
+                </td>
+                 
+                <td>
+                  
+                </td>
+                 
+                <td>
+                  
+                </td>
+                 
+                <td>
+                  
+                </td>
+                 
+                <td>
+                  <img
+                    src="@/assets/img/icons/download.svg"
+                  />
+                </td>
+                 
+                <td>
+                  <img
+                    src="@/assets/img/icons/download.svg"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+       
+      <div
+        class="tables-block"
+      >
+        <div
+          class="tables-block-top"
+        >
+          <div
+            class="table-name"
+          >
+            <img
+              src="@/assets/img/icons/charges-white.svg"
+            />
+             
+            <!---->
+            
+            Future charges
+          
+          </div>
+           
+          <router-link-stub
+            ariacurrentvalue="page"
+            class="tables-block-top-btn"
+            event="click"
+            tag="a"
+            to="/reports/charges"
+          >
+            
+            View all
+            
+            <img
+              src="@/assets/img/icons/statement-view-all.svg"
+            />
+             
+            <!---->
+          </router-link-stub>
+        </div>
+         
+        <div
+          class="wrap-table"
+        >
+          <table>
+            <thead>
+              <tr
+                class="header"
+              >
+                <th>
+                  
+                Issued
+                
+                  <img
+                    src="@/assets/img/icons/sort-arrow.svg"
+                  />
+                   
+                  <img
+                    src="@/assets/img/icons/sort-arrow-white.png"
+                    style="display: none;"
+                  />
+                </th>
+                <th>
+                  
+                Purpose
+                
+                  <img
+                    src="@/assets/img/icons/sort-arrow.svg"
+                  />
+                   
+                  <img
+                    src="@/assets/img/icons/sort-arrow-white.png"
+                    style="display: none;"
+                  />
+                </th>
+                <th>
+                  
+                Country
+                
+                  <img
+                    src="@/assets/img/icons/sort-arrow.svg"
+                  />
+                   
+                  <img
+                    src="@/assets/img/icons/sort-arrow-white.png"
+                    style="display: none;"
+                  />
+                </th>
+                <th>
+                  
+                V-number
+                
+                  <img
+                    src="@/assets/img/icons/sort-arrow.svg"
+                  />
+                   
+                  <img
+                    src="@/assets/img/icons/sort-arrow-white.png"
+                    style="display: none;"
+                  />
+                </th>
+                <th>
+                  
+                Description
+                
+                  <img
+                    src="@/assets/img/icons/sort-arrow.svg"
+                  />
+                   
+                  <img
+                    src="@/assets/img/icons/sort-arrow-white.png"
+                    style="display: none;"
+                  />
+                </th>
+                <th>
+                  
+                Charge
+                
+                  <img
+                    src="@/assets/img/icons/sort-arrow.svg"
+                  />
+                   
+                  <img
+                    src="@/assets/img/icons/sort-arrow-white.png"
+                    style="display: none;"
+                  />
+                </th>
+                 
+                <th>
+                  ID
+                </th>
+              </tr>
+            </thead>
+             
+            <tbody>
+              <tr>
+                <td>
+                  
+                </td>
+                 
+                <td>
+                  
+                </td>
+                 
+                <td>
+                  
+                </td>
+                 
+                <td />
+                 
+                <td
+                  class="status"
+                >
+                  
+                </td>
+                 
+                <td>
+                  
+                </td>
+                 
+                <td>
+                  <img
+                    src="@/assets/img/icons/copy.svg"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

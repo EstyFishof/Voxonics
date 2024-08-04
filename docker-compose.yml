@@ -1,0 +1,9 @@
+version: '3.5'
+services:
+  nginx:
+    build: .
+    container_name: vox_front_nginx
+    ports:
+      - "0.0.0.0:8077:80"
+    volumes:
+      - ./conf/nginx/:/etc/nginx/conf.d/:rw

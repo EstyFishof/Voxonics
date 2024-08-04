@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkVoxonics"]=self["webpackChunkVoxonics"]||[]).push([[393],{93393:function(n,e,u){u.r(e),u.d(e,{default:function(){return f}});var r=function(){var n=this,e=n._self._c;return e("div",[e("router-view")],1)},s=[],t={name:"WrapNumbers"},c=t,i=u(1001),o=(0,i.Z)(c,r,s,!1,null,"05d9988f",null),f=o.exports}}]);

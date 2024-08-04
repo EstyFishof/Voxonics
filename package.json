@@ -1,7 +1,18 @@
 {
-  "dependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@mui/material": "^5.16.0"
-  }
+  "private": true,
+  "scripts": {
+    "start": "lerna run --scope @vue-cli/* --parallel start",
+    "build": "lerna run --scope @vue-cli/* build",
+    "serve": "lerna run --parallel serve",
+    "clean": "lerna run --scope @vue-cli/* --parallel clean"
+  },
+  "workspaces": {
+    "packages": [
+      "../front/*"
+    ]
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  },
+  "name": "front"
 }

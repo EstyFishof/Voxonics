@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`edit user Check snapshot 1`] = `
+<div
+  class="wrap-main"
+>
+  <div
+    class="wrap-form account-wrap"
+  >
+    <form>
+      <personalinfo-stub />
+       
+      <div
+        class="bottom-field"
+      >
+        <!---->
+         
+        <div
+          class="tabs"
+        >
+          <div
+            class="left-tabs"
+          >
+            <div
+              class="tab active"
+            >
+              
+              Permissions
+            
+            </div>
+             
+            <div
+              class="tab"
+            >
+              
+              Departments
+            
+            </div>
+             
+            <div
+              class="tab queues"
+            >
+              Queues
+              
+              <ul
+                class="secondary-list"
+                style="display: none;"
+              >
+                <li
+                  class="secondary-list__item"
+                >
+                  Using
+                
+                </li>
+                 
+                <li
+                  class="secondary-list__item"
+                >
+                  Managing
+                
+                </li>
+              </ul>
+            </div>
+             
+            <div
+              class="tab"
+            >
+              Settings overview
+            </div>
+          </div>
+           
+          <div
+            class="right-tabs"
+          >
+            <controlpanel-stub
+              apply="function () { [native code] }"
+              discard="function () { [native code] }"
+            />
+          </div>
+        </div>
+         
+        <div
+          class="body"
+        >
+          <permission-stub />
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`personal info in AccountInfo Check snapshot 1`] = `
+<div
+  class="personal-info-wrap"
+>
+  <div
+    class="wrap-body"
+  >
+    <fileloader-stub />
+     
+    <div
+      class="personal-info"
+    >
+      <div
+        class="personal-info__first-part"
+      >
+        <div
+          class="item-container with-err"
+        >
+          <label>
+            
+            Name*
+            
+            <input
+              class="input-field error"
+              maxlength="32"
+              placeholder="Enter user name"
+            />
+          </label>
+           
+          <!---->
+        </div>
+         
+        <div
+          class="item-container with-err"
+        >
+          <label>
+            Phone
+            
+            <input
+              class="input-field"
+              maxlength="15"
+              placeholder="Only digits"
+              type="text"
+            />
+          </label>
+           
+          <!---->
+        </div>
+         
+        <div
+          class="item-container"
+        >
+          <label>
+            Location
+            
+            <input
+              class="input-field"
+              placeholder="London, UK"
+              type="text"
+            />
+          </label>
+        </div>
+         
+        <div
+          class="item-container with-err"
+        >
+          <label>
+            Agent Number (id)*
+            
+            <input
+              class="input-field"
+              placeholder="000"
+              type="text"
+            />
+          </label>
+           
+          <!---->
+        </div>
+         
+        <div
+          class="item-container with-err"
+        >
+          <label>
+            Email
+            
+            <input
+              class="input-field"
+              maxlength="36"
+              placeholder="example@voxonics.com"
+              type="email"
+            />
+          </label>
+           
+          <!---->
+        </div>
+         
+        <div
+          class="personal-info__second-part"
+        >
+          <div
+            class="item-container"
+          >
+            <label>
+              Position
+              
+              <input
+                class="input-field"
+                maxlength="16"
+                placeholder="Sales Manager"
+                type="text"
+              />
+            </label>
+          </div>
+        </div>
+         
+        <div
+          class="hr"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

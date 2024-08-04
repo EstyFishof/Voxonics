@@ -1,0 +1,523 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddAgent Check snapshot 1`] = `
+<div
+  class="personal-info-wrap"
+>
+  <div
+    class="wrap-head"
+  >
+    <h2>
+      ADD AGENTS
+    </h2>
+     
+    <span
+      class="hr"
+    />
+  </div>
+   
+  <div
+    class="top"
+  >
+    <div
+      class="left"
+    >
+      Add agent
+
+    </div>
+     
+    <div
+      class="agents users"
+    >
+      <div
+        class="agent user"
+      >
+        <div
+          class="block"
+        >
+          <div
+            class="round"
+          >
+            Name
+          </div>
+           
+          <span
+            class="name"
+          />
+        </div>
+         
+        <span
+          class="name"
+        >
+          Agent Number
+        </span>
+         
+        <span
+          class="union"
+        />
+      </div>
+       
+      <div
+        class="agent user"
+      >
+        <div
+          class="block"
+        >
+          <div
+            class="round"
+          >
+            Name
+          </div>
+           
+          <span
+            class="name"
+          />
+        </div>
+         
+        <span
+          class="name"
+        >
+          Agent Number
+        </span>
+         
+        <span
+          class="union"
+        />
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="personal-info"
+    >
+      <div
+        class="personal-info__first-part"
+      >
+        <div
+          class="item-container with-err"
+        >
+          <div
+            class="label"
+          >
+            <input
+              class="input-field"
+              placeholder="Enter name or Agent Number"
+            />
+             
+            <span
+              class="list"
+              style="display: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="agents users"
+    >
+      <div
+        class="agent user"
+      >
+        <div
+          class="block"
+        >
+          <div
+            class="round"
+          >
+            <img
+              alt="avatar"
+              src=""
+            />
+          </div>
+           
+          <span
+            class="name"
+          >
+            
+          </span>
+        </div>
+         
+        <span
+          class="name"
+        >
+          
+        </span>
+         
+        <img
+          alt=""
+          class="union"
+          src="@/assets/img/icons/union.svg"
+          width="19"
+        />
+      </div>
+      <div
+        class="agent user"
+      >
+        <div
+          class="block"
+        >
+          <div
+            class="round"
+          >
+            <img
+              alt="avatar"
+              src=""
+            />
+          </div>
+           
+          <span
+            class="name"
+          >
+            
+          </span>
+        </div>
+         
+        <span
+          class="name"
+        >
+          
+        </span>
+         
+        <img
+          alt=""
+          class="union"
+          src="@/assets/img/icons/union.svg"
+          width="19"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AddManagers Check snapshot 1`] = `
+<div
+  class="personal-info-wrap"
+>
+  <div
+    class="wrap-head"
+  >
+    <h2>
+      Managed by
+    </h2>
+     
+    <span
+      class="hr"
+    />
+  </div>
+   
+  <div
+    class="top"
+  >
+    <div
+      class="left"
+    >
+      Add manager
+
+    </div>
+     
+    <div
+      class="managers users"
+    >
+      <div
+        class="manager user"
+      >
+        <div
+          class="block"
+        >
+          <div
+            class="round"
+          >
+            Name
+          </div>
+           
+          <span
+            class="name"
+          />
+        </div>
+         
+        <span
+          class="name"
+        >
+          Agent Number
+        </span>
+         
+        <span
+          class="union"
+        />
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="personal-info"
+    >
+      <div
+        class="personal-info__first-part"
+      >
+        <div
+          class="item-container with-err"
+        >
+          <div
+            class="label"
+          >
+            <input
+              class="input-field"
+              placeholder="Enter name or Agent Number"
+            />
+             
+            <span
+              class="list"
+              style="display: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="managers users"
+    >
+      <div
+        class="manager user"
+      >
+        <div
+          class="block"
+        >
+          <div
+            class="round"
+          >
+            <img
+              alt="avatar"
+              src=""
+            />
+          </div>
+           
+          <span
+            class="name"
+          >
+            
+          </span>
+        </div>
+         
+        <span
+          class="name"
+        >
+          
+        </span>
+         
+        <div
+          class="action"
+        >
+          <label
+            class="label-container"
+          >
+            <input
+              checked="checked"
+              class="view"
+              disabled="disabled"
+              type="checkbox"
+            />
+             
+            <span
+              class="check"
+            />
+             
+            <span
+              class="text"
+            >
+              View
+            </span>
+          </label>
+           
+          <label
+            class="label-container"
+          >
+            <input
+              class="edit"
+              type="checkbox"
+            />
+             
+            <span
+              class="check"
+            />
+             
+            <span
+              class="text"
+            >
+              Edit
+            </span>
+          </label>
+        </div>
+         
+        <img
+          alt=""
+          class="union"
+          src="@/assets/img/icons/union.svg"
+          width="19"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`AddNumbers Check snapshot 1`] = `
+<div
+  class="personal-info-wrap"
+>
+  <div
+    class="wrap-head"
+  >
+    <h2>
+      ASSIGN V-NUMBERS
+    </h2>
+     
+    <span
+      class="hr"
+    />
+  </div>
+   
+  <div
+    class="top"
+  >
+    <div
+      class="left"
+    >
+      Assign number
+      
+    </div>
+     
+    <div
+      class="numbers"
+    >
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="personal-info"
+    >
+      <div
+        class="personal-info__first-part"
+      >
+        <div
+          class="item-container with-err"
+        >
+          <div
+            class="label"
+          >
+            <input
+              class="input-field"
+              placeholder="Enter or select number"
+            />
+             
+            <span
+              class="list"
+              style="display: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="numbers"
+    />
+  </div>
+</div>
+`;
+
+exports[`CreateDepartment Check snapshot 1`] = `
+<div
+  class="wrap-main"
+>
+  <div
+    class="wrap-form"
+  >
+    <form>
+      <departmentinfo-stub />
+       
+      <addagent-stub />
+       
+      <addmanager-stub />
+       
+      <addvnumbers-stub />
+       
+      <div
+        class="btn-container"
+      >
+        <button
+          class="btn-submit"
+        >
+          Apply Changes
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`DepartmentInfo Check snapshot 1`] = `
+<div
+  class="personal-info-wrap"
+>
+  <div
+    class="wrap-head"
+  >
+    <h2>
+      DEPARTMENT INFO
+    </h2>
+     
+    <span
+      class="hr"
+    />
+  </div>
+   
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="personal-info"
+    >
+      <div
+        class="personal-info__first-part"
+      >
+        <div
+          class="item-container with-err"
+        >
+          <label>
+            
+              Name
+ 
+            <input
+              class="input-field"
+              maxlength="12"
+              placeholder="Enter name of Department"
+              required="required"
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

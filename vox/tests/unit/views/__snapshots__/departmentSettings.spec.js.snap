@@ -1,0 +1,505 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AgentsSetting Check snapshot 1`] = `
+<div
+  class="personal-info-wrap"
+>
+  <div
+    class="wrap-head"
+  >
+    <h2>
+      Agents in Department
+    </h2>
+  </div>
+   
+  <div
+    class="top"
+  >
+    <div
+      class="left"
+    >
+      Add agent
+    
+    </div>
+     
+    <div
+      class="agents users"
+    >
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="personal-info"
+    >
+      <div
+        class="personal-info__first-part"
+      >
+        <div
+          class="item-container with-err"
+        >
+          <div
+            class="label"
+          >
+            <input
+              class="input-field"
+              placeholder="Enter name or Agent Number"
+            />
+             
+            <span
+              class="list"
+              style="display: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="agents users"
+    />
+  </div>
+</div>
+`;
+
+exports[`DepartmentInfo Check snapshot 1`] = `
+<div
+  class="personal-info-wrap"
+>
+  <div
+    class="wrap-head"
+  >
+    <h2>
+      DEPARTMENT INFO
+    </h2>
+     
+    <span
+      class="hr"
+    />
+     
+    <img
+      alt="trash"
+      class="trash"
+      content="Delete department"
+      src="@/assets/img/icons/trash.svg"
+      tabindex="0"
+      width="30"
+    />
+  </div>
+   
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="personal-info"
+    >
+      <div
+        class="personal-info__first-part"
+      >
+        <span>
+            Name of Department:
+        </span>
+         
+        <div
+          class="item-container with-err"
+        >
+          <input
+            class=""
+            content="Change name"
+            defaulvalue=""
+            maxlength="12"
+            placeholder="Enter name of Department"
+            style="width: 100%;"
+          />
+           
+          <div
+            class="wrap-static"
+          >
+            <div
+              class="static"
+            >
+              <div
+                class="label"
+              >
+                Numbers in Department:
+              </div>
+               
+              <div
+                class="num"
+              >
+                0
+              </div>
+            </div>
+             
+            <div
+              class="static"
+            >
+              <div
+                class="label"
+              >
+                Agents in Department:
+              </div>
+               
+              <div
+                class="num"
+              >
+                0
+              </div>
+            </div>
+             
+            <div
+              class="static"
+            >
+              <div
+                class="label"
+              >
+                Managers in Department:
+              </div>
+               
+              <div
+                class="num"
+              >
+                0
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ManagersSetting Check snapshot 1`] = `
+<div
+  class="personal-info-wrap"
+>
+  <div
+    class="wrap-head"
+  >
+    <h2>
+      Managed by
+    </h2>
+  </div>
+   
+  <div
+    class="top"
+  >
+    <div
+      class="left"
+    >
+      Add manager
+      
+    </div>
+     
+    <div
+      class="managers users"
+    >
+      <!---->
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="personal-info"
+    >
+      <div
+        class="personal-info__first-part"
+      >
+        <div
+          class="item-container with-err"
+        >
+          <div
+            class="label"
+          >
+            <input
+              class="input-field"
+              placeholder="Enter name or Agent Number"
+            />
+             
+            <span
+              class="list"
+              style="display: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="managers users"
+    />
+  </div>
+</div>
+`;
+
+exports[`NumbersSettings Check snapshot 1`] = `
+<div
+  class="personal-info-wrap"
+>
+  <div
+    class="wrap-head"
+  >
+    <h2>
+      Numbers in Department
+    </h2>
+  </div>
+   
+  <div
+    class="top"
+  >
+    <div
+      class="left"
+    >
+      Assign number
+      
+    </div>
+     
+    <div
+      class="numbers"
+    >
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="personal-info"
+    >
+      <div
+        class="personal-info__first-part"
+      >
+        <div
+          class="item-container with-err"
+        >
+          <div
+            class="label"
+          >
+            <input
+              class="input-field"
+              placeholder="Enter or select number"
+            />
+             
+            <span
+              class="list"
+              style="display: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="numbers"
+    >
+      <div
+        class="number"
+      >
+        <div
+          class="block"
+        >
+          <div
+            class="round"
+          >
+            uid1.
+          </div>
+           
+          <span
+            class="name"
+          >
+            
+          </span>
+           
+          <span
+            class="description"
+          >
+            
+          </span>
+        </div>
+         
+        <span
+          class="name"
+        >
+          
+        </span>
+         
+        <img
+          alt=""
+          class="union"
+          src="@/assets/img/icons/union.svg"
+          width="19"
+        />
+      </div>
+      <div
+        class="number"
+      >
+        <div
+          class="block"
+        >
+          <div
+            class="round"
+          >
+            number1.
+          </div>
+           
+          <span
+            class="name"
+          >
+            
+          </span>
+           
+          <span
+            class="description"
+          >
+            
+          </span>
+        </div>
+         
+        <span
+          class="name"
+        >
+          
+        </span>
+         
+        <img
+          alt=""
+          class="union"
+          src="@/assets/img/icons/union.svg"
+          width="19"
+        />
+      </div>
+      <div
+        class="number"
+      >
+        <div
+          class="block"
+        >
+          <div
+            class="round"
+          >
+            name1.
+          </div>
+           
+          <span
+            class="name"
+          >
+            
+          </span>
+           
+          <span
+            class="description"
+          >
+            
+          </span>
+        </div>
+         
+        <span
+          class="name"
+        >
+          
+        </span>
+         
+        <img
+          alt=""
+          class="union"
+          src="@/assets/img/icons/union.svg"
+          width="19"
+        />
+      </div>
+      <div
+        class="number"
+      >
+        <div
+          class="block"
+        >
+          <div
+            class="round"
+          >
+            country1.
+          </div>
+           
+          <span
+            class="name"
+          >
+            
+          </span>
+           
+          <span
+            class="description"
+          >
+            
+          </span>
+        </div>
+         
+        <span
+          class="name"
+        >
+          
+        </span>
+         
+        <img
+          alt=""
+          class="union"
+          src="@/assets/img/icons/union.svg"
+          width="19"
+        />
+      </div>
+      <div
+        class="number"
+      >
+        <div
+          class="block"
+        >
+          <div
+            class="round"
+          >
+            network1.
+          </div>
+           
+          <span
+            class="name"
+          >
+            
+          </span>
+           
+          <span
+            class="description"
+          >
+            
+          </span>
+        </div>
+         
+        <span
+          class="name"
+        >
+          
+        </span>
+         
+        <img
+          alt=""
+          class="union"
+          src="@/assets/img/icons/union.svg"
+          width="19"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

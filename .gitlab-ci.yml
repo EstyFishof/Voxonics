@@ -1,0 +1,79 @@
+services:
+  - docker:dind
+
+stages:
+  - test
+  - build
+  - dev
+  - prod
+
+sonarqube-check:
+  stage: test
+  tags: 
+    - cl2-docker
+  image: sonarsource/sonar-scanner-cli:latest
+  variables:
+    SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+    GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+      - .sonar/cache
+  script:
+   - sonar-scanner -Dsonar.qualitygate.wait=true -Dproject.settings=vox/sonar-project.properties
+ # allow_failure: true
+  when: manual
+  #only:
+  #  - tags
+
+latest_image:
+  stage: build
+  image: docker:dind
+  tags: 
+    - vox-docker
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - docker build -t $CI_REGISTRY/client/front:latest -t $CI_REGISTRY/client/front:$CI_COMMIT_TAG .
+    - docker push $CI_REGISTRY/client/front:latest
+    - docker push $CI_REGISTRY/client/front:$CI_COMMIT_TAG
+  #when: always
+  only:
+    - tags
+
+
+vox-dev:
+  stage: dev
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$ANSIBLE" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  script:
+    - ssh coreadmin@23.88.11.77 "ansible-playbook -i /projects/ansible/hosts.txt /projects/ansible/playbook/vox-update.yml --extra-vars 'front_tag=$CI_COMMIT_TAG' --tags 'env, front' -l VOX-DEV"
+  tags:
+    - cl2-docker
+  when: manual
+  only:
+    - tags
+
+
+vox-prod:
+  stage: prod
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$ANSIBLE"
+    - echo "$ANSIBLE" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  script:
+    - ssh coreadmin@23.88.11.77 "ansible-playbook -i /projects/ansible/hosts.txt /projects/ansible/playbook/vox-update.yml --extra-vars 'front_tag=$CI_COMMIT_TAG' --tags 'env, front' -l VOX-PROD"
+  tags:
+    - cl2-docker
+  when: manual
+  only:
+    - tags

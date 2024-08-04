@@ -1,0 +1,441 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Queues Check snapshot 1`] = `
+<div
+  class="get-users-page-container"
+>
+  <div
+    class="toolbar"
+  >
+    <div>
+      <div
+        class="btn-img"
+      >
+        <span
+          class="add-btns"
+          content="Add new queue"
+          tabindex="0"
+        >
+          <img
+            alt="plus"
+            class="add-btn-plus"
+            height="12"
+            src="@/assets/img/icons/plus.svg"
+            width="15"
+          />
+           
+          <img
+            alt="add"
+            class="add-btn"
+            height="20"
+            src="@/assets/img/icons/add-dep-queue.svg"
+            width="31"
+          />
+        </span>
+         
+        <div
+          class="btn-img"
+        >
+          <svg
+            class="switch-view switch-list"
+            content="List mode"
+            fill="none"
+            height="16"
+            tabindex="0"
+            viewBox="0 0 19 15"
+            width="23"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              height="1.76923"
+              rx="0.884615"
+              width="14.2305"
+              x="4.76953"
+              y="0.5"
+            />
+             
+            <rect
+              height="1.76923"
+              rx="0.884615"
+              width="14.2305"
+              x="4.76953"
+              y="6.26953"
+            />
+             
+            <rect
+              height="1.76923"
+              rx="0.884615"
+              width="14.2305"
+              x="4.76953"
+              y="12.0391"
+            />
+             
+            <circle
+              cx="1.5"
+              cy="1.5"
+              r="1.5"
+            />
+             
+            <circle
+              cx="1.5"
+              cy="7.19922"
+              r="1.5"
+            />
+             
+            <circle
+              cx="1.5"
+              cy="13"
+              r="1.5"
+            />
+          </svg>
+        </div>
+      </div>
+       
+      <ul
+        class="sort-tabs"
+      >
+        <li>
+          Filter by:
+        </li>
+         
+        <li>
+          <label>
+            <input
+              class="input-field"
+              placeholder="Name/Number"
+              type="text"
+            />
+          </label>
+        </li>
+      </ul>
+    </div>
+     
+    <div
+      class="paginator-main"
+    >
+      <div
+        class="paginator"
+      >
+        <div
+          class="select item-container"
+        >
+          <div
+            class="left-item peerpage-wrap"
+            content="Quantity per page"
+            tabindex="0"
+          >
+            <label>
+              <svg
+                class="list"
+                fill="none"
+                height="15"
+                viewBox="0 0 19 15"
+                width="19"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  height="1.76923"
+                  rx="0.884615"
+                  width="14.2305"
+                  x="4.76953"
+                  y="0.5"
+                />
+                 
+                <rect
+                  height="1.76923"
+                  rx="0.884615"
+                  width="14.2305"
+                  x="4.76953"
+                  y="6.26953"
+                />
+                 
+                <rect
+                  height="1.76923"
+                  rx="0.884615"
+                  width="14.2305"
+                  x="4.76953"
+                  y="12.0391"
+                />
+                 
+                <circle
+                  cx="1.5"
+                  cy="1.5"
+                  r="1.5"
+                />
+                 
+                <circle
+                  cx="1.5"
+                  cy="7.19922"
+                  r="1.5"
+                />
+                 
+                <circle
+                  cx="1.5"
+                  cy="13"
+                  r="1.5"
+                />
+              </svg>
+               
+              <span
+                class="per-page"
+              >
+                10
+              </span>
+               
+              <span
+                class="triangle"
+              >
+                <img
+                  alt="select"
+                  src="@/assets/img/icons/arrow-down-white.svg"
+                />
+              </span>
+               
+              <ul
+                class="peerpage-select"
+                style="display: none;"
+              >
+                <li>
+                  12
+                </li>
+                 
+                <li>
+                  24
+                </li>
+                 
+                <li>
+                  36
+                </li>
+                 
+                <li>
+                  48
+                </li>
+              </ul>
+            </label>
+          </div>
+           
+          <div
+            class="pages"
+          >
+            <div
+              class="arrow-wrap"
+              content="First page"
+              tabindex="0"
+            >
+              <svg
+                class="arrow left disabled"
+                fill="transparent"
+                height="18"
+                viewBox="0 0 10 18"
+                width="30"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 1L1 9L9 17"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+               
+              <svg
+                class="arrow left disabled"
+                fill="transparent"
+                height="18"
+                viewBox="0 0 10 18"
+                width="30"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 1L1 9L9 17"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+             
+            <div
+              class="arrow-wrap"
+              content="Previous page"
+              tabindex="0"
+            >
+              <svg
+                class="arrow left disabled"
+                fill="transparent"
+                height="18"
+                viewBox="0 0 10 18"
+                width="30"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 1L1 9L9 17"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+             
+            <div
+              class="first-page peerpage-wrap"
+            >
+              <span>
+                
+              </span>
+               
+              <span
+                style="display: none;"
+              >
+                ,
+              </span>
+               
+              <span
+                class="active"
+              >
+                
+              </span>
+               
+              <span
+                style="display: none;"
+              >
+                ...
+              </span>
+               
+              <span
+                style="display: none;"
+              >
+                ,
+              </span>
+               
+              <span
+                class=""
+              >
+                
+              </span>
+            </div>
+             
+            <div
+              class="arrow-wrap"
+              content="Next page"
+              tabindex="0"
+            >
+              <svg
+                class="arrow right"
+                fill="transparent"
+                height="18"
+                viewBox="0 0 10 18"
+                width="30"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 1L1 9L9 17"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+             
+            <div
+              class="arrow-wrap"
+              content="Last page"
+              tabindex="0"
+            >
+              <svg
+                class="arrow right"
+                fill="transparent"
+                height="18"
+                viewBox="0 0 10 18"
+                width="30"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 1L1 9L9 17"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+               
+              <svg
+                class="arrow right"
+                fill="transparent"
+                height="18"
+                viewBox="0 0 10 18"
+                width="30"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 1L1 9L9 17"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+           
+          <div
+            class="right-item peerpage-wrap search-dep"
+          >
+            <svg
+              class="search"
+              fill="none"
+              height="16"
+              viewBox="0 0 16 16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                class="circle"
+                clip-rule="evenodd"
+                d="M1.77843 7.11112C1.77843 4.16979 4.17044 1.77778 7.11177 1.77778C10.0531 1.77778 12.4451 4.16979 12.4451 7.11112C12.4451 10.0525 10.0531 12.4445 7.11177 12.4445C4.17044 12.4445 1.77843 10.0525 1.77843 7.11112ZM15.7396 14.4827L12.7218 11.464C13.6578 10.2605 14.2222 8.75202 14.2222 7.11112C14.2222 3.19023 11.032 0 7.11112 0C3.19023 0 0 3.19023 0 7.11112C0 11.032 3.19023 14.2222 7.11112 14.2222C8.75202 14.2222 10.2605 13.6578 11.464 12.7218L14.4827 15.7396C14.656 15.9129 14.8836 16 15.1111 16C15.3387 16 15.5662 15.9129 15.7396 15.7396C16.0871 15.392 16.0871 14.8302 15.7396 14.4827Z"
+                fill-rule="evenodd"
+                opacity="0.7"
+              />
+               
+              <path
+                d="M5.28784 9.99414L10.995 4.28697L11.9165 5.20842L6.20929 10.9156L5.28784 9.99414Z"
+                fill="#00C82C"
+                fill-opacity="0.6"
+              />
+               
+              <path
+                d="M3 7.70703L3.82635 6.88068L6.11381 9.16814L5.28746 9.99449L3 7.70703Z"
+                fill="#00C82C"
+                fill-opacity="0.6"
+              />
+            </svg>
+             
+            <span
+              class="count"
+            >
+              50
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="right-tabs"
+    >
+      <controlpanel-stub
+        apply="function () { [native code] }"
+        discard="function () { [native code] }"
+      />
+    </div>
+  </div>
+   
+  <!---->
+   
+  <div
+    class="data-container"
+  >
+    <!---->
+  </div>
+   
+  <!---->
+</div>
+`;

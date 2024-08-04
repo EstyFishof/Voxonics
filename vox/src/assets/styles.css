@@ -1,0 +1,312 @@
+html[theme='light']:root {
+    --switch-bg: #ECF0F2;
+    --substrate: #EFEFF5;
+    --main-bg: #F7F7FA;
+    --main-border: #E5E5E5;
+    --font-panel: #515960;
+    --active-link: #D1DAE7;
+    --active-link-child: #ACBDD7;
+    --nav-bg: #CED8E1;
+    --h2: #4D5262;
+    --toolbar-bg: #99B1D5;
+    --paginator-bg: #ACBDD7;
+    --paginator: transparent;
+    --paginator-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    --paginator-item: #ACBDD7;
+    --paginator-color: #ffffff;
+    --paginator-arrow: #ffffff;
+    --paginator-arrow-disabled: #ffffff;
+    --agent-card-color: var(--light-blue);
+    --agent-card-border: none;
+    --agent-map-bg-menu: #ffffff;
+    --cdr-item-bg: #ACBDD7;
+    --cdr-button-bg: #ACBDD7;
+    --cdr-filter-bg: #DEDFE3;
+    --cdr-datepicker-bg: #8AA8D4;
+    --cdr-datepicker-main-bg: #CED8E1;
+    --cdr-datepicker-day-today: #ffffff;
+    --cdr-border-row: #DEDFE3;
+    --users-table-bg: #F7F7FA;
+    --input-bg: #ffffff;
+    --number-border-row: transparent;
+    --input-color-placeholder: #8E9397;
+    --fill-user-icon: #A7A9B4;
+    --font-user-icon: #A7A9B4;
+    --apply-bg: #45C470;
+    --apply-color: #FFFFFF;
+    --broom-bg: #D6E3F8;
+    --user-body-bg: #EFEFF5;
+    --permission-table-bg: #ffffff;
+    --unchecked: url("../assets/img/icons/unchecked-light.png");
+    --header-user-color: #9799A6;
+    --button-edit-dep-bg: #ACBDD7;
+    --button-edit-dep-border: #8AABC3;
+    --user-deps-input-color: #6D6D6D;
+    --stroke-arrow: #8AA8D4;
+    --fill-arrow: transparent;
+    --bottom-line: #DEDFE3;
+    --dep-child-bg: transparent;
+    --queue-select-bg: #ACBDD7;
+    --number-hover-bg: #FFFFFF;
+    --number-border-top: transparent;
+    --scenario-input-placeholder: #DADADA;
+    --scenario-tab-color: var(--light-blue);
+    --line-scenario: #ABBCD6;
+    --scenario-add-block-bg: #FFFFFF;
+    --scenario-add-block-shadow: 0 0 16px rgba(39, 104, 153, 0.3);
+    --scenario-wheel-bg: #8AA8D4;
+    --scenario-vnumber-input-bg: #8AA8D4;
+    --scenario-vnumber-input-placeholder: #FFFFFF;
+    --scenario-option-bg: #A3BEE5;
+    --support-line: #DEDFE3;
+    --contact-us-font: #9799A6;
+    --statement-border: #F1F1F1;
+    --scroll-bg: #CED8E1;
+    --scroll: #8AA8D4;
+    --backlight: #ACBDD7;
+    --shadow-list: rgba(7, 11, 17, 0.5);
+    --line-dep-queue: #8AA8D4;
+    --input-ip: #D1DAE7;
+    --not-active-btn-ip: #D1DAE7;
+    --allowed-block-bg: #ACBDD7;
+    --batch-actions-list: #DADEE1;
+    --batch-actions-title: rgba(0, 0, 0, 0.64);
+    --outbound-input-shadow: none;
+    --paginator-arrow-list: white;
+    --status-checkbox-bg: rgba(39, 104, 153, 0.5);
+    --list-item-after-border: rgba(115, 147, 255, 0.1);
+    --color-black-to-white: white;
+    --cdr-filter-label-color: #515960;
+    --available-numbers-hover: rgba(255, 255, 255, 0.8);
+    --outbound-routing-line-over-item: #ACBDD7;
+    --outbound-routing-line-under-item: #CED8E1;
+    --outbound-routing-arrow: #276899;
+    --scenario-child-tab-hover: #6488be;
+    --line-between-type-and-value: #276899;
+    --allowed-filter-arrow: #8EA4C6;
+    --phone-base-block-bg: none;
+    --phone-keyboard-item-bg: rgba(172, 189, 215, 0.5);
+    --phone-not-confirmed-block-bg: rgba(39, 104, 153, 0.75);
+    --phone-logo-bg: rgba(39, 104, 153, 0.75);
+    --phone-bottom-menu-bg: #5688B0;
+    --phone-base-block-text-color: #454D54;
+    --phone-bottom-menu-after-and-before-bg: #5688B0;
+    --phone-call-menu-btns-bg: rgba(39, 104, 153, 0.5);
+    --phone-call-menu-btn-disabled-bg: #8B9095;
+    --phone-call-menu-btn-disabled-icon: #DEDFE3;
+    --phone-call-menu-btn-active-bg: #276899;
+    --phone-settings-text-color: #276899;
+    --blue-white-color: #FFFFFF;
+    --phone-bottom-menu-bg-image: url('../assets/img/icons/phone-bottom-menu-bg-light.png');
+    --ava-wrapper-bg: rgba(39, 104, 153, 0.35);
+    --phone-btn-bg: rgba(39, 104, 153, 0.35);
+    --phone-search-bg: #EBF1F8;
+    --delete-number-icon: url('../assets/img/icons/delete-number-light.svg');
+    --phone-elements-bg: #EBF1F8;
+    --item-scenarios-bg: #FFFFFF;
+    --file-loader-btn-bg: #8AA8D4;
+    --ivr-lines-bg: #8AA8D4;
+    --scenario-lines-stroke: #4D5262;
+    --dropdown-list-collapse-bg: #8AA8D4;
+    --dropdown-list-collapse-text-color: #FFFFFF;
+    --enable-ws-checkbox-bg: #ACBDD7;
+    --enable-ws-checkbox-circle-bg: #8AA8D4;
+
+    /* иконки для списка recent calls */
+    /* --incoming-call-icon: url('../assets/img/icons/incoming-call-icon-light.svg');
+    --outbound-call-icon: url('../assets/img/icons/outgoing-call-icon-light.svg');
+    --incoming-local-call-icon: url('../assets/img/icons/incoming-local-call-icon-light.svg');
+    --outgoing-local-call-icon: url('../assets/img/icons/outgoing-local-call-icon-light.svg'); */
+
+
+    /*----------------------------------------------------------------------*/
+    --phone-bg-position: 0px;
+    --bgc-light: #F8F8F8;
+    --dark-grey: #333333;
+    --bg_phone: url("../assets/img/icons/phone-bg-light.png");
+    --bg_login: url("../assets/img/bg_main_light.png");
+    --dirty-white: #DBD9D9;
+    --phone-bg-opacity: 1;
+    --bgc_main: #F8F8F8;
+    --ftc_main: #333333;
+    --bgc_el_main: #DBD9D9;
+    --stroke-arrow-scenarios: #8AA8D4;
+    --outbound-routing-header-bg: #99B1D5;
+    --outbound-routing-user-header-bg: #99B1D5;
+}
+
+:root {
+    --switch-bg: #343A40;
+    --substrate: #17212b;
+    --main-bg: #0F1D28;
+    --main-border: #202933;
+    --font-panel: #FFFFFF;
+    --active-link: #2d363f;
+    --active-link-child: #2d363f;
+    --nav-bg: #202933;
+    --h2: #E7E8E9;
+    --toolbar-bg: #202933;
+    --paginator-bg: #17212B;
+    --paginator: #17212B;
+    --paginator-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    --paginator-item: #242D38;
+    --paginator-color: #646D75;
+    --paginator-arrow: var(--light-blue);
+    --paginator-arrow-disabled: #545B64;
+    --agent-card-color: #6D6D6D;
+    --agent-card-border: 1px solid #6D6D6D;
+    --agent-map-bg-menu: #202933;
+    --cdr-item-bg: #2B343D;
+    --cdr-button-bg: #121A22;
+    --cdr-filter-bg: #17212B;
+    --cdr-datepicker-bg: #17212B;
+    --cdr-datepicker-main-bg: #121A22;
+    --cdr-datepicker-day-today: #292929;
+    --cdr-border-row: #242d38;
+    --users-table-bg: #17212B;
+    --input-bg: #2B343D;
+    --input-color-placeholder: #515960;
+    --fill-user-icon: #232C36;
+    --font-user-icon: #515960;
+    --apply-bg: transparent;
+    --apply-color: #34B53A;
+    --broom-bg: #17212b;
+    --user-body-bg: rgba(17, 25, 32, .25);
+    --permission-table-bg: #232C36;
+    --unchecked: url("../assets/img/icons/unchecked.png");
+    --header-user-color: rgba(255, 255, 255, 0.1);
+    --button-edit-dep-bg: #263037;
+    --button-edit-dep-border: #17212B;
+    --user-deps-input-color: #FFFFFF;
+    --stroke-arrow: #454D54;
+    --fill-arrow: #454D54;
+    --bottom-line: #353B42;
+    --dep-child-bg: rgba(17, 25, 32, 0.25);
+    --queue-select-bg: #232C36;
+    --number-hover-bg: var(--header-user-color);
+    --number-border-top: #979797;
+    --scenario-input-placeholder: #979797;
+    --scenario-tab-color: #FFFFFF;
+    --line-scenario: #242D38;
+    --scenario-add-block-bg: #17212B;
+    --scenario-add-block-shadow: 0 0 16px rgba(39, 104, 153, 0.15);
+    --scenario-wheel-bg: #515960;
+    --scenario-vnumber-input-bg: #2B343D;
+    --scenario-vnumber-input-placeholder: #515960;
+    --scenario-option-bg: #242D38;
+    --support-line: #2E3740;
+    --contact-us-font: #454D54;
+    --statement-border: #242d38;
+    --scroll-bg: #143861;
+    --scroll: #515960;
+    --backlight: #276899;
+    --shadow-list: rgba(7, 11, 17, 1);
+    --line-dep-queue: #202933;
+    --input-ip: #2B343D;
+    --not-active-btn-ip: #454D54;
+    --allowed-block-bg: #202933;
+    --batch-actions-list: #4D515C;
+    --batch-actions-title: rgba(255, 255, 255, 0.34);
+    --outbound-input-shadow: 0 8px 16px rgb(0 0 0 / 12%);
+    --paginator-arrow-list: #636D75;
+    --status-checkbox-bg: #184764;
+    --list-item-after-border: rgba(255, 255, 255, 0.05);
+    --color-black-to-white: black;
+    --cdr-filter-label-color: #8B9095;
+    --available-numbers-hover: rgba(0, 0, 0, 0);
+    --outbound-routing-header-bg: transparent;
+    --outbound-routing-user-header-bg: #17212b;
+    --outbound-routing-line-over-item: #979797;
+    --outbound-routing-line-under-item: #242D38;
+    --outbound-routing-arrow: #515960;
+    --scenario-child-tab-hover: #2D363F;
+    --line-between-type-and-value: #202933;
+    --allowed-filter-arrow: #2B343D;
+    --phone-base-block-bg: #0C1B27;
+    --phone-logo-bg: #000000;
+    --phone-base-block-text-color: #FFFFFF;
+    --phone-not-confirmed-block-bg: rgba(0, 0, 0, 0.2);
+    --phone-keyboard-item-bg: rgba(23, 33, 43, 0.7);
+    --phone-call-menu-btn-disabled-bg: #192531;
+    --phone-call-menu-btn-disabled-icon: #515960;
+    --phone-call-menu-btn-active-bg: rgba(255, 255, 255, 0.5);
+    --phone-bottom-menu-bg: rgba(23, 33, 43, 0.77);
+    --phone-bottom-menu-after-and-before-bg: #18212C;
+    --phone-call-menu-btns-bg: rgba(255, 255, 255, 0.16);
+    --phone-settings-text-color: #FFFFFF;
+    --blue-white-color: #276899;
+    --phone-bottom-menu-bg-image: url('../assets/img/icons/phone-bottom-menu-bg.png');
+    --ava-wrapper-bg: rgba(255, 255, 255, 0.06);
+    --phone-btn-bg: rgba(255, 255, 255, 0.16);
+    --phone-search-bg: rgba(255, 255, 255, 0.16);
+    --phone-elements-bg: rgba(255, 255, 255, 0.06);
+    --delete-number-icon: url('../assets/img/icons/delete-number.svg');
+    --item-scenarios-bg: #2B343D;
+    --file-loader-btn-bg: #0F1D28;
+    --ivr-lines-bg: #515960;
+    --scenario-lines-stroke: #FFFFFF;
+    --dropdown-list-collapse-bg: #232C36;
+    --dropdown-list-collapse-text-color: #8B9095;
+    --enable-ws-checkbox-bg: #343A40;
+    --enable-ws-checkbox-circle-bg: #242D38;
+
+    /* иконки для списка recent calls */
+    /* --incoming-call-icon: url('../assets/img/icons/incoming-call-icon.svg');
+    --outbound-call-icon: url('../assets/img/icons/outgoing-call-icon.svg');
+    --incoming-local-call-icon: url('../assets/img/icons/incoming-local-call-icon.svg');
+    --outgoing-local-call-icon: url('../assets/img/icons/outgoing-local-call-icon.svg'); */
+
+    /*----------------------------------------------------------------------*/
+    /* background для элементов внутри(инпуты, таблицы) */
+    --dark-shock: #2B343D;
+    /* bacground для элементов внутри(инпуты, таблицы) */
+    --bgc_main: #17212b;
+    --ftc_main: #ffffff;
+    --bgc_el_main: #2B343D;
+    /* глав цвет шрифта */
+    --white: #ffffff;
+    /* глав цвет шрифта */
+
+    /* второй цвет шрифта */
+    --light-blue: #276899;
+
+    --phone-bg-position: -300px;
+    --shadow_main: 0px 8px 16px;
+    --phone-bg-opacity: 0.4;
+    --bg_phone: url("../assets/img/bg_main_dark.png");
+    --bg_login: url("../assets/img/bg_main_dark.png");
+    --points_map: #00C82C;
+    --stroke-arrow-scenarios: none;
+}
+
+.grid-content {
+    /* flex: 1 1 auto; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.page-header {
+    min-height: 101px;
+}
+
+.wrap-body-main-vox {
+    position: relative;
+}
+
+.wrap-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.wrap-head h2 {
+    color: var(--header-user-color);
+}
+
+button,
+input,
+label,
+select {
+    outline: none !important;
+}

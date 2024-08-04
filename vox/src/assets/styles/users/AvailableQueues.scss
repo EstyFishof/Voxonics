@@ -1,0 +1,139 @@
+.table-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  
+    .table-title {
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 37px;
+      color: var(--header-user-color);
+      padding: 16px 0;
+    }
+  
+    .wrap-table {
+      width: 766px;
+  
+      .table-header {
+        padding-left: 16px;
+        height: 45px;
+        width: 100%;
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        background: var(--light-blue);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.12);
+        border-radius: 4px 4px 0 0;
+      }
+      .header-name{
+        width: calc(30% - 4px);
+      }
+      .header-number{
+        width: calc(30% - 4px);
+        text-align: center;
+      }
+      .header-length{
+        width: calc(20% - 4px);
+        text-align: center;
+      }
+  
+      .header-item-action {
+        padding-left: 14px;
+        width: calc(20% - 4px);
+        text-align: left;
+      }
+
+      .list-group {
+        max-height: 200px;
+        overflow-y: auto;
+        padding: 0 16px 0 16px;
+        font-size: 16px;
+        background: var(--permission-table-bg);
+        
+  
+        .label-container {
+          position: relative;
+          margin-right: 10px;
+  
+          input[type="checkbox"] {
+            opacity: 0;
+            color: transparent;
+            margin-right: 10px;
+            z-index: 9;
+            position: relative;
+  
+            &:checked ~ .text {
+              color: var(--light-blue);
+            }
+  
+            &:checked ~ .check {
+              position: absolute;
+              opacity: 1;
+              top: 0;
+              left: 2px;
+              width: 16px;
+              height: 16px;
+              background-image: url("../../../assets/img/icons/checked.svg");
+              background-size: cover;
+            }
+  
+            & ~ .check {
+              position: absolute;
+              opacity: 1;
+              top: 0;
+              left: 2px;
+              width: 16px;
+              height: 16px;
+              background-image: var(--unchecked);
+              background-size: cover;
+            }
+          }
+        }
+  
+      }
+  
+      .list-group-item {
+        color: var(--font-panel);
+        display: flex;
+        align-items: center;
+        margin-top: 1px;
+        margin-bottom: 5px;
+        border: none;
+        height: 45px;
+        position: relative;
+  
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 2.01px;
+          background: var(--bottom-line);
+          border-radius: 2px;
+  
+        }
+  
+        .action {
+          width: 20%;
+          text-align: right;
+        }
+      }
+  
+      .department-name {
+        width: 30%;
+        text-align: left;
+      }
+  
+      .department-user-uid {
+        width: 30%;
+        text-align: center;
+      }
+  
+      .department-queue-length{
+        width: 20%;
+        text-align: center;
+      }
+    }
+  }

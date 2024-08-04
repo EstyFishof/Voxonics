@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav Check snapshot 1`] = `
+<div
+  class="full"
+  id="nav"
+>
+  <div
+    class="bg"
+    style="width: 220px;"
+  />
+   
+  <div
+    class="full-routes"
+  >
+    <div
+      class="logo"
+    >
+      <img
+        alt="logo"
+        src="../../assets/img/logo.svg"
+      />
+    </div>
+     
+    <div>
+      <router-link-stub
+        ariacurrentvalue="page"
+        class="parent agent-panel"
+        event="click"
+        tag="a"
+        to="/agent-panel"
+      >
+        <img
+          alt=""
+          class="icon active"
+          src="../../assets/img/icons/agent-panel.svg"
+          width="20"
+        />
+         
+        <img
+          alt=""
+          class="icon gray"
+          src="../../assets/img/icons/agent-panel-gray.svg"
+          width="20"
+        />
+        
+        Agent Panel
+      
+      </router-link-stub>
+    </div>
+     
+    <!---->
+  </div>
+   
+  <!---->
+   
+  <span
+    class="resize-block"
+  >
+    <img
+      alt=""
+      class="resize"
+      src="../../assets/img/icons/nav-arrow.svg"
+      style="transform: rotate(180deg);"
+      width="16"
+    />
+  </span>
+</div>
+`;

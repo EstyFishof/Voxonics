@@ -1,0 +1,562 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`agent setup Check snapshot 1`] = `
+<div
+  class="wrap-agent-setup"
+>
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="agent-setup__second-part"
+    >
+      <div
+        class="item-container"
+      >
+        <label>
+          Role
+          
+          <select>
+            <option
+              value="agent"
+            >
+              Agent
+            </option>
+             
+            <option
+              value="manager"
+            >
+              Manager
+            </option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`file-loader Check snapshot 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="personal-img"
+  >
+    <svg
+      class="personal-img__user-img"
+      fill="none"
+      height="90"
+      viewBox="0 0 68 90"
+      width="68"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        class="inside"
+        clip-rule="evenodd"
+        d="M66 83.2228C66 85.8601 63.9566 88.0005 61.4286 88.0005C58.9006 88.0005 56.8571 85.8601 56.8571 83.2228C56.8571 70.0505 46.6034 59.3339 34 59.3339C21.3966 59.3339 11.1429 70.0505 11.1429 83.2228C11.1429 85.8601 9.09943 88.0005 6.57143 88.0005C4.04343 88.0005 2 85.8601 2 83.2228C2 64.7806 16.3589 49.7784 34 49.7784C51.6411 49.7784 66 64.7806 66 83.2228M34 11.5584C39.0423 11.5584 43.1429 15.8441 43.1429 21.114C43.1429 26.3838 39.0423 30.6695 34 30.6695C28.9578 30.6695 24.8572 26.3838 24.8572 21.114C24.8572 15.8441 28.9578 11.5584 34 11.5584M34.0001 40.2221C44.0847 40.2221 52.2858 31.6508 52.2858 21.111C52.2858 10.5713 44.0847 2 34.0001 2C23.9156 2 15.7144 10.5713 15.7144 21.111C15.7144 31.6508 23.9156 40.2221 34.0001 40.2221"
+        fill-rule="evenodd"
+      />
+       
+      <path
+        class="out"
+        d="M64 83.2228C64 84.841 62.7684 86.0005 61.4286 86.0005V90.0005C65.1447 90.0005 68 86.8792 68 83.2228H64ZM61.4286 86.0005C60.0887 86.0005 58.8571 84.841 58.8571 83.2228H54.8571C54.8571 86.8792 57.7124 90.0005 61.4286 90.0005V86.0005ZM58.8571 83.2228C58.8571 69.03 47.7903 57.3339 34 57.3339V61.3339C45.4166 61.3339 54.8571 71.0709 54.8571 83.2228H58.8571ZM34 57.3339C20.2097 57.3339 9.14286 69.03 9.14286 83.2228H13.1429C13.1429 71.0709 22.5834 61.3339 34 61.3339V57.3339ZM9.14286 83.2228C9.14286 84.841 7.91129 86.0005 6.57143 86.0005V90.0005C10.2876 90.0005 13.1429 86.8792 13.1429 83.2228H9.14286ZM6.57143 86.0005C5.23156 86.0005 4 84.841 4 83.2228H0C0 86.8792 2.85529 90.0005 6.57143 90.0005V86.0005ZM4 83.2228C4 65.8012 17.5455 51.7784 34 51.7784V47.7784C15.1722 47.7784 0 63.76 0 83.2228H4ZM34 51.7784C50.4545 51.7784 64 65.8012 64 83.2228H68C68 63.76 52.8278 47.7784 34 47.7784V51.7784ZM34 13.5584C37.8555 13.5584 41.1429 16.8645 41.1429 21.114H45.1429C45.1429 14.8237 40.2292 9.55844 34 9.55844V13.5584ZM41.1429 21.114C41.1429 25.3634 37.8555 28.6695 34 28.6695V32.6695C40.2292 32.6695 45.1429 27.4043 45.1429 21.114H41.1429ZM34 28.6695C30.1446 28.6695 26.8572 25.3634 26.8572 21.114H22.8572C22.8572 27.4043 27.7709 32.6695 34 32.6695V28.6695ZM26.8572 21.114C26.8572 16.8645 30.1446 13.5584 34 13.5584V9.55844C27.7709 9.55844 22.8572 14.8237 22.8572 21.114H26.8572ZM34.0001 42.2221C45.2716 42.2221 54.2858 32.6712 54.2858 21.111H50.2858C50.2858 30.6303 42.8978 38.2221 34.0001 38.2221V42.2221ZM54.2858 21.111C54.2858 9.55086 45.2716 0 34.0001 0V4C42.8978 4 50.2858 11.5917 50.2858 21.111H54.2858ZM34.0001 0C22.7287 0 13.7144 9.55086 13.7144 21.111H17.7144C17.7144 11.5917 25.1024 4 34.0001 4V0ZM13.7144 21.111C13.7144 32.6712 22.7287 42.2221 34.0001 42.2221V38.2221C25.1024 38.2221 17.7144 30.6303 17.7144 21.111H13.7144Z"
+      />
+    </svg>
+     
+    <label>
+      <span>
+        Upload your photo
+      </span>
+       
+      <input
+        id="file"
+        type="file"
+      />
+    </label>
+     
+    <button>
+      <img
+        alt="For submit press"
+        src="@/assets/img/icons/upload-img-plus.svg"
+      />
+    </button>
+     
+    <h1>
+      
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`permission Check snapshot 1`] = `
+<div
+  class="wrap-agent-setup"
+>
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="agent-setup__second-part"
+    >
+      <div
+        class="item-container"
+      >
+        <!---->
+      </div>
+       
+      <div
+        class="password"
+      >
+        <label>
+          <span
+            class="options-label"
+          >
+            SIP password
+          </span>
+           
+          <input
+            class="input-field sip-password"
+            readonly="readonly"
+            type="text"
+          />
+        </label>
+         
+        <img
+          alt="copy"
+          class="cursor"
+          content="Copy"
+          src="@/assets/img/icons/copy.svg"
+        />
+      </div>
+    </div>
+     
+    <div
+      class="wrap-tables"
+    >
+      <div
+        class="calls-pipe__block"
+      >
+        <div
+          class="calls-pipe__title"
+        >
+          Calls History
+        </div>
+         
+        <ul
+          class="calls-pipe__table-header"
+        >
+          <li
+            class="calls-pipe__header-item"
+          />
+           
+          <li
+            class="calls-pipe__header-item"
+          >
+            View
+          </li>
+           
+          <li
+            class="calls-pipe__header-item"
+          >
+            Listen
+          </li>
+           
+          <li
+            class="calls-pipe__header-item"
+          >
+            Export
+          </li>
+           
+          <li
+            class="calls-pipe__header-item"
+          >
+            Billing
+          </li>
+        </ul>
+         
+        <ul
+          class="calls-pipe__table-block"
+        >
+          <ul
+            class="table-content"
+          >
+            <li
+              class="table-content__item"
+            >
+              All
+            </li>
+             
+            <li
+              class="table-content__item"
+            >
+              <label
+                class="table-content__label"
+              >
+                <input
+                  class="view"
+                  type="checkbox"
+                />
+                 
+                <span
+                  class="check"
+                />
+              </label>
+            </li>
+             
+            <li
+              class="table-content__item"
+            >
+              <label
+                class="table-content__label"
+              >
+                <input
+                  class="transfer"
+                  type="checkbox"
+                />
+                 
+                <span
+                  class="check"
+                />
+              </label>
+            </li>
+             
+            <li
+              class="table-content__item"
+            >
+              <label
+                class="table-content__label"
+              >
+                <input
+                  class="reject"
+                  type="checkbox"
+                />
+                 
+                <span
+                  class="check"
+                />
+              </label>
+            </li>
+             
+            <li
+              class="table-content__item"
+            >
+              <label
+                class="table-content__label"
+              >
+                <input
+                  class="hangup"
+                  type="checkbox"
+                />
+                 
+                <span
+                  class="check"
+                />
+              </label>
+            </li>
+          </ul>
+           
+          <ul
+            class="table-content"
+          >
+            <li
+              class="table-content__item"
+            >
+              Personal
+            </li>
+             
+            <li
+              class="table-content__item"
+            >
+              <label
+                class="table-content__label"
+              >
+                <input
+                  class="personal-view"
+                  type="checkbox"
+                />
+                 
+                <span
+                  class="check"
+                />
+              </label>
+            </li>
+             
+            <li
+              class="table-content__item"
+            >
+              <label
+                class="table-content__label"
+              >
+                <input
+                  class="personal-transfer"
+                  type="checkbox"
+                />
+                 
+                <span
+                  class="check"
+                />
+              </label>
+            </li>
+             
+            <li
+              class="table-content__item"
+            >
+              <label
+                class="table-content__label"
+              >
+                <input
+                  class="personal-transfer"
+                  type="checkbox"
+                />
+                 
+                <span
+                  class="check"
+                />
+              </label>
+            </li>
+             
+            <li
+              class="table-content__item"
+            >
+              <label
+                class="table-content__label"
+              >
+                <input
+                  class="personal-transfer"
+                  type="checkbox"
+                />
+                 
+                <span
+                  class="check"
+                />
+              </label>
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+     
+    <div
+      class="wrap-tables bottom-wrap"
+    >
+      <div
+        class="calls-pipe__block billing"
+      >
+        <div
+          class="calls-pipe__title"
+        >
+          Billing
+        </div>
+         
+        <ul
+          class="calls-pipe__table-header"
+        >
+          <li
+            class="calls-pipe__header-item"
+          >
+            Billing 
+            <br />
+             Reports
+          </li>
+        </ul>
+         
+        <ul
+          class="calls-pipe__table-block"
+        >
+          <ul
+            class="table-content"
+          >
+            <li
+              class="table-content__item"
+            >
+              <label
+                class="table-content__label"
+              >
+                <input
+                  class="view"
+                  type="checkbox"
+                />
+                 
+                <span
+                  class="check"
+                />
+              </label>
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`qsettings / edit Check snapshot qs 1`] = `
+<div
+  class="wrap-queues-setting"
+>
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="table-container"
+    >
+      <div
+        class="available"
+      >
+        <div
+          class="table-title"
+        >
+          Available Queues
+        </div>
+         
+        <div>
+          <ul
+            class="table-header"
+          >
+            <li>
+              Name of Queue
+            </li>
+             
+            <li>
+              Queue Number
+            </li>
+             
+            <li>
+              Agents in Queue
+            </li>
+             
+            <li>
+              <img
+                alt="icon-to"
+                class="select-all-btn"
+                content="Select all"
+                src="@/assets/img/icons/queues-select-all-arrow.svg"
+                width="23"
+              />
+            </li>
+          </ul>
+           
+          <div
+            class="table-content"
+          >
+            <ul
+              class="list-group queue"
+            >
+              <li
+                class="queue-name"
+              >
+                default
+              </li>
+               
+              <li
+                class="queue-int-num"
+              >
+                 0000
+              </li>
+               
+              <li
+                class="queue-user-uid"
+              >
+                10
+              </li>
+               
+              <li
+                class="container-icon-to"
+              >
+                <img
+                  alt="icon-to"
+                  class="select-btn"
+                  content="Select item"
+                  src="@/assets/img/icons/table-icon-to.svg"
+                  width="23"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+       
+      <div
+        class="switcher"
+      >
+        <svg
+          fill="none"
+          height="66"
+          viewBox="0 0 66 66"
+          width="66"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M65 17.0005C65 14.7914 63.2092 13.0006 61.0001 13.0006H15.1797L20.5496 7.82879C22.1693 6.26484 22.1693 3.73691 20.5496 2.17296C18.9257 0.609012 16.2968 0.609012 14.6771 2.17296L2.21789 14.1726C0.594037 15.7365 0.594037 18.2645 2.21789 19.8284L14.6771 31.828C15.487 32.608 16.5502 33 17.6134 33C18.6765 33 19.7397 32.608 20.5496 31.828C22.1693 30.2641 22.1693 27.7362 20.5496 26.1722L15.1797 21.0004H61.0001C63.2092 21.0004 65 19.2096 65 17.0005Z"
+            fill="white"
+            fill-opacity="0.1"
+          />
+           
+          <path
+            d="M51.3229 34.173C49.699 32.609 47.0743 32.609 45.4504 34.173C43.8266 35.7369 43.8266 38.2648 45.4504 39.8288L50.8203 45.0006H4.99988C2.79081 45.0006 1 46.7914 1 49.0005C1 51.2096 2.79081 53.0004 4.99988 53.0004H50.8203L45.4504 58.1722C43.8266 59.7362 43.8266 62.2641 45.4504 63.828C46.2603 64.608 47.3234 65 48.3866 65C49.4498 65 50.513 64.608 51.3229 63.828L63.7821 51.8284C65.406 50.2645 65.406 47.7365 63.7821 46.1726L51.3229 34.173Z"
+            fill="white"
+            fill-opacity="0.1"
+          />
+           
+          <path
+            class="stroke-arrow"
+            d="M65 17.0005C65 14.7914 63.2092 13.0006 61.0001 13.0006H15.1797L20.5496 7.82879C22.1693 6.26484 22.1693 3.73691 20.5496 2.17296C18.9257 0.609012 16.2968 0.609012 14.6771 2.17296L2.21789 14.1726C0.594037 15.7365 0.594037 18.2645 2.21789 19.8284L14.6771 31.828C15.487 32.608 16.5502 33 17.6134 33C18.6765 33 19.7397 32.608 20.5496 31.828C22.1693 30.2641 22.1693 27.7362 20.5496 26.1722L15.1797 21.0004H61.0001C63.2092 21.0004 65 19.2096 65 17.0005Z"
+            stroke-width="2"
+          />
+           
+          <path
+            class="stroke-arrow"
+            d="M51.3229 34.173C49.699 32.609 47.0743 32.609 45.4504 34.173C43.8266 35.7369 43.8266 38.2648 45.4504 39.8288L50.8203 45.0006H4.99988C2.79081 45.0006 1 46.7914 1 49.0005C1 51.2096 2.79081 53.0004 4.99988 53.0004H50.8203L45.4504 58.1722C43.8266 59.7362 43.8266 62.2641 45.4504 63.828C46.2603 64.608 47.3234 65 48.3866 65C49.4498 65 50.513 64.608 51.3229 63.828L63.7821 51.8284C65.406 50.2645 65.406 47.7365 63.7821 46.1726L51.3229 34.173Z"
+            stroke-width="2"
+          />
+        </svg>
+      </div>
+       
+      <div
+        class="selected"
+      >
+        <div>
+          <div
+            class="table-title"
+          >
+            Selected Queues
+          </div>
+           
+          <div>
+            <ul
+              class="table-header"
+            >
+              <li>
+                Name of Queue
+              </li>
+               
+              <li>
+                Queue Number
+              </li>
+               
+              <li>
+                Agents in Queue
+              </li>
+               
+              <li>
+                <img
+                  alt="table-icon-from"
+                  class="select-all-btn"
+                  content="Remove all"
+                  src="@/assets/img/icons/queues-remove-all-arrow.svg"
+                  width="23"
+                />
+              </li>
+            </ul>
+             
+            <div
+              class="table-content"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

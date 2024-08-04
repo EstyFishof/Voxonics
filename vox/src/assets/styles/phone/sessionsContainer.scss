@@ -1,0 +1,122 @@
+.other-sessions-list-item {
+  width: calc(100% - 10px);
+  position: relative;
+  margin-left: 5px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 5px;
+  padding-right: 7px;
+  height: 40px;
+  background: #FFB200;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 46px;
+  transition: all .3s ease-in-out;
+  transform: translateX(0);
+
+  &.not-confirmed-item {
+    background-color: var(--phone-btn-bg);
+  }
+
+  &.not-active {
+    transform: translateX(-345px);
+    justify-content: flex-end;
+    padding-right: 3px;
+
+    .not-open-text {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 21px;
+      color: #FFFFFF;
+      margin-right: 3px;
+    }
+  }
+
+  .empty-block {
+    display: block;
+    width: 34px;
+    height: 34px;
+    margin-right: 13px;
+  }
+
+  span {
+    font-style: normal;
+    font-weight: normal;
+    color: #FFFFFF;
+    text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3), 0px 2px 32px rgba(0, 0, 0, 0.16);
+  }
+
+  .other-sessions-item-decline {
+    cursor: pointer;
+    margin-bottom: -4px;
+    margin-left: 5px;
+    z-index: 1000;
+
+    img {
+      border-radius: 50%;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .other-sessions-item-name {
+    font-size: 18px;
+    line-height: 21px;
+    width: 100px;
+    text-align: left;
+  }
+
+  .other-sessions-item-number-block {
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .other-sessions-item-number {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 16px;
+      text-align: center;
+    }
+    .mute-speaker-icon {
+        margin-left: 7px;
+        margin-bottom: 17px;
+        width: 21px;
+        height: 21px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.16);
+      }
+  }
+
+  .other-sessions-item-time {
+    font-size: 14px;
+    line-height: 16px;
+    width: 60px;
+    display: inline-block;
+    text-align: center;
+  }
+
+
+  .other-sessions-item-btn {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    margin-right: 13px;
+    z-index: 10;
+  }
+}
+
+.active-session {
+  transition: all .3s ease;
+  .other-sessions-list-item {
+    background: #00C82C;
+  }
+}
