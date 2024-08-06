@@ -103,7 +103,6 @@ export default {
     },
     mutations: {
         addEmptySlot(state) {
-            console.log("addEmptySlot");
             state.usersAgentMap.forEach(user => user.placeInList++)
             state.usersAgentMap = [{...new UserDashboard({notUser: true, placeInList: 0})}, ...state.usersAgentMap]
         },
@@ -118,7 +117,6 @@ export default {
             state.usersAgentMap[userIndex] = payload
         },
         userAgentMapDelete(state, payload) {
-            console.log("userAgentMapDelete");
             const userIndex = state.usersAgentMap.findIndex(user => user.placeInList === payload.placeInList)
             state.usersAgentMap.splice(userIndex, 1)
         },

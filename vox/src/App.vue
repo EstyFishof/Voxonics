@@ -1,28 +1,31 @@
 <template>
   <div id="app" class="app-wrap">
-    <ModalError/>
-    <ModalSuccess/>
+    <ModalError />
+    <ModalSuccess />
     <div class="wrap-content">
       <template v-if="$route.meta.layout === 'login'">
-        <Login/>
+        <Login />
       </template>
       <template v-else>
         <div class="blur" v-if="phoneWindowMode === 'window' && !popup"></div>
-        <Nav/>
+        <Nav />
         <div class="grid-content" v-if="userInfo">
-          <Header class="page-header"/>
+          <Header class="page-header" />
 
           <span class="phone-logo" v-if="phoneWindowMode === 'contain' && userInfo.enableWs">
-            <Phone v-show="$route.fullPath === '/agent-panel' || getShowPhone"/>
+            <Phone v-show="$route.fullPath === '/agent-panel' || getShowPhone" />
             <CompactPhone
-              v-show="(notConfirmedSessions.length || deferredSessions.length || activeSession) && $route.fullPath !== '/agent-panel' && !getShowPhone"/>
+              v-show="
+                (notConfirmedSessions.length || deferredSessions.length || activeSession) &&
+                $route.fullPath !== '/agent-panel' &&
+                !getShowPhone
+              " />
           </span>
 
-          <router-view class="wrap-body-main-vox" :class="{notMargin: $route.meta.layout === 'login'}">
-          </router-view>
+          <router-view class="wrap-body-main-vox" :class="{ notMargin: $route.meta.layout === 'login' }"> </router-view>
           <ConfirmationStore />
           <div v-show="getGlobalSpinner" class="spinner">
-            <img src="@/assets/img/spinner.png" alt="load">
+            <img src="@/assets/img/spinner.png" alt="load" />
           </div>
         </div>
       </template>
@@ -31,62 +34,76 @@
 </template>
 
 <script>
-import './assets/styles.css'
-import Nav from '@/views/Navigation/Nav'
-import Header from '@/views/Header'
-import ModalError from '@/components/ModalError'
-import ModalSuccess from '@/components/ModalSuccess'
-import Phone from '@/views/Phone/Phone'
-import CompactPhone from '@/views/Phone/components/CompactPhone.vue'
-import Login from '@/views/Login'
-import {mapGetters} from 'vuex'
-import ConfirmationStore from './components/Confirmation.vue'
+import "./assets/styles.css";
+import Nav from "@/views/Navigation/Nav";
+import Header from "@/views/Header";
+import ModalError from "@/components/ModalError";
+import ModalSuccess from "@/components/ModalSuccess";
+import Phone from "@/views/Phone/Phone";
+import CompactPhone from "@/views/Phone/components/CompactPhone.vue";
+import Login from "@/views/Login";
+import { mapGetters } from "vuex";
+import ConfirmationStore from "./components/Confirmation.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: { Login, ModalError, ModalSuccess, Nav, Header, Phone, CompactPhone, ConfirmationStore },
   computed: {
-    ...mapGetters(['getGlobalSpinner', 'userInfo', 'phoneWindowMode', 'parentFrame', 'popup', 'activeSession', 'getShowPhone', 'notConfirmedSessions', 'deferredSessions', 'getSetSessionShown']),
+    ...mapGetters([
+      "getGlobalSpinner",
+      "userInfo",
+      "phoneWindowMode",
+      "parentFrame",
+      "popup",
+      "activeSession",
+      "getShowPhone",
+      "notConfirmedSessions",
+      "deferredSessions",
+      "getSetSessionShown",
+    ]),
   },
   async mounted() {
-    const urlParams = new URLSearchParams(window.location.search)
-    if (urlParams.has('token')) {
-      localStorage.setItem('token', urlParams.get('token'))
-      await this.$store.dispatch('getUserInfo')
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has("token")) {
+      localStorage.setItem("token", urlParams.get("token"));
+      await this.$store.dispatch("getUserInfo");
 
       if (this.userInfo.uid) {
-        this.$router.push('/agent-panel')
+        this.$router.push("/agent-panel");
       }
     }
     if (window.opener) {
-      this.$store.commit('toggleTheme', "init")
+      this.$store.commit("toggleTheme", "init");
     }
-    window.addEventListener('storage', event => event.key === 'theme' && this.$store.commit('toggleTheme') && this.$store.commit('toggleTheme'))
+    window.addEventListener(
+      "storage",
+      (event) => event.key === "theme" && this.$store.commit("toggleTheme") && this.$store.commit("toggleTheme")
+    );
 
-    window.addEventListener('message', (e) => {
-      if (e.data === 'openSuccess') {
-        this.popup.postMessage('windowModeOn', window.location.origin + '/phone')
-        this.popup.postMessage('setParentFrameFalse', window.location.origin + '/phone')
+    window.addEventListener("message", (e) => {
+      if (e.data === "openSuccess") {
+        this.popup.postMessage("windowModeOn", window.location.origin + "/phone");
+        this.popup.postMessage("setParentFrameFalse", window.location.origin + "/phone");
       }
-      if (e.data === 'windowModeOn') {
-        this.$store.commit('setPhoneWindowMode', 'window')
+      if (e.data === "windowModeOn") {
+        this.$store.commit("setPhoneWindowMode", "window");
       }
-      if (e.data === 'setParentFrameFalse') {
-        this.$store.commit('setParentFrame', false)
+      if (e.data === "setParentFrameFalse") {
+        this.$store.commit("setParentFrame", false);
       }
-      if (e.data === 'containModeOn' && !window.opener) {
-        this.$store.commit('savePopup', null)
-        this.$store.commit('setPhoneWindowMode', 'contain')
+      if (e.data === "containModeOn" && !window.opener) {
+        this.$store.commit("savePopup", null);
+        this.$store.commit("setPhoneWindowMode", "contain");
       }
-    })
-    window.addEventListener('unauthorized', () => {
-      this.$store.dispatch('pushLogout')
-    })
+    });
+    window.addEventListener("unauthorized", () => {
+      this.$store.dispatch("pushLogout");
+    });
   },
   beforeDestroy() {
-    this.$store.dispatch("closeConnection")
-  }
-}
+    this.$store.dispatch("closeConnection");
+  },
+};
 </script>
 
 <style lang="scss" src="@/assets/styles/clickedSectorForBatchActions.scss"></style>
@@ -126,7 +143,7 @@ body {
   height: 6px; /* высота для горизонтального скролла */
   background-color: var(--scroll-bg);
 }
-
+/* מחוון פס גלילה */
 /* ползунок скроллбара */
 ::-webkit-scrollbar-thumb {
   background-color: var(--scroll);
@@ -151,22 +168,24 @@ input::-webkit-inner-spin-button {
 }
 
 .disabled-gray-options-block {
-  color: #6D6D6D !important;
+  color: #6d6d6d !important;
 
-  .options-label, .label {
-    color: #6D6D6D !important;
+  .options-label,
+  .label {
+    color: #6d6d6d !important;
 
     .input-field {
       background: var(--paginator-item) !important;
-      color: #6D6D6D !important;
+      color: #6d6d6d !important;
 
       &::placeholder {
-        color: #6D6D6D !important;
+        color: #6d6d6d !important;
       }
     }
   }
 
-  .triangle, .union {
+  .triangle,
+  .union {
     filter: grayscale(1);
   }
 }
@@ -194,7 +213,6 @@ html {
   img {
     width: 100%;
     height: 100%;
-
   }
 }
 
@@ -311,25 +329,23 @@ svg {
 }
 
 /* For triangle arrow (Sharp) */
-.tippy-popper[x-placement^=right] .tippy-tooltip .tippy-arrow {
+.tippy-popper[x-placement^="right"] .tippy-tooltip .tippy-arrow {
   border-right: 7px solid var(--substrate);
 }
 
-.tippy-popper[x-placement^=left] .tippy-tooltip .tippy-arrow {
+.tippy-popper[x-placement^="left"] .tippy-tooltip .tippy-arrow {
   border-left: 7px solid var(--substrate);
 }
 
-.tippy-popper[x-placement^=top] .tippy-tooltip .tippy-arrow {
+.tippy-popper[x-placement^="top"] .tippy-tooltip .tippy-arrow {
   border-top: 7px solid var(--substrate);
 }
 
-.tippy-popper[x-placement^=bottom] .tippy-tooltip .tippy-arrow {
+.tippy-popper[x-placement^="bottom"] .tippy-tooltip .tippy-arrow {
   border-bottom: 7px solid var(--substrate);
 }
 
-
 .tippy-popper[x-placement^="top"] .tippy-tooltip .tippy-arrow {
-
   bottom: -7px;
   margin: 0 3px;
   -webkit-transform-origin: 50% 0;
@@ -358,7 +374,7 @@ svg {
   font-weight: normal;
   font-size: 14px;
   line-height: 16px;
-  color: #8B9095;
+  color: #8b9095;
 
   .input-field {
     margin-top: 2px;
@@ -391,16 +407,18 @@ svg {
     justify-content: flex-end;
     cursor: pointer;
 
-    img, svg {
+    img,
+    svg {
       margin-right: -5px;
       transform: rotate(-90deg);
-      transition: all .3s ease-in-out;
+      transition: all 0.3s ease-in-out;
     }
 
     &.rotate-arrow {
-      img, svg {
+      img,
+      svg {
         transform: rotate(0deg);
-        transition: all .3s ease-in-out;
+        transition: all 0.3s ease-in-out;
       }
     }
   }
@@ -443,7 +461,7 @@ svg {
       }
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         width: 95%;
         bottom: 0;
@@ -468,7 +486,6 @@ svg {
     }
   }
 }
-
 
 // checkbox
 // ===============================================================================
@@ -497,7 +514,6 @@ input[type="checkbox"] {
   &:checked ~ .text {
     color: var(--light-blue) !important;
   }
-
 
   & + .check {
     position: absolute;
@@ -540,7 +556,6 @@ input[type="checkbox"] {
   }
 }
 
-
 // блок фильтрации в шапке компонентов
 // ===============================================================================
 
@@ -570,11 +585,10 @@ input[type="checkbox"] {
       margin-top: 0;
       background-color: var(--paginator-bg);
 
-
       &::placeholder {
         color: white;
         font-size: 16px;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
       }
 
       &::-webkit-outer-spin-button,
@@ -600,7 +614,6 @@ input[type="checkbox"] {
   height: 100vh;
   background: var(--main-bg);
   z-index: 9999999;
-
 }
 .pointer {
   cursor: pointer;
@@ -644,19 +657,19 @@ input[type="checkbox"] {
 
 @media (max-width: 1600px) {
   .grid-content {
-     width: 1230px;
+    width: 1230px;
   }
 }
 
 @media (max-width: 1504px) {
   .grid-content {
-     width: 1136px;
+    width: 1136px;
   }
 }
 
 @media (max-width: 1408px) {
   .grid-content {
-     width: 1006px;
+    width: 1006px;
   }
 }
 </style>

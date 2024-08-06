@@ -33,7 +33,21 @@
             </div>
             <div v-show="show === 'dashboard'" class="childes">
               <router-link to="/dashboard/agents-map"> Agents Map</router-link>
-              <router-link to="/dashboard/Test-map"> Test Map</router-link>
+            </div>
+
+            <div @click="toggleVisible('dialer')">
+              <router-link class="parent" to="/dialer">
+                <img class="icon active" width="20" src="../../assets/img/icons/dialer.svg" alt="">
+                <img class="icon gray" width="20" src="../../assets/img/icons/dialer-gray.svg" alt="">
+                Dialer
+                <svg :class="show === 'dialer' ? 'active-arrow arrow' : 'arrow'" fill="transparent" height="18"
+                     viewBox="0 0 10 18" width="10" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 1L1 9L9 17" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                </svg>
+              </router-link>
+            </div>
+            <div v-show="show === 'dialer'" class="childes">
+              <router-link to="/dialer/agents-table"> Live Stats</router-link>
             </div>
 
             <div v-show="this.userInfo.permission.cdr.view || this.userInfo.permission.view.billing"
@@ -165,6 +179,11 @@
             <router-link to="/dashboard">
               <img class="icon active" width="32" src="../../assets/img/icons/dashboard.svg" alt="">
               <img class="icon gray" width="32" src="../../assets/img/icons/dashboard-gray.svg" alt="">
+            </router-link>
+
+            <router-link to="/dialer">
+              <img class="icon active" width="32" src="../../assets/img/icons/dialer.svg" alt="">
+              <img class="icon gray" width="32" src="../../assets/img/icons/dialer-gray.svg" alt="">
             </router-link>
 
             <div v-show="this.userInfo.permission.cdr.view || this.userInfo.permission.view.billing"
