@@ -10,7 +10,7 @@
       <div class="divider-container">
         <div class="divider"></div> 
         <span>Number assigned</span>
-        
+    
       </div>
       <div class="highlight-container">
         <span :class="{'highlight': !isRight, 'unhighlight': isRight}">Preferred numbers</span>
@@ -18,7 +18,11 @@
           <div class="slider-circle" :class="{'right': isRight}"></div>
         </div>
         <span :class="{'highlight': isRight, 'unhighlight': !isRight}">Assigned numbers</span>
-      </div>
+     </div><div class="divider2"></div>
+       <div class="sheduale">
+          <span>Sheduale</span>
+        </div>
+    
     </div>
   </template>
   
@@ -75,6 +79,7 @@
   color: rgb(118, 117, 119);
   margin-right: 1100px;
   padding: 0px;
+  font-size: large;
 }
 .highlight-container {
   display: flex;
@@ -116,5 +121,18 @@
 }
 .slider.right {
   background-color: #4caf50;
+}
+.divider2{
+  height: 1px;
+  background-color: rgb(118, 117, 119);
+  margin-left: 100px;
+  margin-right: 30px;
+}
+
+.sheduale{
+  color: rgb(118, 117, 119);
+  margin-right: 1168px;
+  padding: 0px;
+  font-size: large;
 }
 </style>

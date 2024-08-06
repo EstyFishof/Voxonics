@@ -5,23 +5,76 @@
       <div class="form-row">
         <div class="form-group">
           <label for="campaignName">Campaign Name</label>
-          <input type="text" id="campaignName" v-model="form.campaignName" placeholder="Enter campaign name" required>
+          <div class="input-container">
+            <input
+              type="text"
+              id="campaignName"
+              v-model="form.campaignName"
+              placeholder="Enter campaign name"
+              required
+            />
+            <svg class="icon-pencil1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21.707 2.293a1 1 0 00-1.414 0L15.3 7.285l5.001 5.001 5.003-5.003a1 1 0 000-1.414l-3.597-3.576zM2.999 14.707v5.001h5.003l10.89-10.891-5.003-5.003L2.999 14.707zm0 0" />
+            </svg>
+          </div>
+          <span v-if="nameError" class="error-message">{{ nameError }}</span>
         </div>
         <div class="form-group">
           <label for="campaignID">Campaign ID</label>
-          <input type="text" id="campaignID" v-model="form.campaignID" placeholder="6Digits" required>
+          <div class="input-container">
+            <input
+              type="text"
+              id="campaignID"
+              v-model="form.campaignID"
+              placeholder="6Digits"
+              required
+            />
+            <svg class="icon-pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21.707 2.293a1 1 0 00-1.414 0L15.3 7.285l5.001 5.001 5.003-5.003a1 1 0 000-1.414l-3.597-3.576zM2.999 14.707v5.001h5.003l10.89-10.891-5.003-5.003L2.999 14.707zm0 0" />
+            </svg>
+          </div>
+          <span v-if="idError" class="error-message">{{ idError }}</span>
         </div>
         <div class="form-group">
           <label for="campaignDescription">Campaign Description</label>
-          <input type="text" id="campaignDescription" v-model="form.campaignDescription" placeholder="Enter Description" required>
+          <div class="input-container">
+            <input
+              type="text"
+              id="campaignDescription"
+              v-model="form.campaignDescription"
+              placeholder="Enter Description"
+              required
+            />
+            <svg class="icon-pencil" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M21.707 2.293a1 1 0 00-1.414 0L15.3 7.285l5.001 5.001 5.003-5.003a1 1 0 000-1.414l-3.597-3.576zM2.999 14.707v5.001h5.003l10.89-10.891-5.003-5.003L2.999 14.707zm0 0" />
+            </svg>
+          </div>
         </div>
         <div class="form-group">
           <label for="campaignStatus">Campaign Status</label>
-          <input type="text" id="campaignStatus" v-model="form.campaignStatus" placeholder="Active" required>
+          <div class="input-container">
+            <input
+              type="text"
+              id="campaignStatus"
+              v-model="form.campaignStatus"
+              placeholder="Active"
+              required
+            />
+          
+          </div>
         </div>
         <div class="form-group">
           <label for="campaignDialLevel">Campaign Dial Level</label>
-          <input type="text" id="campaignDialLevel" v-model="form.campaignDialLevel" placeholder="2" required>
+          <div class="input-container">
+            <input
+              type="text"
+              id="campaignDialLevel"
+              v-model="form.campaignDialLevel"
+              placeholder="2"
+              required
+            />
+           
+          </div>
         </div>
       </div>
       <div class="form-group">
@@ -44,7 +97,6 @@
     </div>
     <span :class="{'highlight': isRight, 'unhighlight': !isRight}">Virtual agent</span>
   </div>
-
 </template>
 
 <script>
@@ -60,9 +112,22 @@ export default {
         campaignDialLevel: '',
         campaignFile: null
       },
-      isRight: false,
-      employees: [] //הוספת מערך עובדים
+      isRight: false
     };
+  },
+  computed: {
+    nameError() {
+      if (/\d/.test(this.form.campaignName)) {
+        return 'Error';
+      }
+      return '';
+    },
+    idError() {
+      if (/[^\d]/.test(this.form.campaignID)) {
+        return 'Error';
+      }
+      return '';
+    }
   },
   methods: {
     handleFileUpload(event) {
@@ -76,9 +141,6 @@ export default {
     },
     togglePosition() {
       this.isRight = !this.isRight;
-    },
-    addEmployee() {
-      this.employees.push({ name: '', role: '', age: '' });
     }
   }
 };
@@ -86,7 +148,7 @@ export default {
 
 <style scoped>
 h1 {
-  color:rgb(118, 117, 119);
+  color: rgb(118, 117, 119);
   margin-right: 1000px;
   font-size: large;
 }
@@ -118,11 +180,32 @@ label.left-align {
   text-align: left;
   margin-left: 0;
 }
-input[type="text"] {
-  width: 80%;
-  padding: 4px;
+.input-container {
+  position: relative;
+}
+.input-container input[type="text"] {
+  width: 87%;
+  padding: 10px 30px 10px 10px; /* Adjust padding to make space for the icon */
   box-sizing: border-box;
-  background-color: rgb(168, 165, 171);
+  background-color: rgb(47, 43, 50);
+}
+.icon-pencil1{
+  position: absolute;
+  right: 30px;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  fill: #de1616;
+}
+.icon-pencil {
+  position: absolute;
+  right: 30px;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  fill: #4f6e96; /* Change color as needed */
 }
 .custom-file-input {
   position: relative;
@@ -135,7 +218,7 @@ input[type="text"] {
   width: 100%;
   padding: 40px;
   box-sizing: border-box;
-  background-color: rgb(118, 117, 119);
+  background-color: rgb(140, 134, 146);
   cursor: pointer;
   text-align: center;
   font-size: medium;
@@ -168,7 +251,7 @@ input[type="text"] {
 .slider {
   width: 34px;
   height: 15px;
-  background-color: #2b4b74;;
+  background-color: #2b4b74;
   border-radius: 8px;
   position: relative;
   cursor: pointer;
@@ -178,7 +261,7 @@ input[type="text"] {
 .slider-circle {
   width: 17px;
   height: 15.1px;
-  background-color: #4f6e96;;
+  background-color: #4f6e96;
   border-radius: 50%;
   position: absolute;
   top: 0.9px;
@@ -187,9 +270,13 @@ input[type="text"] {
 }
 .slider-circle.right {
   transform: translateX(15px);
-  background-color: #4f6e96;;
+  background-color: #4f6e96;
 }
 .slider.right {
   background-color: #4caf50;
+}
+.error-message {
+  color: red;
+  font-size: small;
 }
 </style>

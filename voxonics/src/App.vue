@@ -2,9 +2,9 @@
   <div id="app">
     <CampaignForm />
     <EmployeeTable />
-    <NumberAssined/>
-    <NewCalendar/>
-    <MyCalendar/>
+    <NumberAssined />
+   
+    
   </div>
 </template>
 
@@ -12,9 +12,6 @@
 import CampaignForm from './components/CampaignForm.vue';
 import EmployeeTable from './components/EmployeeTable.vue';
 import NumberAssined from './components/NumberAssined.vue';
-import NewCalendar from './components/NewCalendar.vue';
-import MyCalendar from './components/MyCalendar.vue';
-
 
 
 export default {
@@ -22,12 +19,13 @@ export default {
     CampaignForm,
     EmployeeTable,
     NumberAssined,
-    NewCalendar,
-    MyCalendar
-   
+    
   }
 };
 </script>
+
+
+
 
 <style>
 #app {
