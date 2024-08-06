@@ -197,16 +197,7 @@ export default {
   },
   data() {
     return {
-      rows: [
-        {
-          AgentName: "def",
-          Role: "Agent",
-          Status: "Paused",
-          Duration: 7.41,
-          AVGTalkingTime: "2m 3s",
-          Calls: 91,
-        },
-      ], // Initialize with an empty array, will be populated with real data
+      rows: [], // Initialize with an empty array, will be populated with real data
       rowsHeadArr: ["AgentName", "Role", "Status", "Duration", "AVGTalkingTime", "Calls"],
       sortKeyWaiting: "",
       sortAscWaiting: true,
@@ -235,26 +226,11 @@ export default {
       this.ws.onmessage = (event) => {
         console.log('WebSocket message received:', event.data); // Logging raw data
         try {
-          const parsedData = JSON.parse(event.data);
-          //console.log('Status:', parsedData.data.statusText); // Logging raw data
-          console.log('Parsed data:', parsedData.user); // Logging parsed data
-          // Assuming `parsedData` has a `data` property that is an array of objects
-          const users = parsedData.user;
-          Object.keys(users).forEach((key) => {
-            const user = users[key];
-            console.log('user is: ', user);
-            this.rows.push({
-              AgentName: user.name,
-              Role: user.permission.role,
-              Status: "Talking",//user.status,
-              Duration: "7.41", // Replace with actual duration if available
-              AVGTalkingTime: "2m 3s", // Replace with actual talking time if available
-              Calls: 91, // Replace with actual call count if available
-            });
-          });
+          const rows = JSON.parse(event.data);
+          console.log('Parsed data:', rows); // Logging parsed data
+          this.rows = rows;
         } catch (e) {
           this.errorMessage = 'Error parsing data.';
-          console.error('Error parsing data:', e);
         }
       };
 
@@ -271,6 +247,13 @@ export default {
           this.errorMessage = 'Connection closed abruptly';
         }
       };
+    
+    },
+    beforeDestroy() {
+      // Close the WebSocket connection when the component is destroyed
+      if (this.ws) {
+        this.ws.close();
+      }
     },
     sortTable(key, tableType) {
       if (tableType === 'waiting') {
@@ -303,16 +286,11 @@ export default {
       return '';
     },
     sumTalkingAgents() {
-      return this.rows.filter(rows => rows.Status === 'Talking').length;
+      return this.rows.filter(agent => agent.Status === 'Talking').length;
     },
     countUniqueAgents() {
-      return new Set(this.rows.map(rows => rows.AgentId)).size;
+      return new Set(this.rows.map(agent => agent.AgentId)).size;
     },
-  },
-  beforeDestroy() {
-    if (this.ws) {
-      this.ws.close();
-    }
   },
 };
 </script>
