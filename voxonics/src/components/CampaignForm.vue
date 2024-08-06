@@ -185,9 +185,11 @@ label.left-align {
 }
 .input-container input[type="text"] {
   width: 87%;
+  height: 35px;
   padding: 10px 30px 10px 10px; /* Adjust padding to make space for the icon */
   box-sizing: border-box;
   background-color: rgb(47, 43, 50);
+  color: #ffffff;
 }
 .icon-pencil1{
   position: absolute;
