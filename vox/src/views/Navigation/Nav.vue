@@ -32,10 +32,13 @@
               </router-link>
             </div>
             <div v-show="show === 'dashboard'" class="childes">
+              <router-link to="/newCampaign">newCampaign</router-link>
+            </div>
+            
+            <div v-show="show === 'Campaign'" class="childes">
               <router-link to="/dashboard/agents-map"> Agents Map</router-link>
               <router-link to="/dashboard/Test-map"> Test Map</router-link>
             </div>
-
             <div v-show="this.userInfo.permission.cdr.view || this.userInfo.permission.view.billing"
                  @click="toggleVisible('reports')">
               <router-link class="parent" to="/reports">

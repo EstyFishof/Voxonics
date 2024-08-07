@@ -17,6 +17,12 @@ export const routes = [
         meta: {title: 'Agent Panel', icon: agentPanel}
     },
     {
+        path: '/newCampaign',
+        component: () => import('@/views/Agent/CampaignForm.vue'),
+        //component: () => import('@/views/Test.vue'),
+        meta: {title: 'new Campaign', icon: agentPanel}
+    },
+    {
         path: '/phone',
         component: () => import('@/views/Phone/Phone.vue'),
         meta: {title: 'Soft Phone', icon: agentPanel}
