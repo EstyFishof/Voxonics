@@ -70,18 +70,15 @@
                 <div class="filter-buttons">
                   <FilterButton
                     label="Agent Name"
-                    :sortKey="sortKeyWaiting"
-                    :sortAsc="sortAscWaiting"
+                    :sortAsc="sortKeyWaiting === 'AgentName' ? sortAscWaiting : true"
                     @click="sortTable('AgentName', 'waiting')" />
                   <FilterButton
                     label="Role"
-                    :sortKey="sortKeyWaiting"
-                    :sortAsc="sortAscWaiting"
+                    :sortAsc="sortKeyWaiting === 'Role' ? sortAscWaiting : true"
                     @click="sortTable('Role', 'waiting')" />
                   <FilterButton
                     label="Avg. Talking Time"
-                    :sortKey="sortKeyWaiting"
-                    :sortAsc="sortAscWaiting"
+                    :sortAsc="sortKeyWaiting === 'AVGTalkingTime' ? sortAscWaiting : true"
                     @click="sortTable('AVGTalkingTime', 'waiting')" />
                 </div>
               </div>
@@ -98,16 +95,14 @@
               :class="{ 'hidden-header': rowHead === 'Actions' }"
               @click="sortTable(rowHead, 'waiting')">
               {{ rowHead }}
-              <img :class="{ 'rotated': sortAsc }" src="@/assets/img/icons/arrow-down-white.svg" alt="select" />
+              <img :src="sortArrow" :class="{ rotated: isActive }" ref="name" alt="select" />
             </th>
           </tr>
         </thead>
         <tbody>
           <!-- <tr class="getRowClass(row.Duration)" v-for="(row, index) in sortedFilteredRowsWaiting" :key="index" class="row-waiting-table"> -->
-            <tr v-for="(row, index) in sortedFilteredRowsWaiting" :key="index" :class="getRowClass(row.Duration)">
-
-
-          <!-- <tr class="row-waiting-table" v-for="(row, index) in sortedFilteredRowsWaiting" :key="index"> -->
+          <tr v-for="(row, index) in sortedFilteredRowsWaiting" :key="index" :class="getRowClass(row.Duration)">
+            <!-- <tr class="row-waiting-table" v-for="(row, index) in sortedFilteredRowsWaiting" :key="index"> -->
             <td class="values-table" v-for="(value, key, idx) in row" :key="idx">{{ value }}</td>
             <td class="content-list-item item-btn">
               <div style="visibility: hidden" class="buttons">
@@ -135,23 +130,19 @@
                 <div class="filter-buttons">
                   <FilterButton
                     label="Agent Name"
-                    :sortKey="sortKeyNotWaiting"
-                    :sortAsc="sortAscNotWaiting"
+                    :sortAsc="sortKeyNotWaiting === 'AgentName' ? sortAscNotWaiting : true"
                     @click="sortTable('AgentName', 'notWaiting')" />
                   <FilterButton
                     label="Role"
-                    :sortKey="sortKeyNotWaiting"
-                    :sortAsc="sortAscNotWaiting"
+                    :sortAsc="sortKeyNotWaiting === 'Role' ? sortAscNotWaiting : true"
                     @click="sortTable('Role', 'notWaiting')" />
                   <FilterButton
                     label="Status"
-                    :sortKey="sortKeyNotWaiting"
-                    :sortAsc="sortAscNotWaiting"
+                    :sortAsc="sortKeyNotWaiting === 'Status' ? sortAscNotWaiting : true"
                     @click="sortTable('Status', 'notWaiting')" />
                   <FilterButton
                     label="Avg. Talking Time"
-                    :sortKey="sortKeyNotWaiting"
-                    :sortAsc="sortAscNotWaiting"
+                    :sortAsc="sortKeyNotWaiting === 'AVGTalkingTime' ? sortAscNotWaiting : true"
                     @click="sortTable('AVGTalkingTime', 'notWaiting')" />
                 </div>
               </div>
@@ -164,7 +155,7 @@
               :key="index"
               @click="sortTable(rowHead, 'notWaiting')">
               {{ rowHead }}
-              <img :class="{ 'rotated': sortAsc }" src="@/assets/img/icons/arrow-down-white.svg" alt="select" />
+              <img :src="sortArrow" :class="{ rotated: isActive }" ref="name" alt="select" />
             </th>
           </tr>
         </thead>
@@ -200,6 +191,7 @@
 
 <script>
 import FilterButton from "@/components/FilterButton.vue";
+import sortArrow from "@/assets/img/icons/sort-arrow.svg";
 
 export default {
   name: "AgentsTable",
@@ -208,6 +200,7 @@ export default {
   },
   data() {
     return {
+      sortArrow: sortArrow,
       rows: [
         {
           AgentName: "abc",
@@ -215,7 +208,7 @@ export default {
           AgentId: "123456789",
           Status: "Waiting",
           Duration: 2.48,
-          AVGTalkingTime: "2m 3s",
+          AVGTalkingTime: "4m 3s",
           Calls: 91,
         },
         {
@@ -224,7 +217,7 @@ export default {
           AgentId: "987654321",
           Status: "Waiting",
           Duration: 7.41,
-          AVGTalkingTime: "2m 3s",
+          AVGTalkingTime: "1m 3s",
           Calls: 28,
         },
         {
@@ -278,6 +271,7 @@ export default {
       sortAscWaiting: true,
       sortKeyNotWaiting: "AgentName",
       sortAscNotWaiting: true,
+      activeButton: "",
     };
   },
   computed: {
@@ -297,11 +291,22 @@ export default {
   methods: {
     sortTable(key, type) {
       if (type === "waiting") {
-        this.sortKeyWaiting = key;
-        this.sortAscWaiting = !this.sortAscWaiting;
+        if (this.sortKeyWaiting === key) {
+          // this.sortKeyWaiting = key;
+          this.sortAscWaiting = !this.sortAscWaiting;
+        } else {
+          this.sortKeyWaiting = key;
+          this.sortAscWaiting = true;
+        }
+        this.activeButton = key;
       } else {
-        this.sortKeyNotWaiting = key;
-        this.sortAscNotWaiting = !this.sortAscNotWaiting;
+        if (this.sortKeyNotWaiting === key) {
+          this.sortAscNotWaiting = !this.sortAscNotWaiting;
+        } else {
+          this.sortKeyNotWaiting = key;
+          this.sortAscNotWaiting = true;
+        }
+        this.activeButton = key;
       }
     },
     sortRows(rows, type) {
@@ -342,14 +347,13 @@ export default {
       return "";
     },
     getRowClass(duration) {
-      return duration <= 3 ? 'short-duration' : 'long-duration';
+      return duration <= 3 ? "short-duration" : "long-duration";
     },
   },
 };
 </script>
 
 <style scoped>
-
 table {
   width: 100%;
   border-collapse: collapse;
@@ -662,7 +666,7 @@ button img {
   border-radius: 20px;
   border: none;
   margin-bottom: 12px;
-  background-color: #3A5378;
+  background-color: #3a5378;
 }
 
 .long-duration {
@@ -672,6 +676,6 @@ button img {
   /* cursor: pointer;
   display: flex;
   align-items: center; */
-  background-color: #173F75;
+  background-color: #173f75;
 }
 </style>

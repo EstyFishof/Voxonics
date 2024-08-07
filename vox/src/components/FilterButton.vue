@@ -20,7 +20,11 @@
       sortAsc: {
         type: Boolean,
         required: true
-      }
+      },
+    isActive: {
+      type: Boolean,
+      required: true
+    }
     }
   };
   </script>
