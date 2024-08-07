@@ -246,7 +246,7 @@ export default {
             this.rows.push({
               AgentName: user.name,
               Role: user.permission.role,
-              Status: "Talking",//user.status,
+              Status: user.status,
               Duration: "7.41", // Replace with actual duration if available
               AVGTalkingTime: "2m 3s", // Replace with actual talking time if available
               Calls: 91, // Replace with actual call count if available
