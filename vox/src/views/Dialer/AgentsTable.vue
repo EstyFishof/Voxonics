@@ -290,24 +290,17 @@ export default {
   },
   methods: {
     sortTable(key, type) {
-      if (type === "waiting") {
-        if (this.sortKeyWaiting === key) {
-          // this.sortKeyWaiting = key;
-          this.sortAscWaiting = !this.sortAscWaiting;
-        } else {
-          this.sortKeyWaiting = key;
-          this.sortAscWaiting = true;
-        }
-        this.activeButton = key;
+      const isWaitingType = type === "waiting";
+      const sortKey = isWaitingType ? this.sortKeyWaiting : this.sortKeyNotWaiting;
+      const sortAsc = isWaitingType ? this.sortAscWaiting : this.sortAscNotWaiting;
+
+      if (sortKey === key) {
+        this[isWaitingType ? "sortAscWaiting" : "sortAscNotWaiting"] = !sortAsc;
       } else {
-        if (this.sortKeyNotWaiting === key) {
-          this.sortAscNotWaiting = !this.sortAscNotWaiting;
-        } else {
-          this.sortKeyNotWaiting = key;
-          this.sortAscNotWaiting = true;
-        }
-        this.activeButton = key;
+        this[isWaitingType ? "sortKeyWaiting" : "sortKeyNotWaiting"] = key;
+        this[isWaitingType ? "sortAscWaiting" : "sortAscNotWaiting"] = true;
       }
+      this.activeButton = key;
     },
     sortRows(rows, type) {
       const sortKey = type === "waiting" ? this.sortKeyWaiting : this.sortKeyNotWaiting;
