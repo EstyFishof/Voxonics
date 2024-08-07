@@ -1,7 +1,7 @@
 <template>
     <button class="filter-button" @click="$emit('click')">
       {{ label }}
-      <img src="@/assets/img/icons/arrow-down-white.svg" alt="select" />
+      <img :class="{ 'rotated': sortAsc }" src="@/assets/img/icons/arrow-down-white.svg" alt="select" />
     </button>
   </template>
   
@@ -44,6 +44,11 @@
     height: 12px;
     vertical-align: middle;
     margin-left: 5px;
-  }
+    transition: transform 0.3s ease;
+}
+
+.filter-button img.rotated {
+  transform: rotate(180deg);
+}
   </style>
   

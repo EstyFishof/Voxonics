@@ -1,9 +1,8 @@
-<template>
+<template class="template">
   <div>
     <div class="squares">
       <div class="square">
         <img src="@/assets/img/icons/TalkingIcon.svg" alt="Active calls icon" class="icon" />
-        <!-- 15 -->
         <span class="number">
           {{ sumTalkingAgents() }}
         </span>
@@ -99,12 +98,16 @@
               :class="{ 'hidden-header': rowHead === 'Actions' }"
               @click="sortTable(rowHead, 'waiting')">
               {{ rowHead }}
-              <img src="@/assets/img/icons/arrow-down-white.svg" alt="select" />
+              <img :class="{ 'rotated': sortAsc }" src="@/assets/img/icons/arrow-down-white.svg" alt="select" />
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr class="row-waiting-table" v-for="(row, index) in sortedFilteredRowsWaiting" :key="index">
+          <!-- <tr class="getRowClass(row.Duration)" v-for="(row, index) in sortedFilteredRowsWaiting" :key="index" class="row-waiting-table"> -->
+            <tr v-for="(row, index) in sortedFilteredRowsWaiting" :key="index" :class="getRowClass(row.Duration)">
+
+
+          <!-- <tr class="row-waiting-table" v-for="(row, index) in sortedFilteredRowsWaiting" :key="index"> -->
             <td class="values-table" v-for="(value, key, idx) in row" :key="idx">{{ value }}</td>
             <td class="content-list-item item-btn">
               <div style="visibility: hidden" class="buttons">
@@ -120,6 +123,7 @@
               </div>
             </td>
           </tr>
+          <!-- </tr> -->
         </tbody>
       </table>
       <table>
@@ -160,7 +164,7 @@
               :key="index"
               @click="sortTable(rowHead, 'notWaiting')">
               {{ rowHead }}
-              <img src="@/assets/img/icons/arrow-down-white.svg" alt="select" />
+              <img :class="{ 'rotated': sortAsc }" src="@/assets/img/icons/arrow-down-white.svg" alt="select" />
             </th>
           </tr>
         </thead>
@@ -337,11 +341,15 @@ export default {
       }
       return "";
     },
+    getRowClass(duration) {
+      return duration <= 3 ? 'short-duration' : 'long-duration';
+    },
   },
 };
 </script>
 
 <style scoped>
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -349,6 +357,7 @@ table {
 }
 
 .tables {
+  width: 100%;
   border: #1f2833 3px solid;
 }
 
@@ -390,6 +399,11 @@ td {
   width: 12px;
   height: 12px;
   margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.filter-button img.rotated {
+  transform: rotate(180deg);
 }
 
 th {
@@ -511,6 +525,7 @@ button img {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
+  /* width: 100%; */
   margin-bottom: 20px;
   margin-right: 7%;
 }
@@ -641,5 +656,22 @@ button img {
   font-size: 18px;
   font-weight: calc(12);
   color: #fff;
+}
+
+.short-duration {
+  border-radius: 20px;
+  border: none;
+  margin-bottom: 12px;
+  background-color: #3A5378;
+}
+
+.long-duration {
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 12px;
+  /* cursor: pointer;
+  display: flex;
+  align-items: center; */
+  background-color: #173F75;
 }
 </style>
