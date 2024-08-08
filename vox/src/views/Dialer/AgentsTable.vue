@@ -105,7 +105,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(row, index) in sortedFilteredRowsWaiting" :key="index">
+          <tr v-for="(row, index) in sortedFilteredRowsWaiting" :key="index" :class="getRowClass(row.Duration)">
             <td class="values-table" v-for="(value, key, idx) in row" :key="idx">{{ value }}</td>
             <td class="content-list-item item-btn">
               <div style="visibility: hidden" class="acions-buttons">
@@ -344,6 +344,9 @@ export default {
         };
       }
       return "";
+    },
+    getRowClass(duration) {
+      return duration <= 3 ? "short-duration" : "long-duration";
     },
   },
 };
