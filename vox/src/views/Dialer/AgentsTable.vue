@@ -61,6 +61,7 @@
     </div>
 
     <div class="tables">
+      <!-- Table for Waiting Agents -->
       <table>
         <thead>
           <tr>
@@ -95,32 +96,35 @@
               :class="{ 'hidden-header': rowHead === 'Actions' }"
               @click="sortTable(rowHead, 'waiting')">
               {{ rowHead }}
-              <img :src="sortArrow" :class="{ rotated: isActive }" ref="name" alt="select" />
+              <img
+                :src="sortArrow"
+                :class="{ rotated: isSortedAscending(rowHead, 'waiting') }"
+                ref="name"
+                alt="select" />
             </th>
           </tr>
         </thead>
         <tbody>
-          <!-- <tr class="getRowClass(row.Duration)" v-for="(row, index) in sortedFilteredRowsWaiting" :key="index" class="row-waiting-table"> -->
-          <tr v-for="(row, index) in sortedFilteredRowsWaiting" :key="index" :class="getRowClass(row.Duration)">
-            <!-- <tr class="row-waiting-table" v-for="(row, index) in sortedFilteredRowsWaiting" :key="index"> -->
+          <tr v-for="(row, index) in sortedFilteredRowsWaiting" :key="index">
             <td class="values-table" v-for="(value, key, idx) in row" :key="idx">{{ value }}</td>
             <td class="content-list-item item-btn">
-              <div style="visibility: hidden" class="buttons">
-                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }"
-                  >SPY</span
-                >
-                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }"
-                  >WHISPER</span
-                >
-                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }"
-                  >MERGE</span
-                >
+              <div style="visibility: hidden" class="acions-buttons">
+                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">
+                  SPY
+                </span>
+                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">
+                  WHISPER
+                </span>
+                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">
+                  MERGE
+                </span>
               </div>
             </td>
           </tr>
-          <!-- </tr> -->
         </tbody>
       </table>
+
+      <!-- Table for Non-Waiting Agents -->
       <table>
         <thead>
           <tr>
@@ -155,7 +159,11 @@
               :key="index"
               @click="sortTable(rowHead, 'notWaiting')">
               {{ rowHead }}
-              <img :src="sortArrow" :class="{ rotated: isActive }" ref="name" alt="select" />
+              <img
+                :src="sortArrow"
+                :class="{ rotated: isSortedAscending(rowHead, 'notWaiting') }"
+                ref="name"
+                alt="select" />
             </th>
           </tr>
         </thead>
@@ -168,18 +176,17 @@
               class="values-table">
               {{ value }}
             </td>
-
             <td class="content-list-item item-btn">
-              <div class="buttons">
-                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }"
-                  >SPY</span
-                >
-                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }"
-                  >WHISPER</span
-                >
-                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }"
-                  >MERGE</span
-                >
+              <div class="acions-buttons">
+                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">
+                  SPY
+                </span>
+                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">
+                  WHISPER
+                </span>
+                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">
+                  MERGE
+                </span>
               </div>
             </td>
           </tr>
@@ -315,7 +322,11 @@ export default {
         return sortAsc ? comparison : -comparison;
       });
     },
-
+    isSortedAscending(rowHead, type) {
+      const sortKey = type === "waiting" ? this.sortKeyWaiting : this.sortKeyNotWaiting;
+      const sortAsc = type === "waiting" ? this.sortAscWaiting : this.sortAscNotWaiting;
+      return sortKey === rowHead && sortAsc;
+    },
     sumTalkingAgents() {
       return this.rows.filter((row) => row.Status === "Talking").length;
     },
@@ -326,21 +337,13 @@ export default {
     },
     getStatusClass(status, key) {
       if (key === "Status" || key === "Duration") {
-        switch (status) {
-          case "In Disposition":
-            return "in-disposition";
-          case "Paused":
-            return "paused";
-          case "Talking":
-            return "talking";
-          default:
-            return "";
-        }
+        return {
+          yellow: status === "Paused",
+          green: status === "Talking",
+          blue: status === "In Disposition",
+        };
       }
       return "";
-    },
-    getRowClass(duration) {
-      return duration <= 3 ? "short-duration" : "long-duration";
     },
   },
 };
@@ -392,14 +395,23 @@ td {
   align-items: center;
 }
 
-.filter-button img {
+.row-head {
+  padding-bottom: 20px;
+  font-weight: initial;
+  font-size: 13px;
+  color: var(--agent-card-color);
+}
+
+.row-head img {
   width: 12px;
   height: 12px;
   margin-left: 5px;
   transition: transform 0.3s ease;
+  transform: rotate(0deg); /* חץ כלפי מטה כברירת מחדל */
 }
 
-.filter-button img.rotated {
+.row-head img.rotated {
+  transition: transform 0.3s ease;
   transform: rotate(180deg);
 }
 
@@ -435,27 +447,16 @@ thead tr:first-child th {
   transform: translateX(-60px);
 }
 
-.content-list-item {
-  font-weight: normal;
-  line-height: 16px;
-  position: relative;
-}
 .values-table {
   font-size: 15px;
 }
 
 .hidden-header {
   visibility: hidden;
+  display: none;
 }
 .hidden-header span {
   display: none;
-}
-
-.row-head {
-  padding-bottom: 20px;
-  font-weight: initial;
-  font-size: 13px;
-  color: var(--agent-card-color);
 }
 
 .table-row {
@@ -471,7 +472,7 @@ thead tr:first-child th {
   height: 45px;
 }
 
-.item-btn {
+.acions-buttons {
   width: 35%;
   display: flex;
   justify-content: space-between;
@@ -479,7 +480,8 @@ thead tr:first-child th {
   padding-right: 25px;
   position: relative;
 }
-.btn {
+
+.acions-buttons .btn {
   cursor: pointer;
   border-radius: 4px;
   padding: 2px 9px;
@@ -488,33 +490,26 @@ thead tr:first-child th {
   margin-right: 6px;
 }
 
-.btn.disabled {
+.acions-buttons .btn.disabled {
   pointer-events: none;
   background: var(--paginator-item);
   border: var(--agent-card-border);
   color: var(--paginator-arrow-disabled);
 }
 
-.btn.able {
+.acions-buttons .btn.able {
   border: 1px solid #296ba0;
   background: var(--paginator-item);
   color: var(--paginator-arrow);
 }
 
-button img {
-  width: 12px;
-  height: 12px;
-  vertical-align: middle;
-  margin-left: 5px;
-}
-
-.in-disposition {
+.blue {
   color: #296ba0;
 }
-.paused {
+.yellow {
   color: #fcaf00;
 }
-.talking {
+.green {
   color: #2db152;
 }
 
@@ -522,7 +517,6 @@ button img {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  /* width: 100%; */
   margin-bottom: 20px;
   margin-right: 7%;
 }
@@ -666,9 +660,6 @@ button img {
   border-radius: 6px;
   border: none;
   margin-bottom: 12px;
-  /* cursor: pointer;
-  display: flex;
-  align-items: center; */
   background-color: #173f75;
 }
 </style>
