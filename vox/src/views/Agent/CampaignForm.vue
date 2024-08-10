@@ -1,4 +1,5 @@
 <template>
+  <div>
   <div class="campaign-form">
     <h1>Create new campaign</h1>
     <form @submit.prevent="submitForm">
@@ -96,6 +97,7 @@
       <div class="slider-circle" :class="{'right': isRight}"></div>
     </div>
     <span :class="{'highlight': isRight, 'unhighlight': !isRight}">Virtual agent</span>
+  </div>
   </div>
 </template>
 
