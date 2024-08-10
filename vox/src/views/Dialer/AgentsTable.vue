@@ -4,7 +4,7 @@
       <div class="square">
         <img src="@/assets/img/icons/TalkingIcon.svg" alt="Active calls icon" class="icon" />
         <span class="number">
-          {{ sumTalkingAgents() }}
+          <!-- {{ sumTalkingAgents() }} -->
         </span>
         <div class="call-mode">Active calls</div>
       </div>
@@ -50,9 +50,9 @@
       <div class="big-square">
         <img src="@/assets/img/icons/agents-statement.svg" alt="Agent in calls Logged in icon" class="icon" />
         <span class="number">
-          {{ countUniqueAgents() }}
+          <!-- {{ countUniqueAgents() }} -->
         </span>
-        <div class="call-mode">.Agents in calls .Logged in</div>
+        <div class="call-mode">Agents in calls Logged in</div>
       </div>
       <div class="big-square">
         <img src="@/assets/img/icons/TalkingIcon.svg" alt="avg. Talking time icon" class="icon" />
@@ -71,15 +71,18 @@
                 <div class="filter-buttons">
                   <FilterButton
                     label="Agent Name"
-                    :sortAsc="sortKeyWaiting === 'AgentName' ? sortAscWaiting : true"
-                    @click="sortTable('AgentName', 'waiting')" />
+                    :sortAsc="sortKeyWaiting === 'name' ? sortAscWaiting : true"
+                    :sortKey="sortKeyWaiting"
+                    @click="sortTable('name', 'waiting')" />
                   <FilterButton
                     label="Role"
-                    :sortAsc="sortKeyWaiting === 'Role' ? sortAscWaiting : true"
-                    @click="sortTable('Role', 'waiting')" />
+                    :sortAsc="sortKeyWaiting === 'permission.role' ? sortAscWaiting : true"
+                    :sortKey="sortKeyWaiting"
+                    @click="sortTable('permission.role', 'waiting')" />
                   <FilterButton
                     label="Avg. Talking Time"
                     :sortAsc="sortKeyWaiting === 'AVGTalkingTime' ? sortAscWaiting : true"
+                    :sortKey="sortKeyWaiting"
                     @click="sortTable('AVGTalkingTime', 'waiting')" />
                 </div>
               </div>
@@ -96,28 +99,38 @@
               :class="{ 'hidden-header': rowHead === 'Actions' }"
               @click="sortTable(rowHead, 'waiting')">
               {{ rowHead }}
-              <img
-                :src="sortArrow"
-                :class="{ rotated: isSortedAscending(rowHead, 'waiting') }"
-                ref="name"
-                alt="select" />
+              <img :src="sortArrow" :class="{ rotated: isSortedAscending(rowHead, 'waiting') }" alt="select" />
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(row, index) in sortedFilteredRowsWaiting" :key="index" :class="getRowClass(row.Duration)">
-            <td class="values-table" v-for="(value, key, idx) in row" :key="idx">{{ value }}</td>
+          <tr v-for="row in sortedFilteredRowsWaiting" :key="row.uid" :class="getRowClass(row.Duration)">
+            <td class="values-table">{{ row.name }}</td>
+            <td class="values-table">{{ row.permission.role }}</td>
+            <td class="values-table">{{ row.internalNumber }}</td>
+            <td class="values-table">{{ row.status }}</td>
+            <td class="values-table"></td>
+            <td class="values-table">{{ calculateDuration(row.statusTime) }}</td>
             <td class="content-list-item item-btn">
-              <div style="visibility: hidden" class="acions-buttons">
-                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">
-                  SPY
-                </span>
-                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">
-                  WHISPER
-                </span>
-                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">
-                  MERGE
-                </span>
+              <div style="visibility: hidden" class="buttons">
+                <span
+                  class="btn"
+                  @click="spy(item)"
+                  :class="{ able: row.status === 'talking', disabled: row.status !== 'Talking' }"
+                  >SPY</span
+                >
+                <span
+                  class="btn"
+                  @click="whisper(item)"
+                  :class="{ able: row.status === 'talking', disabled: row.status !== 'Talking' }"
+                  >WHISPER</span
+                >
+                <span
+                  class="btn"
+                  @click="merge(item)"
+                  :class="{ able: row.status === 'talking', disabled: row.status !== 'Talking' }"
+                  >MERGE</span
+                >
               </div>
             </td>
           </tr>
@@ -134,19 +147,23 @@
                 <div class="filter-buttons">
                   <FilterButton
                     label="Agent Name"
-                    :sortAsc="sortKeyNotWaiting === 'AgentName' ? sortAscNotWaiting : true"
-                    @click="sortTable('AgentName', 'notWaiting')" />
+                    :sortAsc="sortKeyNotWaiting === 'name' ? sortAscNotWaiting : true"
+                    :sortKey="sortKeyNotWaiting"
+                    @click="sortTable('name', 'notWaiting')" />
                   <FilterButton
                     label="Role"
-                    :sortAsc="sortKeyNotWaiting === 'Role' ? sortAscNotWaiting : true"
-                    @click="sortTable('Role', 'notWaiting')" />
+                    :sortAsc="sortKeyNotWaiting === 'permission.role' ? sortAscNotWaiting : true"
+                    :sortKey="sortKeyNotWaiting"
+                    @click="sortTable('permission.role', 'notWaiting')" />
                   <FilterButton
                     label="Status"
                     :sortAsc="sortKeyNotWaiting === 'Status' ? sortAscNotWaiting : true"
-                    @click="sortTable('Status', 'notWaiting')" />
+                    :sortKey="sortKeyNotWaiting"
+                    @click="sortTable('status', 'notWaiting')" />
                   <FilterButton
                     label="Avg. Talking Time"
                     :sortAsc="sortKeyNotWaiting === 'AVGTalkingTime' ? sortAscNotWaiting : true"
+                    :sortKey="sortKeyNotWaiting"
                     @click="sortTable('AVGTalkingTime', 'notWaiting')" />
                 </div>
               </div>
@@ -159,32 +176,27 @@
               :key="index"
               @click="sortTable(rowHead, 'notWaiting')">
               {{ rowHead }}
-              <img
-                :src="sortArrow"
-                :class="{ rotated: isSortedAscending(rowHead, 'notWaiting') }"
-                ref="name"
-                alt="select" />
+              <img :src="sortArrow" :class="{ rotated: isSortedAscending(rowHead, 'notWaiting') }" alt="select" />
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(row, index) in sortedFilteredRowsNotWaiting" :key="index" class="table-row">
-            <td
-              v-for="(value, key, idx) in row"
-              :key="idx"
-              :class="getStatusClass(row.Status, key)"
-              class="values-table">
-              {{ value }}
-            </td>
+          <tr v-for="row in sortedFilteredRowsNotWaiting" :key="row.uid" class="table-row">
+            <td class="values-table">{{ row.name }}</td>
+            <td class="values-table">{{ row.permission.role }}</td>
+            <td class="values-table">{{ row.internalNumber }}</td>
+            <td class="values-table">{{ row.status }}</td>
+            <td class="values-table"></td>
+            <td class="values-table">{{ calculateDuration(row.statusTime) }}</td>
             <td class="content-list-item item-btn">
               <div class="acions-buttons">
-                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">
+                <span class="btn" :class="{ able: row.status === 'Talking', disabled: row.status !== 'Talking' }">
                   SPY
                 </span>
-                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">
+                <span class="btn" :class="{ able: row.status === 'Talking', disabled: row.status !== 'Talking' }">
                   WHISPER
                 </span>
-                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">
+                <span class="btn" :class="{ able: row.status === 'Talking', disabled: row.status !== 'Talking' }">
                   MERGE
                 </span>
               </div>
@@ -208,145 +220,173 @@ export default {
   data() {
     return {
       sortArrow: sortArrow,
-      rows: [
-        {
-          AgentName: "abc",
-          Role: "Agent",
-          AgentId: "123456789",
-          Status: "Waiting",
-          Duration: 2.48,
-          AVGTalkingTime: "4m 3s",
-          Calls: 91,
-        },
-        {
-          AgentName: "def",
-          Role: "Agent",
-          AgentId: "987654321",
-          Status: "Waiting",
-          Duration: 7.41,
-          AVGTalkingTime: "1m 3s",
-          Calls: 28,
-        },
-        {
-          AgentName: "ghi",
-          Role: "Admin",
-          AgentId: "456123789",
-          Status: "Paused",
-          Duration: 6.0,
-          AVGTalkingTime: "2m 3s",
-          Calls: 4,
-        },
-        {
-          AgentName: "jkl",
-          Role: "Agent",
-          AgentId: "159264873",
-          Status: "In Disposition",
-          Duration: 5.3,
-          AVGTalkingTime: "2m 3s",
-          Calls: 7,
-        },
-        {
-          AgentName: "ano",
-          Role: "Agent",
-          AgentId: "353428619",
-          Status: "Talking",
-          Duration: 1.9,
-          AVGTalkingTime: "1m 3s",
-          Calls: 39,
-        },
-        {
-          AgentName: "pqr",
-          Role: "Admin",
-          AgentId: "852963741",
-          Status: "Waiting",
-          Duration: 3.0,
-          AVGTalkingTime: "2m 3s",
-          Calls: 65,
-        },
-        {
-          AgentName: "mno",
-          Role: "Agent",
-          AgentId: "753428619",
-          Status: "Talking",
-          Duration: 1.9,
-          AVGTalkingTime: "2m 3s",
-          Calls: 65,
-        },
-      ],
-      rowsHeadArr: ["AgentName", "Role", "AgentId", "Status", "Duration", "AVGTalkingTime", "Calls", "Actions"],
-      sortKeyWaiting: "AgentName",
-      sortAscWaiting: true,
-      sortKeyNotWaiting: "AgentName",
-      sortAscNotWaiting: true,
-      activeButton: "",
+      ws: null, // WebSocket connection
+      rows: [], // Data received from WebSocket
+      errorMessage: "", // Error message
+      rowsHeadArr: ["Agent Name", "Role", "Agent ID", "Status", "Avg. Talking Time", "Duration", "Actions"], // Headers
+      sortKeyWaiting: "", // Key for sorting waiting agents
+      sortKeyNotWaiting: "", // Key for sorting not-waiting agents
+      sortAscWaiting: true, // Sort ascending for waiting agents
+      sortAscNotWaiting: true, // Sort ascending for not-waiting agents
     };
   },
+  created() {
+    this.fetchData();
+    console.log("WebSocket connection opened");
+  },
   computed: {
+    // sortedFilteredRowsWaiting() {
+    //   // Return filtered and sorted rows for waiting agents
+    //   return this.filterAndSortRows(this.rows, "waiting");
+    // },
+    // sortedFilteredRowsNotWaiting() {
+    //   // Return filtered and sorted rows for not-waiting agents
+    //   return this.filterAndSortRows(this.rows, "notWaiting");
+    // }
     sortedFilteredRowsWaiting() {
-      return this.sortRows(this.filteredRowsWaiting, "waiting");
+      // Return filtered and sorted rows for waiting agents
+      return this.filterAndSortRows(
+        Object.values(this.rows).filter((row) => row.status !== "Waiting"),
+        // this.rows.filter((row) => row.Status === "Waiting"),
+        this.sortKeyWaiting,
+        this.sortAscWaiting
+      );
     },
     sortedFilteredRowsNotWaiting() {
-      return this.sortRows(this.filteredRowsNotWaiting, "notWaiting");
-    },
-    filteredRowsWaiting() {
-      return this.rows.filter((row) => row.Status === "Waiting");
-    },
-    filteredRowsNotWaiting() {
-      return this.rows.filter((row) => row.Status !== "Waiting");
+      // Return filtered and sorted rows for not-waiting agents
+      return this.filterAndSortRows(
+        Object.values(this.rows).filter((row) => row.status !== "notWaiting"),
+        // this.rows.filter((row) => row.Status === "notWaiting"),
+        this.sortKeyNotWaiting,
+        this.sortAscNotWaiting
+      );
     },
   },
   methods: {
-    sortTable(key, type) {
-      const isWaitingType = type === "waiting";
-      const sortKey = isWaitingType ? this.sortKeyWaiting : this.sortKeyNotWaiting;
-      const sortAsc = isWaitingType ? this.sortAscWaiting : this.sortAscNotWaiting;
+    async fetchData() {
+      this.ws = new WebSocket(`${window.env.WS_URL}/agent-map`, localStorage.getItem("token"));
 
-      if (sortKey === key) {
-        this[isWaitingType ? "sortAscWaiting" : "sortAscNotWaiting"] = !sortAsc;
-      } else {
-        this[isWaitingType ? "sortKeyWaiting" : "sortKeyNotWaiting"] = key;
-        this[isWaitingType ? "sortAscWaiting" : "sortAscNotWaiting"] = true;
-      }
-      this.activeButton = key;
+      this.ws.onmessage = (event) => {
+        try {
+          const rows = JSON.parse(event.data);
+          if (rows.user != undefined) {
+            console.log("Parsed data:", rows.user); // Logging parsed data
+            this.rows = rows.user;
+            console.log(this.ro);
+          }
+        } catch (e) {
+          this.errorMessage = "Error parsing data.";
+        }
+      };
+
+      this.ws.onerror = (error) => {
+        this.errorMessage = "WebSocket error";
+        console.error("WebSocket error:", error);
+      };
+
+      this.ws.onclose = () => {
+        console.log("WebSocket connection closed");
+      };
     },
-    sortRows(rows, type) {
-      const sortKey = type === "waiting" ? this.sortKeyWaiting : this.sortKeyNotWaiting;
-      const sortAsc = type === "waiting" ? this.sortAscWaiting : this.sortAscNotWaiting;
+    beforeDestroy() {
+      // Close the WebSocket connection when the component is destroyed
+      if (this.ws) {
+        this.ws.close();
+      }
+    },
+    spy(item) {
+      this.$store.commit("showPhoneMutation", true);
+      this.$store.dispatch("sipCall", `1*${item.internalNumber}`);
+    },
+    whisper(item) {
+      this.$store.commit("showPhoneMutation", true);
+      this.$store.dispatch("sipCall", `2*${item.internalNumber}`);
+    },
+    merge() {
+      this.$store.commit("showPhoneMutation", true);
+      this.$store.dispatch("sipCall", `3*${item.internalNumber}`);
+    },
+    // filterAndSortRows(rows, sortKey, sortAsc) {
+    //   return rows.sort((a, b) => {
+    //     if (sortKey) {
+    //       const aVal = a[sortKey];
+    //       const bVal = b[sortKey];
+    //       if (aVal < bVal) return sortAsc ? -1 : 1;
+    //       if (aVal > bVal) return sortAsc ? 1 : -1;
+    //     }
+    //     return 0;
+    //   });
+    // },
+    filterAndSortRows(rows, sortKey, sortAsc) {
+      return rows.sort((a, b) => {
+        const keys = sortKey.split(".");
+        let aVal = a;
+        let bVal = b;
 
-      return rows.slice().sort((a, b) => {
-        let comparison = 0;
+        keys.forEach((key) => {
+          aVal = aVal[key];
+          bVal = bVal[key];
+        });
 
-        if (a[sortKey] > b[sortKey]) comparison = 1;
-        else if (a[sortKey] < b[sortKey]) comparison = -1;
-
-        return sortAsc ? comparison : -comparison;
+        if (aVal < bVal) return sortAsc ? -1 : 1;
+        if (aVal > bVal) return sortAsc ? 1 : -1;
+        return 0;
       });
+    },
+    // sortTable(column, tableType) {
+    //   if (tableType === "waiting") {
+    //     this.sortKeyWaiting = column;
+    //     this.sortAscWaiting = this.sortKeyWaiting === column ? !this.sortAscWaiting : true;
+    //   } else if (tableType === "notWaiting") {
+    //     this.sortKeyNotWaiting = column;
+    //     this.sortAscNotWaiting = this.sortKeyNotWaiting === column ? !this.sortAscNotWaiting : true;
+    //   }
+    // },
+    sortTable(key, type) {
+      if (type === "waiting") {
+        if (this.sortKeyWaiting === key) {
+          this.sortAscWaiting = !this.sortAscWaiting;
+        } else {
+          this.sortAscWaiting = true;
+        }
+        this.sortKeyWaiting = key;
+      } else if (type === "notWaiting") {
+        if (this.sortKeyNotWaiting === key) {
+          this.sortAscNotWaiting = !this.sortAscNotWaiting;
+        } else {
+          this.sortAscNotWaiting = true;
+        }
+        this.sortKeyNotWaiting = key;
+      }
+    },
+
+    getRowClass(duration) {
+      return duration >= 10 ? "highlight-row" : "";
+    },
+    getStatusClass(status, key) {
+      return status === "Talking" && key !== "Actions" ? "highlight-status" : "";
+    },
+    sumTalkingAgents() {
+      return this.rows.filter((row) => row.status === "Talking").length;
+    },
+    countUniqueAgents() {
+      const uniqueAgents = new Set(this.rows.map((row) => row.name));
+      return uniqueAgents.size;
     },
     isSortedAscending(rowHead, type) {
       const sortKey = type === "waiting" ? this.sortKeyWaiting : this.sortKeyNotWaiting;
       const sortAsc = type === "waiting" ? this.sortAscWaiting : this.sortAscNotWaiting;
       return sortKey === rowHead && sortAsc;
     },
-    sumTalkingAgents() {
-      return this.rows.filter((row) => row.Status === "Talking").length;
-    },
-    countUniqueAgents() {
-      const allRows = [...this.sortedFilteredRowsWaiting, ...this.sortedFilteredRowsNotWaiting];
-      const uniqueAgents = new Set(allRows.map((row) => row.AgentName));
-      return uniqueAgents.size;
-    },
-    getStatusClass(status, key) {
-      if (key === "Status" || key === "Duration") {
-        return {
-          yellow: status === "Paused",
-          green: status === "Talking",
-          blue: status === "In Disposition",
-        };
-      }
-      return "";
-    },
-    getRowClass(duration) {
-      return duration <= 3 ? "short-duration" : "long-duration";
+    calculateDuration(statusTime) {
+      const parsedTime = new Date(statusTime); // המרה ל- Date
+      const currentTime = new Date(); // זמן נוכחי
+      const duration = currentTime - parsedTime; // חישוב הפרש הזמן במילישניות
+
+      const seconds = Math.floor((duration / 1000) % 60);
+      const minutes = Math.floor((duration / (1000 * 60)) % 60);
+
+      return ` ${minutes} minutes, ${seconds} seconds`;
     },
   },
 };

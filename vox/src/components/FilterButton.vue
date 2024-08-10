@@ -1,7 +1,7 @@
 <template>
   <button class="filter-button" @click="$emit('click')">
     {{ label }}
-    <img :class="{ 'rotated': !sortAsc }" src="@/assets/img/icons/arrow-down-white.svg" alt="select" />
+    <img :class="{ rotated: !sortAsc }" src="@/assets/img/icons/arrow-down-white.svg" alt="select" />
   </button>
 </template>
 
@@ -11,21 +11,21 @@ export default {
   props: {
     label: {
       type: String,
-      required: true
+      required: true,
     },
     sortKey: {
       type: String,
-      required: true
+      //required: true
     },
     sortAsc: {
       type: Boolean,
-      required: true
+      required: true,
     },
     isActive: {
       type: Boolean,
-      required: true
-    }
-  }
+      //required: true
+    },
+  },
 };
 </script>
 
