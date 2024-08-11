@@ -86,7 +86,7 @@
       </div>
     </form>
   </div>
-  <div class="divider-container">
+  <!-- <div class="divider-container">
     <div class="divider"></div>
     <span>Agent assigned</span>
   </div>
@@ -96,7 +96,7 @@
       <div class="slider-circle" :class="{'right': isRight}"></div>
     </div>
     <span :class="{'highlight': isRight, 'unhighlight': !isRight}">Virtual agent</span>
-  </div>
+  </div> -->
 </template>
 
 <script>

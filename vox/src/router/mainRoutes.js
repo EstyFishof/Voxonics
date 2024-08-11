@@ -17,9 +17,9 @@ export const routes = [
         meta: {title: 'Agent Panel', icon: agentPanel}
     },
     {
-        path: '/newCampaign',
+        path: '/campaign',
         component: () => import('@/views/Agent/CampaignForm.vue'),
-        //component: () => import('@/views/Test.vue'),
+        //component: () => import('@/views/Agent/DayClr.vue'),
         meta: {title: 'new Campaign', icon: agentPanel}
     },
     {

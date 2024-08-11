@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div id="contanet1">
       <button id="dayS" @click="showDaySetting">Day Setting</button>
       <button id="weekP" @click="showWeekPreference">Week Preference</button>
@@ -381,7 +381,7 @@
    margin: 9px;
  }
  </style>
-  -->
+
  
  
  

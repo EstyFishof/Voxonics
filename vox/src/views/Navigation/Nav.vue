@@ -18,6 +18,14 @@
             </router-link>
           </div>
 
+          <div @click="toggleVisible('panel')">
+            <router-link to="/campaign">
+              <img class="icon active" width="20" src="../../assets/img/icons/agent-panel.svg" alt="">
+              <img class="icon gray" width="20" src="../../assets/img/icons/agent-panel-gray.svg" alt="">
+              New Campaign
+            </router-link>
+          </div>
+
           <template v-if="displayConfig.mainNavigation.showManagersRoutes">
 
             <div @click="toggleVisible('dashboard')">
@@ -31,11 +39,11 @@
                 </svg>
               </router-link>
             </div>
-            <div v-show="show === 'dashboard'" class="childes">
-              <router-link to="/newCampaign">newCampaign</router-link>
+            <div v-show="show === 'campaign'" class="childes">
+              <router-link to="/campaign">newCampaign</router-link>
             </div>
             
-            <div v-show="show === 'Campaign'" class="childes">
+            <div v-show="show === 'dashboard'" class="childes">
               <router-link to="/dashboard/agents-map"> Agents Map</router-link>
               <router-link to="/dashboard/Test-map"> Test Map</router-link>
             </div>
