@@ -1,10 +1,12 @@
-<template class="template">
+<template>
   <div>
+    <!-- Dashboard Squares -->
     <div class="squares">
+      <!-- Squares for various metrics, using real data -->
       <div class="square">
         <img src="@/assets/img/icons/TalkingIcon.svg" alt="Active calls icon" class="icon" />
         <span class="number">
-          <!-- {{ sumTalkingAgents() }} -->
+          {{ sumTalkingAgents() }}
         </span>
         <div class="call-mode">Active calls</div>
       </div>
@@ -50,7 +52,7 @@
       <div class="big-square">
         <img src="@/assets/img/icons/agents-statement.svg" alt="Agent in calls Logged in icon" class="icon" />
         <span class="number">
-          <!-- {{ countUniqueAgents() }} -->
+          {{ countUniqueAgents() }}
         </span>
         <div class="call-mode">Agents in calls Logged in</div>
       </div>
@@ -60,8 +62,9 @@
       </div>
     </div>
 
+    <!-- Tables for agent data -->
     <div class="tables">
-      <!-- Table for Waiting Agents -->
+      <!-- Waiting Table -->
       <table>
         <thead>
           <tr>
@@ -71,18 +74,18 @@
                 <div class="filter-buttons">
                   <FilterButton
                     label="Agent Name"
-                    :sortAsc="sortKeyWaiting === 'name' ? sortAscWaiting : true"
+                    :sortAsc="sortKeyWaiting === 'AgentName' ? sortAscWaiting : true"
                     :sortKey="sortKeyWaiting"
-                    @click="sortTable('name', 'waiting')" />
+                    @click="sortTable('AgentName', 'waiting')" />
                   <FilterButton
                     label="Role"
-                    :sortAsc="sortKeyWaiting === 'permission.role' ? sortAscWaiting : true"
                     :sortKey="sortKeyWaiting"
-                    @click="sortTable('permission.role', 'waiting')" />
+                     :sortAsc="sortKeyWaiting === 'Role' ? sortAscWaiting : true"
+                    @click="sortTable('Role', 'waiting')" />
                   <FilterButton
                     label="Avg. Talking Time"
-                    :sortAsc="sortKeyWaiting === 'AVGTalkingTime' ? sortAscWaiting : true"
                     :sortKey="sortKeyWaiting"
+                     :sortAsc="sortKeyWaiting === 'AVGTalkingTime' ? sortAscWaiting : true"
                     @click="sortTable('AVGTalkingTime', 'waiting')" />
                 </div>
               </div>
@@ -99,45 +102,25 @@
               :class="{ 'hidden-header': rowHead === 'Actions' }"
               @click="sortTable(rowHead, 'waiting')">
               {{ rowHead }}
-              <img :src="sortArrow" :class="{ rotated: isSortedAscending(rowHead, 'waiting') }" alt="select" />
+              <img src="@/assets/img/icons/arrow-down-white.svg" alt="select" />
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="row in sortedFilteredRowsWaiting" :key="row.uid" :class="getRowClass(row.Duration)">
-            <td class="values-table">{{ row.name }}</td>
-            <td class="values-table">{{ row.permission.role }}</td>
-            <td class="values-table">{{ row.internalNumber }}</td>
-            <td class="values-table">{{ row.status }}</td>
-            <td class="values-table"></td>
-            <td class="values-table">{{ calculateDuration(row.statusTime) }}</td>
+          <tr class="row-waiting-table" v-for="(row, index) in sortedFilteredRowsWaiting" :key="index">
+            <td class="values-table" v-for="(value, key, idx) in row" :key="idx">{{ value }}</td>
             <td class="content-list-item item-btn">
               <div style="visibility: hidden" class="buttons">
-                <span
-                  class="btn"
-                  @click="spy(item)"
-                  :class="{ able: row.status === 'talking', disabled: row.status !== 'Talking' }"
-                  >SPY</span
-                >
-                <span
-                  class="btn"
-                  @click="whisper(item)"
-                  :class="{ able: row.status === 'talking', disabled: row.status !== 'Talking' }"
-                  >WHISPER</span
-                >
-                <span
-                  class="btn"
-                  @click="merge(item)"
-                  :class="{ able: row.status === 'talking', disabled: row.status !== 'Talking' }"
-                  >MERGE</span
-                >
+                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">SPY</span>
+                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">WHISPER</span>
+                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">MERGE</span>
               </div>
             </td>
           </tr>
         </tbody>
       </table>
 
-      <!-- Table for Non-Waiting Agents -->
+      <!-- Not Waiting Table -->
       <table>
         <thead>
           <tr>
@@ -147,23 +130,23 @@
                 <div class="filter-buttons">
                   <FilterButton
                     label="Agent Name"
-                    :sortAsc="sortKeyNotWaiting === 'name' ? sortAscNotWaiting : true"
                     :sortKey="sortKeyNotWaiting"
-                    @click="sortTable('name', 'notWaiting')" />
+                     :sortAsc="sortKeyNotWaiting === 'AgentName' ? sortAscNotWaiting : true"
+                    @click="sortTable('AgentName', 'notWaiting')" />
                   <FilterButton
                     label="Role"
-                    :sortAsc="sortKeyNotWaiting === 'permission.role' ? sortAscNotWaiting : true"
                     :sortKey="sortKeyNotWaiting"
-                    @click="sortTable('permission.role', 'notWaiting')" />
+                     :sortAsc="sortKeyNotWaiting === 'Role' ? sortAscNotWaiting : true"
+                    @click="sortTable('Role', 'notWaiting')" />
                   <FilterButton
                     label="Status"
-                    :sortAsc="sortKeyNotWaiting === 'Status' ? sortAscNotWaiting : true"
                     :sortKey="sortKeyNotWaiting"
-                    @click="sortTable('status', 'notWaiting')" />
+                    :sortAsc="sortKeyNotWaiting === 'Status' ? sortAscNotWaiting : true"
+                    @click="sortTable('Status', 'notWaiting')" />
                   <FilterButton
                     label="Avg. Talking Time"
-                    :sortAsc="sortKeyNotWaiting === 'AVGTalkingTime' ? sortAscNotWaiting : true"
                     :sortKey="sortKeyNotWaiting"
+                     :sortAsc="sortKeyNotWaiting === 'AVGTalkingTime' ? sortAscNotWaiting : true"
                     @click="sortTable('AVGTalkingTime', 'notWaiting')" />
                 </div>
               </div>
@@ -176,29 +159,24 @@
               :key="index"
               @click="sortTable(rowHead, 'notWaiting')">
               {{ rowHead }}
-              <img :src="sortArrow" :class="{ rotated: isSortedAscending(rowHead, 'notWaiting') }" alt="select" />
+              <img src="@/assets/img/icons/arrow-down-white.svg" alt="select" />
             </th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="row in sortedFilteredRowsNotWaiting" :key="row.uid" class="table-row">
-            <td class="values-table">{{ row.name }}</td>
-            <td class="values-table">{{ row.permission.role }}</td>
-            <td class="values-table">{{ row.internalNumber }}</td>
-            <td class="values-table">{{ row.status }}</td>
-            <td class="values-table"></td>
-            <td class="values-table">{{ calculateDuration(row.statusTime) }}</td>
+          <tr v-for="(row, index) in sortedFilteredRowsNotWaiting" :key="index" class="table-row">
+            <td
+              v-for="(value, key, idx) in row"
+              :key="idx"
+              :class="getStatusClass(row.Status, key)"
+              class="values-table">
+              {{ value }}
+            </td>
             <td class="content-list-item item-btn">
-              <div class="acions-buttons">
-                <span class="btn" :class="{ able: row.status === 'Talking', disabled: row.status !== 'Talking' }">
-                  SPY
-                </span>
-                <span class="btn" :class="{ able: row.status === 'Talking', disabled: row.status !== 'Talking' }">
-                  WHISPER
-                </span>
-                <span class="btn" :class="{ able: row.status === 'Talking', disabled: row.status !== 'Talking' }">
-                  MERGE
-                </span>
+              <div class="buttons">
+                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">SPY</span>
+                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">WHISPER</span>
+                <span class="btn" :class="{ able: row.Status === 'Talking', disabled: row.Status !== 'Talking' }">MERGE</span>
               </div>
             </td>
           </tr>
@@ -208,9 +186,9 @@
   </div>
 </template>
 
+
 <script>
 import FilterButton from "@/components/FilterButton.vue";
-import sortArrow from "@/assets/img/icons/sort-arrow.svg";
 
 export default {
   name: "AgentsTable",
@@ -219,175 +197,122 @@ export default {
   },
   data() {
     return {
-      sortArrow: sortArrow,
-      ws: null, // WebSocket connection
-      rows: [], // Data received from WebSocket
-      errorMessage: "", // Error message
-      rowsHeadArr: ["Agent Name", "Role", "Agent ID", "Status", "Avg. Talking Time", "Duration", "Actions"], // Headers
-      sortKeyWaiting: "", // Key for sorting waiting agents
-      sortKeyNotWaiting: "", // Key for sorting not-waiting agents
-      sortAscWaiting: true, // Sort ascending for waiting agents
-      sortAscNotWaiting: true, // Sort ascending for not-waiting agents
+      rows: [
+        {
+          AgentName: "def",
+          Role: "Agent",
+          Status: "Paused",
+          Duration: 7.41,
+          AVGTalkingTime: "2m 3s",
+          Calls: 91,
+        },
+      ], // Initialize with an empty array, will be populated with real data
+      rowsHeadArr: ["AgentName", "Role", "Status", "Duration", "AVGTalkingTime", "Calls"],
+      sortKeyWaiting: "",
+      sortAscWaiting: true,
+      sortKeyNotWaiting: "",
+      sortAscNotWaiting: true,
+      ws: null,
     };
   },
   created() {
     this.fetchData();
-    console.log("WebSocket connection opened");
   },
   computed: {
-    // sortedFilteredRowsWaiting() {
-    //   // Return filtered and sorted rows for waiting agents
-    //   return this.filterAndSortRows(this.rows, "waiting");
-    // },
-    // sortedFilteredRowsNotWaiting() {
-    //   // Return filtered and sorted rows for not-waiting agents
-    //   return this.filterAndSortRows(this.rows, "notWaiting");
-    // }
     sortedFilteredRowsWaiting() {
-      // Return filtered and sorted rows for waiting agents
-      return this.filterAndSortRows(
-        Object.values(this.rows).filter((row) => row.status !== "Waiting"),
-        // this.rows.filter((row) => row.Status === "Waiting"),
-        this.sortKeyWaiting,
-        this.sortAscWaiting
-      );
+      return this.sortAndFilter(this.rows.filter(row => row.Status === 'Waiting'), this.sortKeyWaiting, this.sortAscWaiting);
     },
     sortedFilteredRowsNotWaiting() {
-      // Return filtered and sorted rows for not-waiting agents
-      return this.filterAndSortRows(
-        Object.values(this.rows).filter((row) => row.status !== "notWaiting"),
-        // this.rows.filter((row) => row.Status === "notWaiting"),
-        this.sortKeyNotWaiting,
-        this.sortAscNotWaiting
-      );
+      return this.sortAndFilter(this.rows.filter(row => row.Status !== 'Waiting'), this.sortKeyNotWaiting, this.sortAscNotWaiting);
     },
   },
   methods: {
     async fetchData() {
-      this.ws = new WebSocket(`${window.env.WS_URL}/agent-map`, localStorage.getItem("token"));
+      // Create the WebSocket connection
+      this.ws = new WebSocket(`${window.env.WS_URL}/agent-map`, localStorage.getItem('token'));
 
+      // Handle incoming messages
       this.ws.onmessage = (event) => {
+        console.log('WebSocket message received:', event.data); // Logging raw data
         try {
-          const rows = JSON.parse(event.data);
-          if (rows.user != undefined) {
-            console.log("Parsed data:", rows.user); // Logging parsed data
-            this.rows = rows.user;
-            console.log(this.ro);
-          }
+          const parsedData = JSON.parse(event.data);
+          //console.log('Status:', parsedData.data.statusText); // Logging raw data
+          console.log('Parsed data:', parsedData.user); // Logging parsed data
+          // Assuming `parsedData` has a `data` property that is an array of objects
+          const users = parsedData.user;
+          Object.keys(users).forEach((key) => {
+            const user = users[key];
+            console.log('user is: ', user);
+            this.rows.push({
+              AgentName: user.name,
+              Role: user.permission.role,
+              Status: user.status,
+              Duration: "7.41", // Replace with actual duration if available
+              AVGTalkingTime: "2m 3s", // Replace with actual talking time if available
+              Calls: 91, // Replace with actual call count if available
+            });
+          });
         } catch (e) {
-          this.errorMessage = "Error parsing data.";
+          this.errorMessage = 'Error parsing data.';
+          console.error('Error parsing data:', e);
         }
       };
 
+      // Handle errors
       this.ws.onerror = (error) => {
-        this.errorMessage = "WebSocket error";
-        console.error("WebSocket error:", error);
+        this.errorMessage = 'WebSocket error: ' + error.message;
       };
 
-      this.ws.onclose = () => {
-        console.log("WebSocket connection closed");
+      // Handle connection close
+      this.ws.onclose = (event) => {
+        if (event.wasClean) {
+          console.log('Connection closed cleanly');
+        } else {
+          this.errorMessage = 'Connection closed abruptly';
+        }
       };
     },
-    beforeDestroy() {
-      // Close the WebSocket connection when the component is destroyed
-      if (this.ws) {
-        this.ws.close();
+    sortTable(key, tableType) {
+      if (tableType === 'waiting') {
+        this.sortKeyWaiting = key;
+        this.sortAscWaiting = !this.sortAscWaiting;
+      } else {
+        this.sortKeyNotWaiting = key;
+        this.sortAscNotWaiting = !this.sortAscNotWaiting;
       }
     },
-    spy(item) {
-      this.$store.commit("showPhoneMutation", true);
-      this.$store.dispatch("sipCall", `1*${item.internalNumber}`);
-    },
-    whisper(item) {
-      this.$store.commit("showPhoneMutation", true);
-      this.$store.dispatch("sipCall", `2*${item.internalNumber}`);
-    },
-    merge() {
-      this.$store.commit("showPhoneMutation", true);
-      this.$store.dispatch("sipCall", `3*${item.internalNumber}`);
-    },
-    // filterAndSortRows(rows, sortKey, sortAsc) {
-    //   return rows.sort((a, b) => {
-    //     if (sortKey) {
-    //       const aVal = a[sortKey];
-    //       const bVal = b[sortKey];
-    //       if (aVal < bVal) return sortAsc ? -1 : 1;
-    //       if (aVal > bVal) return sortAsc ? 1 : -1;
-    //     }
-    //     return 0;
-    //   });
-    // },
-    filterAndSortRows(rows, sortKey, sortAsc) {
-      return rows.sort((a, b) => {
-        const keys = sortKey.split(".");
-        let aVal = a;
-        let bVal = b;
-
-        keys.forEach((key) => {
-          aVal = aVal[key];
-          bVal = bVal[key];
-        });
-
-        if (aVal < bVal) return sortAsc ? -1 : 1;
-        if (aVal > bVal) return sortAsc ? 1 : -1;
+    sortAndFilter(rows, sortKey, sortAsc) {
+      return rows.slice().sort((a, b) => {
+        if (sortKey) {
+          const aVal = a[sortKey];
+          const bVal = b[sortKey];
+          if (aVal < bVal) return sortAsc ? -1 : 1;
+          if (aVal > bVal) return sortAsc ? 1 : -1;
+        }
         return 0;
       });
     },
-    // sortTable(column, tableType) {
-    //   if (tableType === "waiting") {
-    //     this.sortKeyWaiting = column;
-    //     this.sortAscWaiting = this.sortKeyWaiting === column ? !this.sortAscWaiting : true;
-    //   } else if (tableType === "notWaiting") {
-    //     this.sortKeyNotWaiting = column;
-    //     this.sortAscNotWaiting = this.sortKeyNotWaiting === column ? !this.sortAscNotWaiting : true;
-    //   }
-    // },
-    sortTable(key, type) {
-      if (type === "waiting") {
-        if (this.sortKeyWaiting === key) {
-          this.sortAscWaiting = !this.sortAscWaiting;
-        } else {
-          this.sortAscWaiting = true;
-        }
-        this.sortKeyWaiting = key;
-      } else if (type === "notWaiting") {
-        if (this.sortKeyNotWaiting === key) {
-          this.sortAscNotWaiting = !this.sortAscNotWaiting;
-        } else {
-          this.sortAscNotWaiting = true;
-        }
-        this.sortKeyNotWaiting = key;
-      }
-    },
-
-    getRowClass(duration) {
-      return duration >= 10 ? "highlight-row" : "";
-    },
     getStatusClass(status, key) {
-      return status === "Talking" && key !== "Actions" ? "highlight-status" : "";
+      if (key === 'Status') {
+        return {
+          'in-disposition': status === 'In Disposition',
+          'paused': status === 'Paused',
+          'talking': status === 'Talking',
+        };
+      }
+      return '';
     },
     sumTalkingAgents() {
-      return this.rows.filter((row) => row.status === "Talking").length;
+      return this.rows.filter(rows => rows.Status === 'Talking').length;
     },
     countUniqueAgents() {
-      const uniqueAgents = new Set(this.rows.map((row) => row.name));
-      return uniqueAgents.size;
+      return new Set(this.rows.map(rows => rows.AgentId)).size;
     },
-    isSortedAscending(rowHead, type) {
-      const sortKey = type === "waiting" ? this.sortKeyWaiting : this.sortKeyNotWaiting;
-      const sortAsc = type === "waiting" ? this.sortAscWaiting : this.sortAscNotWaiting;
-      return sortKey === rowHead && sortAsc;
-    },
-    calculateDuration(statusTime) {
-      const parsedTime = new Date(statusTime); // המרה ל- Date
-      const currentTime = new Date(); // זמן נוכחי
-      const duration = currentTime - parsedTime; // חישוב הפרש הזמן במילישניות
-
-      const seconds = Math.floor((duration / 1000) % 60);
-      const minutes = Math.floor((duration / (1000 * 60)) % 60);
-
-      return ` ${minutes} minutes, ${seconds} seconds`;
-    },
+  },
+  beforeDestroy() {
+    if (this.ws) {
+      this.ws.close();
+    }
   },
 };
 </script>
@@ -400,7 +325,6 @@ table {
 }
 
 .tables {
-  width: 100%;
   border: #1f2833 3px solid;
 }
 
@@ -438,24 +362,10 @@ td {
   align-items: center;
 }
 
-.row-head {
-  padding-bottom: 20px;
-  font-weight: initial;
-  font-size: 13px;
-  color: var(--agent-card-color);
-}
-
-.row-head img {
+.filter-button img {
   width: 12px;
   height: 12px;
   margin-left: 5px;
-  transition: transform 0.3s ease;
-  transform: rotate(0deg); /* חץ כלפי מטה כברירת מחדל */
-}
-
-.row-head img.rotated {
-  transition: transform 0.3s ease;
-  transform: rotate(180deg);
 }
 
 th {
@@ -490,16 +400,27 @@ thead tr:first-child th {
   transform: translateX(-60px);
 }
 
+.content-list-item {
+  font-weight: normal;
+  line-height: 16px;
+  position: relative;
+}
 .values-table {
   font-size: 15px;
 }
 
 .hidden-header {
   visibility: hidden;
-  display: none;
 }
 .hidden-header span {
   display: none;
+}
+
+.row-head {
+  padding-bottom: 20px;
+  font-weight: initial;
+  font-size: 13px;
+  color: var(--agent-card-color);
 }
 
 .table-row {
@@ -515,7 +436,7 @@ thead tr:first-child th {
   height: 45px;
 }
 
-.acions-buttons {
+.item-btn {
   width: 35%;
   display: flex;
   justify-content: space-between;
@@ -523,8 +444,7 @@ thead tr:first-child th {
   padding-right: 25px;
   position: relative;
 }
-
-.acions-buttons .btn {
+.btn {
   cursor: pointer;
   border-radius: 4px;
   padding: 2px 9px;
@@ -533,26 +453,33 @@ thead tr:first-child th {
   margin-right: 6px;
 }
 
-.acions-buttons .btn.disabled {
+.btn.disabled {
   pointer-events: none;
   background: var(--paginator-item);
   border: var(--agent-card-border);
   color: var(--paginator-arrow-disabled);
 }
 
-.acions-buttons .btn.able {
+.btn.able {
   border: 1px solid #296ba0;
   background: var(--paginator-item);
   color: var(--paginator-arrow);
 }
 
-.blue {
+button img {
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.in-disposition {
   color: #296ba0;
 }
-.yellow {
+.paused {
   color: #fcaf00;
 }
-.green {
+.talking {
   color: #2db152;
 }
 
@@ -690,19 +617,5 @@ thead tr:first-child th {
   font-size: 18px;
   font-weight: calc(12);
   color: #fff;
-}
-
-.short-duration {
-  border-radius: 20px;
-  border: none;
-  margin-bottom: 12px;
-  background-color: #3a5378;
-}
-
-.long-duration {
-  border-radius: 6px;
-  border: none;
-  margin-bottom: 12px;
-  background-color: #173f75;
 }
 </style>

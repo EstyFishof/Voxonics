@@ -140,6 +140,7 @@
                         v-tippy="{ placement : 'top',  arrow: true, delay : 800, duration: 500 }">
                     <span class="circle">
                       {{ item.timeToView.days }}
+                      {{ console.log('item:',item) }}
                     </span>
                   </span>
                   <span class="delete-card" v-if="isEdit && item.notUser">
@@ -431,6 +432,74 @@ export default {
     }
   },
   methods: {
+    async fetchData() {
+      // Create the WebSocket connection
+      this.ws = new WebSocket(`${window.env.WS_URL}/agent-map`, localStorage.getItem('token'));
+
+      // Handle incoming messages
+      this.ws.onmessage = (event) => {
+        console.log('WebSocket message received:', event.data); // Logging raw data
+        try {
+          const parsedData = JSON.parse(event.data);
+          //console.log('Status:', parsedData.data.statusText); // Logging raw data
+          console.log('Parsed data:', parsedData.user); // Logging parsed data
+          // Assuming `parsedData` has a `data` property that is an array of objects
+          const users = parsedData.user;
+          Object.keys(users).forEach((key) => {
+            const user = users[key];
+            console.log('user is: ', user);
+            this.rows.push({
+              AgentName: user.name,
+              Role: user.permission.role,
+              Status: user.status,
+              Duration: "7.41", // Replace with actual duration if available
+              AVGTalkingTime: "2m 3s", // Replace with actual talking time if available
+              Calls: 91, // Replace with actual call count if available
+            });
+          });
+        } catch (e) {
+          this.errorMessage = 'Error parsing data.';
+          console.error('Error parsing data:', e);
+        }
+      };
+
+      // Handle errors
+      this.ws.onerror = (error) => {
+        this.errorMessage = 'WebSocket error: ' + error.message;
+      };
+
+      // Handle connection close
+      this.ws.onclose = (event) => {
+        if (event.wasClean) {
+          console.log('Connection closed cleanly');
+        } else {
+          this.errorMessage = 'Connection closed abruptly';
+        }
+      };
+    },
+    sortTable(key, tableType) {
+      if (tableType === 'waiting') {
+        this.sortKeyWaiting = key;
+        this.sortAscWaiting = !this.sortAscWaiting;
+      } else {
+        this.sortKeyNotWaiting = key;
+        this.sortAscNotWaiting = !this.sortAscNotWaiting;
+      }
+    },
+    sortAndFilter(rows, sortKey, sortAsc) {
+      return rows.slice().sort((a, b) => {
+        if (sortKey) {
+          const aVal = a[sortKey];
+          const bVal = b[sortKey];
+          if (aVal < bVal) return sortAsc ? -1 : 1;
+          if (aVal > bVal) return sortAsc ? 1 : -1;
+        }
+        return 0;
+      });
+    },
+
+
+
     spy(item) {
       this.$store.commit('showPhoneMutation', true)
       this.$store.dispatch('sipCall', `1*${item.internalNumber}`)
