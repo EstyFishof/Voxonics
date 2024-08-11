@@ -231,12 +231,12 @@ export default {
 </script>
 
 
-
 <style scoped>
 .container {
   background-color: #1c1d21;
   color:#a3a9af;
   padding: 20px;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 
 .tables-container {
@@ -494,11 +494,13 @@ input[type="checkbox"]:checked::before {
   align-items: center;
 }
 .circular-image {
-  width: 19px; /* גודל התמונה */
-  height: 19px; /* גובה התמונה */
-  border-radius: 50%; /* הפיכת התמונה לעיגול */
-  object-fit: cover; /* התמונה תתאים לגודל המסגרת מבלי לעוות */
+  width: 19px; 
+  height: 19px; 
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 </style>
+
+
 

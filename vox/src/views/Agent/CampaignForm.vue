@@ -147,10 +147,12 @@ export default {
 </script>
 
 <style scoped>
+
 h1 {
   color: rgb(118, 117, 119);
   margin-right: 1000px;
   font-size: large;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .campaign-form {
   max-width: 100%;
@@ -175,6 +177,7 @@ label {
   display: block;
   margin-bottom: 5px;
   color: #4f6e96;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 label.left-align {
   text-align: left;
@@ -199,6 +202,7 @@ label.left-align {
   width: 16px;
   height: 16px;
   fill: #de1616;
+ 
 }
 .icon-pencil {
   position: absolute;
@@ -215,6 +219,7 @@ label.left-align {
 }
 .custom-file-input input[type="file"] {
   display: none;
+  
 }
 .custom-file-input input[type="text"] {
   width: 100%;
@@ -228,13 +233,15 @@ label.left-align {
 .divider {
   height: 1px;
   background-color: rgb(118, 117, 119);
-  margin-left: 165px;
+  margin-left: 130px;
   margin-right: 30px;
 }
 .divider-container span {
   color: rgb(118, 117, 119);
-  margin-right: 1100px;
+ 
   padding: 0px;
+  
+  
 }
 .highlight-container {
   display: flex;
@@ -246,9 +253,11 @@ label.left-align {
 .highlight {
   font-weight: bold;
   color: #4f6e96;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .unhighlight {
   color: #b5aeae;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .slider {
   width: 34px;
@@ -282,3 +291,4 @@ label.left-align {
   font-size: small;
 }
 </style>
+
