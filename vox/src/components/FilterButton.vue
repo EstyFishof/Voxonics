@@ -49,10 +49,10 @@ export default {
   vertical-align: middle;
   margin-left: 5px;
   transition: transform 0.3s ease;
-  transform: rotate(0deg); /* חץ כלפי מטה כברירת מחדל */
+  transform: rotate(180deg); /* חץ כלפי מעלה לאחר לחיצה */
 }
 
 .filter-button img.rotated {
-  transform: rotate(180deg); /* חץ כלפי מעלה לאחר לחיצה */
+  transform: rotate(0deg); /* חץ כלפי מטה כברירת מחדל */
 }
 </style>
