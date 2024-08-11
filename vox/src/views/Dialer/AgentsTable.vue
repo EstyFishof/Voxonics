@@ -6,7 +6,7 @@
       <div class="square">
         <img src="@/assets/img/icons/TalkingIcon.svg" alt="Active calls icon" class="icon" />
         <span class="number">
-          {{ sumOnlineAgents() }}
+          {{ this.agentOnline }}
         </span>
         <div class="call-mode">Active calls</div>
       </div>
@@ -51,9 +51,7 @@
       </div>
       <div class="big-square">
         <img src="@/assets/img/icons/agents-statement.svg" alt="Agent in calls Logged in icon" class="icon" />
-        <span class="number">
-          {{ countUniqueAgents() }}
-        </span>
+        <span class="number"> {{ this.agentInCalls }} | {{ this.loggedIn }} </span>
         <div class="call-mode">Agents in calls Logged in</div>
       </div>
       <div class="big-square">
@@ -221,7 +219,7 @@ export default {
           Role: "agent",
           ID: "123",
           Status: "paused",
-          Duration: '7 m, 41 s',
+          Duration: "7 m, 41 s",
           AVGTalkingTime: "2m 3s",
           Calls: 91,
         },
@@ -231,6 +229,9 @@ export default {
       sortAscWaiting: true,
       sortKeyNotWaiting: "",
       sortAscNotWaiting: true,
+      agentOnline: 0,
+      agentInCalls: 0,
+      loggedIn: 0,
       ws: null,
     };
   },
@@ -258,8 +259,6 @@ export default {
       const parsedTime = new Date(statusTime); // המרה ל- Date
       const currentTime = new Date(); // זמן נוכחי
       const duration = currentTime - parsedTime; // חישוב הפרש הזמן במילישניות
-
-      const seconds = Math.floor((duration / 1000) % 60);
       const totalMinutes = Math.floor(duration / (1000 * 60)); // חישוב סך כל הדקות שהצטברו
       const remainingMinutes = totalMinutes % 1440; // חישוב הדקות שלא הצטברו ליום שלם
       const remainingSeconds = Math.floor((duration % (1000 * 60)) / 1000); // חישוב השניות הנוספות
@@ -292,6 +291,9 @@ export default {
               Calls: 91, // Replace with actual call count if available
             });
           });
+          this.agentOnline = this.rows.filter((rows) => rows.Status === "online").length;
+          this.agentInCalls = this.rows.filter((rows) => rows.Status === "online" || rows.Status === "paused").length;
+          this.loggedIn = this.rows.filter((rows) => rows.Status !== "offline").length;
         } catch (e) {
           this.errorMessage = "Error parsing data.";
           console.error("Error parsing data:", e);
@@ -359,12 +361,6 @@ export default {
     merge() {
       this.$store.commit("showPhoneMutation", true);
       this.$store.dispatch("sipCall", `3*${item.internalNumber}`);
-    },
-    sumOnlineAgents() {
-      return this.rows.filter((rows) => rows.Status === "online").length;
-    },
-    countUniqueAgents() {
-      return new Set(this.rows.map((rows) => rows.ID)).size;
     },
   },
 
@@ -528,6 +524,7 @@ thead tr:first-child th {
   margin-bottom: 20px;
   margin-right: 7%;
 }
+
 .square {
   position: relative;
   width: 100px;
