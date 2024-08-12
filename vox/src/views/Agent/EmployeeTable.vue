@@ -94,7 +94,7 @@
 </template>
 
 <script>
-import customerServiceIcon from '@/assets/lovepik-customer-service-personnel-icon-png-image_400960953_wh1200.png';
+import customerServiceIcon from '@/assets/img/icons/lovepik-customer-service-personnel-icon-png-image_400960953_wh1200.png';
 export default {
   data() {
     return {

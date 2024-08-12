@@ -85,6 +85,12 @@
         </div>
       </div>
     </form>
+  
+    
+    <EmployeeTable/>
+    <NumberAssined/>
+    <DayClr/>
+
   </div>
   <!-- <div class="divider-container">
     <div class="divider"></div>
@@ -100,7 +106,18 @@
 </template>
 
 <script>
+
+import EmployeeTable from './EmployeeTable.vue';
+import NumberAssined from  './NumberAssined.vue';
+import DayClr from './DayClr.vue';
+
 export default {
+  components: {
+    
+    EmployeeTable,
+    NumberAssined,
+    DayClr,
+  },
   name: 'CampaignForm',
   data() {
     return {

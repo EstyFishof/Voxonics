@@ -221,7 +221,6 @@ export default {
 .calendar-container {
  display: flex;
  background-color: #202933;
- max-width: 687px;
  border-radius: 17px;
 }
 .calendar {
@@ -309,7 +308,6 @@ export default {
 }
 html {
  background-color: #0f1d28;
- max-width: 715px;
 }
 #btNext1 {
  background-color: #d8e0e724;
