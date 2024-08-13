@@ -6,38 +6,56 @@
       <div class="square">
         <img src="@/assets/img/icons/TalkingIcon.svg" alt="Active calls icon" class="icon" />
         <span class="number">
-          {{ this.agentOnline }}
+          {{ this.activeCalls }}
         </span>
         <div class="call-mode">Active calls</div>
       </div>
       <div class="square">
         <img src="@/assets/img/icons/phone-keyboard.svg" alt="Calls today icon" class="icon" />
+        <span class="number">
+          {{ this.callsToday }}
+        </span>
         <div class="call-mode">Calls today</div>
       </div>
       <div class="square">
         <div class="small-square"></div>
         <div class="percent">%</div>
         <img src="@/assets/img/icons/TalkingIcon.svg" alt="Answered calls icon" class="icon" />
+        <span class="number">
+          {{ this.answeredCalls }}
+        </span>
         <div class="call-mode">Answered calls</div>
       </div>
       <div class="square">
         <div class="small-square"></div>
         <div class="percent">%</div>
         <img src="@/assets/img/icons/phone-pause.svg" alt="Dropped calls icon" class="icon" />
+        <span class="number">
+          {{ this.droppedCalls }}
+        </span>
         <div class="call-mode">Dropped calls</div>
       </div>
 
       <div class="square">
         <img src="@/assets/img/icons/TalkingIcon.svg" alt="Calls waiting for agents icon" class="icon" />
+        <span class="number">
+          {{ this.callsWaitingAgents }}
+        </span>
         <div class="call-mode">Calls waiting for agents</div>
       </div>
       <div class="square">
         <img src="@/assets/img/icons/phone-clock.svg" alt="avg. Waiting time icon" class="icon" />
+        <span class="number">
+          {{ this.avgWaitingTime }}
+        </span>
         <div class="call-mode">avg. Waiting time</div>
       </div>
       <div class="square">
         <div class="medium-square-dial-level"></div>
         <img src="@/assets/img/icons/to-back-map.svg" alt="Dial level icon" class="icon" />
+        <span class="numberDialLevel">
+          {{ this.dialLevel }}
+        </span>
         <div class="x">x</div>
         <img src="@/assets/img/icons/edit.svg" alt="Dial level icon" class="small-icon" />
         <div class="call-mode">Dial level</div>
@@ -47,6 +65,9 @@
         <div class="medium-square-dialable-leads"></div>
         <img src="@/assets/img/icons/agent-panel-gray.svg" alt="Dialable leads icon" class="icon" />
         <img src="@/assets/img/icons/to-back-map.svg" alt="Dialable leads icon" class="small-icon" />
+        <span class="number">
+          {{ this.dialableLeads }}
+        </span>
         <div class="call-mode">Dialable leads</div>
       </div>
       <div class="big-square">
@@ -56,6 +77,9 @@
       </div>
       <div class="big-square">
         <img src="@/assets/img/icons/TalkingIcon.svg" alt="avg. Talking time icon" class="icon" />
+        <span class="number">
+          {{ this.avgTalkingTime }}
+        </span>
         <div class="call-mode">avg. Talking time</div>
       </div>
     </div>
@@ -108,13 +132,13 @@
           <tr v-for="(row, index) in sortedFilteredRowsWaiting" :key="index" class="table-row">
             <td class="values-table" v-for="(value, key, idx) in row" :key="idx">{{ value }}</td>
             <td class="actions-buttons" style="visibility: hidden">
-              <span class="action" :class="{ able: row.Status === 'online', disabled: row.Status !== 'online' }"
+              <span class="action" :class="{ able: row.Status === 'calling', disabled: row.Status !== 'calling' }"
                 >SPY</span
               >
-              <span class="action" :class="{ able: row.Status === 'online', disabled: row.Status !== 'online' }"
+              <span class="action" :class="{ able: row.Status === 'calling', disabled: row.Status !== 'calling' }"
                 >WHISPER</span
               >
-              <span class="action" :class="{ able: row.Status === 'online', disabled: row.Status !== 'online' }"
+              <span class="action" :class="{ able: row.Status === 'calling', disabled: row.Status !== 'calling' }"
                 >MERGE</span
               >
             </td>
@@ -178,19 +202,19 @@
               <span
                 class="action"
                 @click="spy(row)"
-                :class="{ able: row.Status === 'online', disabled: row.Status !== 'online' }"
+                :class="{ able: row.Status === 'calling', disabled: row.Status !== 'calling' }"
                 >SPY</span
               >
               <span
                 class="action"
                 @click="whisper(row)"
-                :class="{ able: row.Status === 'online', disabled: row.Status !== 'online' }"
+                :class="{ able: row.Status === 'calling', disabled: row.Status !== 'calling' }"
                 >WHISPER</span
               >
               <span
                 class="action"
                 @click="merge(row)"
-                :class="{ able: row.Status === 'online', disabled: row.Status !== 'online' }"
+                :class="{ able: row.Status === 'calling', disabled: row.Status !== 'calling' }"
                 >MERGE</span
               >
             </td>
@@ -204,6 +228,8 @@
 <script>
 import FilterButton from "@/components/FilterButton.vue";
 import sortArrow from "@/assets/img/icons/sort-arrow.svg";
+import { UsersGettersApi, CDRGettersApi } from "@/API/getters";
+import { mapGetters } from "vuex";
 
 export default {
   name: "AgentsTable",
@@ -229,9 +255,17 @@ export default {
       sortAscWaiting: true,
       sortKeyNotWaiting: "",
       sortAscNotWaiting: true,
-      agentOnline: 0,
+      activeCalls: 0,
+      callsToday: 0,
+      answeredCalls: 0,
+      droppedCalls: 0,
+      callsWaitingAgents: 0,
+      avgWaitingTime: 0,
+      dialLevel: 0,
+      dialableLeads: 0,
       agentInCalls: 0,
       loggedIn: 0,
+      avgTalkingTime: 0,
       ws: null,
     };
   },
@@ -239,20 +273,26 @@ export default {
     this.fetchData();
   },
   computed: {
+    ...mapGetters(["usersAgentMap"]), // ??האם זה אמור לגרום לרינדור של כל הנציגים בלי לרענן
+    ...mapGetters(["getCDR"]),
     sortedFilteredRowsWaiting() {
       return this.sortAndFilter(
-        this.rows.filter((row) => row.Status === "Waiting"),
+        this.rows.filter((row) => row.Status === "waiting"),
         this.sortKeyWaiting,
         this.sortAscWaiting
       );
     },
     sortedFilteredRowsNotWaiting() {
       return this.sortAndFilter(
-        this.rows.filter((row) => row.Status !== "Waiting"),
+        this.rows.filter((row) => row.Status !== "waiting"),
         this.sortKeyNotWaiting,
         this.sortAscNotWaiting
       );
     },
+
+    // totalCalls() {
+    //   return this.calculateTotalCalls();
+    // }
   },
   methods: {
     calculateDuration(statusTime) {
@@ -260,17 +300,43 @@ export default {
       const currentTime = new Date(); // זמן נוכחי
       const duration = currentTime - parsedTime; // חישוב הפרש הזמן במילישניות
       const totalMinutes = Math.floor(duration / (1000 * 60)); // חישוב סך כל הדקות שהצטברו
-      const remainingMinutes = totalMinutes % 1440; // חישוב הדקות שלא הצטברו ליום שלם
+      const remainingMinutes = (totalMinutes % 1440) + 180; // תיקון ההכנסה השגויה לדאטה בייס +חישוב הדקות שלא הצטברו ליום שלם
       const remainingSeconds = Math.floor((duration % (1000 * 60)) / 1000); // חישוב השניות הנוספות
 
       return ` ${remainingMinutes} m, ${remainingSeconds} s`;
+    },
+    
+    // פונקציה לסכום השיחות
+    // calculateTotalCalls() {
+    //   // סכום מספר השיחות עבור כל שורה במערך
+    //   return this.rows.reduce((total, row) => {
+    //     return total + (row.Calls || 0); // בדוק אם Calls מוגדר, אחרת הוסף 0
+    //   }, 0);
+    // },
+    async fetchAgentCalls() {
+      try {
+        const cdrData = await CDRGettersApi.getCDR(); // נניח שהפונקציה מחזירה אובייקט עם נתוני מספר השיחות לכל סוכן
+
+        // נניח שהמבנה המוחזר הוא אובייקט בו המפתח הוא מזהה הסוכן והערך הוא מספר השיחות
+        Object.keys(cdrData).forEach((agentID) => {
+          const calls = cdrData[agentID];
+
+          // מצא את הסוכן ב-rows ועדכן את מספר השיחות
+          const agent = this.rows.find((row) => row.ID === agentID);
+          if (agent) {
+            agent.Calls = calls;
+          }
+        });
+      } catch (error) {
+        console.error("Error fetching agent calls:", error);
+      }
     },
     async fetchData() {
       // Create the WebSocket connection
       this.ws = new WebSocket(`${window.env.WS_URL}/agent-map`, localStorage.getItem("token"));
 
       // Handle incoming messages
-      this.ws.onmessage = (event) => {
+      this.ws.onmessage = async (event) => {
         console.log("WebSocket message received:", JSON.parse(event.data)); // Logging raw data
         try {
           const parsedData = JSON.parse(event.data);
@@ -278,22 +344,28 @@ export default {
           console.log("Parsed data:", parsedData.user); // Logging parsed data
           // Assuming `parsedData` has a `data` property that is an array of objects
           const users = parsedData.user;
+          // תחילה נקבל את כל נתוני השיחות מהשרת לפני הוספתם למערך
+          // await this.fetchAgentCalls();
           Object.keys(users).forEach((key) => {
             const user = users[key];
             console.log("user is: ", user);
+            // const calls = this.rows.find((row) => row.ID === user.internalNumber)?.Calls || 0;
+
             this.rows.push({
               AgentName: user.name,
               Role: user.permission.role,
               ID: user.internalNumber,
-              Status: user.status,
+              Status: user.status === "online" ? "waiting" : user.status,
               Duration: this.calculateDuration(user.statusTime), // Replace with actual duration if available
               AVGTalkingTime: "2m 3s", // Replace with actual talking time if available
-              Calls: 91, // Replace with actual call count if available
+              Calls: 0,
             });
           });
-          this.agentOnline = this.rows.filter((rows) => rows.Status === "online").length;
-          this.agentInCalls = this.rows.filter((rows) => rows.Status === "online" || rows.Status === "paused").length;
-          this.loggedIn = this.rows.filter((rows) => rows.Status !== "offline").length;
+          await this.fetchAgentCalls();
+
+          this.activeCalls = this.rows.filter((rows) => rows.Status === "calling").length; //נציגים בשיחה כרגע
+          this.agentInCalls = this.rows.filter((rows) => rows.Status !== "blocked").length; //נציגים שיכולים לשוחח מבחינת ההרשאות(לא חסומים)
+          this.loggedIn = this.rows.filter((rows) => rows.Status !== "offline").length; //כמה נציגים מחוברים למערכת
         } catch (e) {
           this.errorMessage = "Error parsing data.";
           console.error("Error parsing data:", e);
@@ -314,6 +386,7 @@ export default {
         }
       };
     },
+
     sortTable(key, tableType) {
       if (tableType === "waiting") {
         this.sortKeyWaiting = key;
@@ -344,7 +417,7 @@ export default {
         return {
           "in-disposition": status === "offline",
           paused: status === "paused",
-          online: status === "online",
+          waiting: status === "waiting",
         };
       }
       return "";
@@ -361,6 +434,13 @@ export default {
     merge() {
       this.$store.commit("showPhoneMutation", true);
       this.$store.dispatch("sipCall", `3*${item.internalNumber}`);
+    },
+    fetch(argument) {
+      CDRGettersApi.getCDR(this.queryString())
+        .then(() => (this.highLightBtnSearch = false))
+        .catch((e) => {
+          throw new Error(e);
+        });
     },
   },
 
@@ -513,7 +593,7 @@ thead tr:first-child th {
 .paused {
   color: #fcaf00;
 }
-.online {
+.waiting {
   color: #2db152;
 }
 
@@ -623,8 +703,8 @@ thead tr:first-child th {
 }
 .x {
   position: absolute;
-  top: 23%;
-  left: 62%;
+  top: 22%;
+  left: 60%;
   transform: translateX(-50%);
   font-size: 25px;
   filter: brightness(0) invert(1);
@@ -635,7 +715,7 @@ thead tr:first-child th {
   margin: 5px;
   text-align: center;
   position: absolute;
-  top: -10px;
+  top: -11.5px;
   right: -2%;
   transform: translateX(-50%);
   font-size: 10px;
@@ -652,5 +732,14 @@ thead tr:first-child th {
   font-size: 18px;
   font-weight: calc(12);
   /* color: #fff; */
+}
+.numberDialLevel {
+  display: block;
+  position: absolute;
+  top: 28%;
+  left: 40%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: calc(12);
 }
 </style>
