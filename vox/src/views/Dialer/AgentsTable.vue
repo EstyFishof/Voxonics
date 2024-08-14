@@ -342,6 +342,9 @@ export default {
           const parsedData = JSON.parse(event.data);
           //console.log('Status:', parsedData.data.statusText); // Logging raw data
           console.log("Parsed data:", parsedData.user); // Logging parsed data
+
+          //console.log("CDR!!!!!!!!!!!!:", getCDR);
+
           // Assuming `parsedData` has a `data` property that is an array of objects
           const users = parsedData.user;
           // תחילה נקבל את כל נתוני השיחות מהשרת לפני הוספתם למערך
@@ -361,7 +364,7 @@ export default {
               Calls: 0,
             });
           });
-          await this.fetchAgentCalls();
+          //'///////await this.fetchAgentCalls();
 
           this.activeCalls = this.rows.filter((rows) => rows.Status === "calling").length; //נציגים בשיחה כרגע
           this.agentInCalls = this.rows.filter((rows) => rows.Status !== "blocked").length; //נציגים שיכולים לשוחח מבחינת ההרשאות(לא חסומים)
