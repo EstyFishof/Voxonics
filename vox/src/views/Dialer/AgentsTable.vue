@@ -2,84 +2,63 @@
   <div>
     <!-- Dashboard Squares -->
     <div class="squares">
-      <!-- Squares for various metrics, using real data -->
       <div class="square">
         <img src="@/assets/img/icons/TalkingIcon.svg" alt="Active calls icon" class="icon" />
-        <span class="number">
-          {{ this.activeCalls }}
-        </span>
+        <span class="number">{{ this.activeCalls }}</span>
         <div class="call-mode">Active calls</div>
       </div>
       <div class="square">
         <img src="@/assets/img/icons/phone-keyboard.svg" alt="Calls today icon" class="icon" />
-        <span class="number">
-          {{ this.callsToday }}
-        </span>
+        <span class="number">{{ this.callsToday }}</span>
         <div class="call-mode">Calls today</div>
       </div>
       <div class="square">
         <div class="small-square"></div>
         <div class="percent">%</div>
         <img src="@/assets/img/icons/TalkingIcon.svg" alt="Answered calls icon" class="icon" />
-        <span class="number">
-          {{ this.answeredCalls }}
-        </span>
+        <span class="number">{{ this.answeredCalls }}</span>
         <div class="call-mode">Answered calls</div>
       </div>
       <div class="square">
         <div class="small-square"></div>
         <div class="percent">%</div>
         <img src="@/assets/img/icons/phone-pause.svg" alt="Dropped calls icon" class="icon" />
-        <span class="number">
-          {{ this.droppedCalls }}
-        </span>
+        <span class="number">{{ this.droppedCalls }}</span>
         <div class="call-mode">Dropped calls</div>
       </div>
-
       <div class="square">
         <img src="@/assets/img/icons/TalkingIcon.svg" alt="Calls waiting for agents icon" class="icon" />
-        <span class="number">
-          {{ this.callsWaitingAgents }}
-        </span>
+        <span class="number">{{ this.callsWaitingAgents }}</span>
         <div class="call-mode">Calls waiting for agents</div>
       </div>
       <div class="square">
         <img src="@/assets/img/icons/phone-clock.svg" alt="avg. Waiting time icon" class="icon" />
-        <span class="number">
-          {{ this.avgWaitingTime }}
-        </span>
+        <span class="number">{{ this.avgWaitingTime }}</span>
         <div class="call-mode">avg. Waiting time</div>
       </div>
       <div class="square">
         <div class="medium-square-dial-level"></div>
         <img src="@/assets/img/icons/to-back-map.svg" alt="Dial level icon" class="icon" />
-        <span class="numberDialLevel">
-          {{ this.dialLevel }}
-        </span>
+        <span class="numberDialLevel">{{ this.dialLevel }}</span>
         <div class="x">x</div>
         <img src="@/assets/img/icons/edit.svg" alt="Dial level icon" class="small-icon" />
         <div class="call-mode">Dial level</div>
       </div>
-
       <div class="big-square">
         <div class="medium-square-dialable-leads"></div>
         <img src="@/assets/img/icons/agent-panel-gray.svg" alt="Dialable leads icon" class="icon" />
         <img src="@/assets/img/icons/to-back-map.svg" alt="Dialable leads icon" class="small-icon" />
-        <span class="number">
-          {{ this.dialableLeads }}
-        </span>
+        <span class="number">{{ this.dialableLeads }}</span>
         <div class="call-mode">Dialable leads</div>
       </div>
       <div class="big-square">
         <img src="@/assets/img/icons/agents-statement.svg" alt="Agent in calls Logged in icon" class="icon" />
-        <span class="number"> {{ this.agentInCalls }} | {{ this.loggedIn }} </span>
+        <span class="number">{{ this.agentInCalls }} | {{ this.loggedIn }}</span>
         <div class="call-mode">Agents in calls Logged in</div>
       </div>
       <div class="big-square">
         <img src="@/assets/img/icons/TalkingIcon.svg" alt="avg. Talking time icon" class="icon" />
-        <span class="number">
-          {{ this.avgTalkingTime }}
-        </span>
+        <span class="number">{{ this.avgTalkingTime }}</span>
         <div class="call-mode">avg. Talking time</div>
       </div>
     </div>
@@ -132,15 +111,9 @@
           <tr v-for="(row, index) in sortedFilteredRowsWaiting" :key="index" class="table-row">
             <td class="values-table" v-for="(value, key, idx) in row" :key="idx">{{ value }}</td>
             <td class="actions-buttons" style="visibility: hidden">
-              <span class="action" :class="{ able: row.Status === 'calling', disabled: row.Status !== 'calling' }"
-                >SPY</span
-              >
-              <span class="action" :class="{ able: row.Status === 'calling', disabled: row.Status !== 'calling' }"
-                >WHISPER</span
-              >
-              <span class="action" :class="{ able: row.Status === 'calling', disabled: row.Status !== 'calling' }"
-                >MERGE</span
-              >
+              <span class="action">SPY</span>
+              <span class="action">WHISPER</span>
+              <span class="action">MERGE</span>
             </td>
           </tr>
         </tbody>
@@ -228,7 +201,7 @@
 <script>
 import FilterButton from "@/components/FilterButton.vue";
 import sortArrow from "@/assets/img/icons/sort-arrow.svg";
-import { UsersGettersApi, CDRGettersApi } from "@/API/getters";
+import { CDRGettersApi } from "@/API/getters";
 import { mapGetters } from "vuex";
 
 export default {
@@ -270,11 +243,11 @@ export default {
     };
   },
   created() {
-    this.fetchData();
+    this.fetchDataUsers();
+    this.fetchDataCalls();
   },
   computed: {
-    ...mapGetters(["usersAgentMap"]), // ??האם זה אמור לגרום לרינדור של כל הנציגים בלי לרענן
-    ...mapGetters(["getCDR"]),
+    ...mapGetters(["getUsersCDR", "getPageCDR", "getPeerPageCDR", "getPaginatorCDR", "getCDR", "getCountry"]),
     sortedFilteredRowsWaiting() {
       return this.sortAndFilter(
         this.rows.filter((row) => row.Status === "waiting"),
@@ -305,50 +278,18 @@ export default {
 
       return ` ${remainingMinutes} m, ${remainingSeconds} s`;
     },
-    
-    // פונקציה לסכום השיחות
-    // calculateTotalCalls() {
-    //   // סכום מספר השיחות עבור כל שורה במערך
-    //   return this.rows.reduce((total, row) => {
-    //     return total + (row.Calls || 0); // בדוק אם Calls מוגדר, אחרת הוסף 0
-    //   }, 0);
-    // },
-    async fetchAgentCalls() {
-      try {
-        const cdrData = await CDRGettersApi.getCDR(); // נניח שהפונקציה מחזירה אובייקט עם נתוני מספר השיחות לכל סוכן
-
-        // נניח שהמבנה המוחזר הוא אובייקט בו המפתח הוא מזהה הסוכן והערך הוא מספר השיחות
-        Object.keys(cdrData).forEach((agentID) => {
-          const calls = cdrData[agentID];
-
-          // מצא את הסוכן ב-rows ועדכן את מספר השיחות
-          const agent = this.rows.find((row) => row.ID === agentID);
-          if (agent) {
-            agent.Calls = calls;
-          }
-        });
-      } catch (error) {
-        console.error("Error fetching agent calls:", error);
-      }
-    },
-    async fetchData() {
+    async fetchDataUsers() {
       // Create the WebSocket connection
       this.ws = new WebSocket(`${window.env.WS_URL}/agent-map`, localStorage.getItem("token"));
 
       // Handle incoming messages
       this.ws.onmessage = async (event) => {
-        console.log("WebSocket message received:", JSON.parse(event.data)); // Logging raw data
+        // console.log("WebSocket message received:", JSON.parse(event.data)); // Logging raw data
         try {
           const parsedData = JSON.parse(event.data);
-          //console.log('Status:', parsedData.data.statusText); // Logging raw data
-          console.log("Parsed data:", parsedData.user); // Logging parsed data
-
-          //console.log("CDR!!!!!!!!!!!!:", getCDR);
-
+          console.log("users data:", parsedData.user); // Logging parsed data
           // Assuming `parsedData` has a `data` property that is an array of objects
           const users = parsedData.user;
-          // תחילה נקבל את כל נתוני השיחות מהשרת לפני הוספתם למערך
-          // await this.fetchAgentCalls();
           Object.keys(users).forEach((key) => {
             const user = users[key];
             console.log("user is: ", user);
@@ -364,7 +305,6 @@ export default {
               Calls: 0,
             });
           });
-          //'///////await this.fetchAgentCalls();
 
           this.activeCalls = this.rows.filter((rows) => rows.Status === "calling").length; //נציגים בשיחה כרגע
           this.agentInCalls = this.rows.filter((rows) => rows.Status !== "blocked").length; //נציגים שיכולים לשוחח מבחינת ההרשאות(לא חסומים)
@@ -389,7 +329,32 @@ export default {
         }
       };
     },
+    async fetchDataCalls() {
+      try {
+        const response = await CDRGettersApi.getCDR("page=1&per_page=20");
+        const callsData = response.data;
+        console.log("calls data: ", callsData);
+        let callsToday = 0;
+        let answeredCalls = 0;
+        let droppedCalls = 0;
+        let avgWaitingTime = 0;
+        let avgTalkingTime = 0;
 
+        const today = new Date();
+
+        callsData.forEach((call) => {
+          const callDate = new Date(call.calldate);
+          if (callDate.getTime() === today.getTime()) callsToday++;
+          if (call.disposition === "ANSWERED") answeredCalls++;
+          if (call.disposition === "FAILED") droppedCalls++;
+        });
+        this.callsToday = callsToday;
+        this.answeredCalls = answeredCalls;
+        this.droppedCalls = droppedCalls;
+      } catch (e) {
+        throw new Error(e);
+      }
+    },
     sortTable(key, tableType) {
       if (tableType === "waiting") {
         this.sortKeyWaiting = key;
@@ -438,13 +403,6 @@ export default {
       this.$store.commit("showPhoneMutation", true);
       this.$store.dispatch("sipCall", `3*${item.internalNumber}`);
     },
-    fetch(argument) {
-      CDRGettersApi.getCDR(this.queryString())
-        .then(() => (this.highLightBtnSearch = false))
-        .catch((e) => {
-          throw new Error(e);
-        });
-    },
   },
 
   beforeDestroy() {
@@ -459,11 +417,11 @@ export default {
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 20px;
 }
 
 .tables {
   border: #1f2833 3px solid;
+  margin-bottom: 30px;
 }
 
 th,
@@ -497,12 +455,12 @@ th {
   cursor: pointer;
 }
 
-th img {
+/* th img {
   width: 12px;
   height: 12px;
   vertical-align: middle;
   margin-left: 5px;
-}
+} */
 
 thead tr:first-child th {
   background: var(--paginator-item);
@@ -550,7 +508,7 @@ thead tr:first-child th {
 
 .table-row {
   border-bottom: 2.5px var(--paginator-item) solid;
-  height: 45px;
+  height: 7vh;
 }
 
 .table-row:last-child {
@@ -572,7 +530,7 @@ thead tr:first-child th {
 .actions-buttons .action {
   cursor: pointer;
   border-radius: 4px;
-  padding: 2px 9px;
+  padding: 3.5px 9px;
   font-size: 14px;
   line-height: 16px;
   margin-right: 6px;
@@ -602,15 +560,14 @@ thead tr:first-child th {
 
 .squares {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 20px;
-  margin-right: 7%;
+  margin: 13px 6.5% 13px 0;
 }
 
 .square {
   position: relative;
-  width: 100px;
+  width: 9%;
   height: 95px;
   display: flex;
   align-items: center;
@@ -619,7 +576,7 @@ thead tr:first-child th {
   padding: 10px;
   border-radius: 3px;
   /* color: #fff; */
-  margin: 5px;
+  /* margin: 5px; */
   margin-right: -7%;
   text-align: center;
   padding-top: 50px;
@@ -636,7 +593,6 @@ thead tr:first-child th {
   justify-content: center;
   background: #323a45;
   border-radius: 3px;
-  /* color: #fff; */
   margin: 5px;
   text-align: center;
   position: absolute;
@@ -649,7 +605,6 @@ thead tr:first-child th {
 .medium-square-dial-level {
   background: linear-gradient(to bottom, #314457, #3b4c60);
   border-radius: 3px;
-  /* color: #fff; */
   text-align: center;
   width: 90%;
   height: 32%;
@@ -661,7 +616,6 @@ thead tr:first-child th {
 .medium-square-dialable-leads {
   background: linear-gradient(to bottom, #314457, #3b4c60);
   border-radius: 3px;
-  /* color: #fff; */
   text-align: center;
   width: 75%;
   height: 32%;
@@ -680,7 +634,6 @@ thead tr:first-child th {
   background: linear-gradient(to bottom, #19222c, #3c4753);
   padding: 10px;
   border-radius: 3px;
-  /* color: #fff; */
   margin: 5px;
   margin-right: -7%;
   text-align: center;
@@ -714,7 +667,6 @@ thead tr:first-child th {
   font-weight: calc(12);
 }
 .percent {
-  /* color: #bdbbbb; */
   margin: 5px;
   text-align: center;
   position: absolute;
@@ -734,7 +686,6 @@ thead tr:first-child th {
   transform: translateX(-50%);
   font-size: 18px;
   font-weight: calc(12);
-  /* color: #fff; */
 }
 .numberDialLevel {
   display: block;
