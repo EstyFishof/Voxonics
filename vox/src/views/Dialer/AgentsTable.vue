@@ -329,7 +329,7 @@ export default {
         }
       };
     },
-    async fetchDataCalls() {
+    async fetchDataCalls() { 
       try {
         const response = await CDRGettersApi.getCDR("page=1&per_page=20");
         const callsData = response.data;
