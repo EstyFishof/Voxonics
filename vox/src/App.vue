@@ -143,7 +143,6 @@ body {
   height: 6px; /* высота для горизонтального скролла */
   background-color: var(--scroll-bg);
 }
-/* מחוון פס גלילה */
 /* ползунок скроллбара */
 ::-webkit-scrollbar-thumb {
   background-color: var(--scroll);
