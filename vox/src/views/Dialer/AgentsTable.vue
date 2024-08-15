@@ -273,7 +273,7 @@ export default {
       const currentTime = new Date(); // זמן נוכחי
       const duration = currentTime - parsedTime; // חישוב הפרש הזמן במילישניות
       const totalMinutes = Math.floor(duration / (1000 * 60)); // חישוב סך כל הדקות שהצטברו
-      const remainingMinutes = (totalMinutes % 1440) + 180; // תיקון ההכנסה השגויה לדאטה בייס +חישוב הדקות שלא הצטברו ליום שלם
+      const remainingMinutes = (totalMinutes % 1440) - 180; // תיקון ההכנסה השגויה לדאטה בייס +חישוב הדקות שלא הצטברו ליום שלם
       const remainingSeconds = Math.floor((duration % (1000 * 60)) / 1000); // חישוב השניות הנוספות
 
       return ` ${remainingMinutes} m, ${remainingSeconds} s`;
@@ -329,9 +329,10 @@ export default {
         }
       };
     },
-    async fetchDataCalls() { 
+    async fetchDataCalls() {
       try {
-        const response = await CDRGettersApi.getCDR("page=1&per_page=20");
+        // const response = await CDRGettersApi.getCDR("date={%22from%22:%222024-08-15%2000:00:00%22,%22to%22:%222024-08-15%2023:59:00%22}&per-page=100");        const callsData = response.data;
+        const response = await CDRGettersApi.getCDR("per-page=10000");
         const callsData = response.data;
         console.log("calls data: ", callsData);
         let callsToday = 0;
@@ -339,11 +340,13 @@ export default {
         let droppedCalls = 0;
         let avgWaitingTime = 0;
         let avgTalkingTime = 0;
-
+        
         const today = new Date();
-
         callsData.forEach((call) => {
           const callDate = new Date(call.calldate);
+          console.log("callDate.getTime(): ",callDate.getTime())
+          console.log("today.getTime(): ",today.getTime())
+
           if (callDate.getTime() === today.getTime()) callsToday++;
           if (call.disposition === "ANSWERED") answeredCalls++;
           if (call.disposition === "FAILED") droppedCalls++;
