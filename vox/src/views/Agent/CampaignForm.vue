@@ -17,7 +17,7 @@
               <path d="M21.707 2.293a1 1 0 00-1.414 0L15.3 7.285l5.001 5.001 5.003-5.003a1 1 0 000-1.414l-3.597-3.576zM2.999 14.707v5.001h5.003l10.89-10.891-5.003-5.003L2.999 14.707zm0 0" />
             </svg>
           </div>
-          <span v-if="nameError" class="error-message">{{ nameError }}</span>
+          <span v-if="nameError" class="error-message">{{ nameError }}</span> 
         </div>
         <div class="form-group">
           <label for="campaignID">Campaign ID</label>
