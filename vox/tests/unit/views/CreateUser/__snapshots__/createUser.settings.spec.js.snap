@@ -1,0 +1,359 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`agent setup Check snapshot 1`] = `
+<div
+  class="wrap-agent-setup"
+>
+  <div
+    class="wrap-head"
+  >
+    <h2>
+      AGENT SETUP
+    </h2>
+     
+    <svg
+      class="arrow down"
+      fill="transparent"
+      viewBox="0 0 10 18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9 1L1 9L9 17"
+        stroke="var(--light-blue)"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
+     
+    <span
+      class="hr"
+    />
+  </div>
+   
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="agent-setup__second-part"
+    >
+      <div
+        class="item-container"
+      >
+        <label
+          class="options-label"
+        >
+          <span
+            class="options-title"
+          >
+            Role
+          </span>
+           
+          <input
+            class="input-field"
+            readonly="readonly"
+            type="text"
+          />
+           
+          <span
+            class="triangle"
+          >
+            <img
+              alt="select"
+              src="@/assets/img/icons/arrow-down-white.svg"
+            />
+          </span>
+           
+          <!---->
+        </label>
+      </div>
+       
+      <div
+        class="item-container"
+      >
+        <label
+          class="options-label"
+        >
+          <span
+            class="options-title"
+          >
+            Departments Settings
+          </span>
+           
+          <input
+            class="input-field dep"
+            readonly="readonly"
+            type="text"
+          />
+           
+          <span
+            class="triangle"
+          >
+            <img
+              alt="select"
+              src="@/assets/img/icons/arrow-down-white.svg"
+            />
+          </span>
+           
+          <ul
+            class="list-related-numbers"
+            style="display: none;"
+          />
+        </label>
+      </div>
+       
+      <div
+        class="item-container"
+      >
+        <label
+          class="options-label"
+        >
+          <span
+            class="options-title"
+          >
+            Calls Direction**
+          </span>
+           
+          <span
+            class="input-field"
+          >
+            
+             - 
+          
+          </span>
+          <span
+            class="input-field"
+          >
+            
+             - 
+          
+          </span>
+          <span
+            class="input-field"
+          >
+            
+             - 
+          
+          </span>
+        </label>
+         
+        <p
+          class="calls-info"
+        >
+          <span>
+            **You can change it by contacting us
+          </span>
+        </p>
+      </div>
+       
+      <div
+        class="item-container"
+      >
+        <label
+          class="options-label"
+        >
+          <span
+            class="options-title"
+          >
+            V-number**
+          </span>
+           
+          <input
+            class="input-field num"
+            readonly="readonly"
+            required="required"
+            type="text"
+          />
+           
+          <span
+            class="triangle"
+          >
+            <img
+              alt="select"
+              src="@/assets/img/icons/arrow-down-white.svg"
+            />
+          </span>
+           
+          <ul
+            class="list-related-numbers"
+            style="display: none;"
+          />
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`queue settings Check snapshot 1`] = `
+<div
+  class="wrap-queues-setting"
+>
+  <div
+    class="wrap-head"
+  >
+    <h2>
+      QUEUES SETTINGS
+    </h2>
+     
+    <svg
+      class="arrow down"
+      fill="transparent"
+      viewBox="0 0 10 18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9 1L1 9L9 17"
+        stroke="var(--light-blue)"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+      />
+    </svg>
+     
+    <span
+      class="hr"
+    />
+  </div>
+   
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="table-container"
+    >
+      <div
+        class="available"
+      >
+        <div
+          class="table-title"
+        >
+          Available Queues
+        </div>
+         
+        <div>
+          <ul
+            class="table-header"
+          >
+            <li>
+              Name of Queue
+            </li>
+             
+            <li>
+              Queue Number
+            </li>
+             
+            <li>
+              Agents in Queue
+            </li>
+             
+            <li>
+              <img
+                content="Select all"
+                src="@/assets/img/icons/queues-select-all-arrow.svg"
+              />
+            </li>
+          </ul>
+           
+          <div
+            class="table-content"
+          />
+           
+          <div
+            class="btn-table-container"
+          />
+        </div>
+      </div>
+       
+      <div
+        class="switcher"
+      >
+        <img
+          alt="switcher"
+          src="@/assets/img/icons/table-switcher.svg"
+        />
+      </div>
+       
+      <div
+        class="selected"
+      >
+        <div>
+          <div
+            class="table-title"
+          >
+            Selected Queues
+          </div>
+           
+          <div>
+            <ul
+              class="table-header"
+            >
+              <li>
+                Name of Queue
+              </li>
+               
+              <li>
+                Queue Number
+              </li>
+               
+              <li>
+                Agents in Queue
+              </li>
+               
+              <li>
+                <img
+                  alt="table-icon-from"
+                  content="Remove all"
+                  src="@/assets/img/icons/queues-remove-all-arrow.svg"
+                  width="23"
+                />
+              </li>
+            </ul>
+             
+            <div
+              class="table-content"
+            >
+              <ul
+                class="list-group"
+              >
+                <li
+                  class="queue-name"
+                >
+                  
+                </li>
+                 
+                <li
+                  class="queue-int-num"
+                >
+                  
+                </li>
+                 
+                <li
+                  class="queue-user-uid"
+                >
+                  
+                </li>
+                 
+                <li
+                  class="container-icon-to"
+                >
+                  <img
+                    alt="table-icon-from"
+                    content="Remove item"
+                    src="@/assets/img/icons/table-icon-err.svg"
+                    width="23"
+                  />
+                </li>
+              </ul>
+            </div>
+             
+            <div
+              class="btn-table-container"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

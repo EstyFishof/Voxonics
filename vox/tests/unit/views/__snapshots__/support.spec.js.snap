@@ -1,0 +1,2425 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`support Check snapshot 1`] = `
+<div
+  class="wrap-container"
+>
+  <div
+    class="contact-us"
+  >
+    <span
+      class="contact-us-text"
+    >
+      Still Have Questions? 
+    </span>
+     
+    <span
+      class="contact-us-btn"
+    >
+      <a
+        href="mailto:office@voxonics.com"
+      >
+        Contact us
+      </a>
+    </span>
+  </div>
+   
+  <span
+    class="title"
+    id="faq"
+  >
+    FAQ
+  </span>
+   
+  <ul
+    class="main-list"
+  >
+    <li
+      class="main-list-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow rotateArrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            General
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <ul
+        class="secondary-list"
+      >
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              Why changes weren't saved?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              After each and every change in the system you have to save your changes by clicking “Apply changes”.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              How to logout an 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+              ?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              To logout an 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+              , you need to find the 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+               on 
+              <span
+                style="background: var(--backlight)"
+              >
+                Agent
+              </span>
+               map, then click on three dots and the logout button will appear.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              Where can I find out more information about an 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+              ?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Go to Settings &gt; Users &gt; desired user - then you will see users settings and change them if you want to.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              How to change the display of information?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              In our system we have 2 types of displaying information: card or list. You can choose it by clicking on the icon in the upper left corner.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              What is a SIP password?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              SIP password is a password/secret for connection to the softphone/IP-phone by adding domain/server address and 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+               number to register the SIP.
+            </span>
+          </span>
+        </li>
+      </ul>
+    </li>
+    <li
+      class="main-list-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow rotateArrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            Agent panel
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <ul
+        class="secondary-list"
+      >
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              What is pause and ready action in the 
+              <span
+                style="background: var(--backlight)"
+              >
+                Agent
+              </span>
+               Panel?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              <i>
+                Pause
+              </i>
+               means that you cannot receive or make external calls, but still can receive internal calls.
+              <br />
+              <i>
+                Ready
+              </i>
+               means that you can receive or make internal and external calls
+            </span>
+          </span>
+        </li>
+      </ul>
+    </li>
+    <li
+      class="main-list-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow rotateArrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            Add new user
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <ul
+        class="secondary-list"
+      >
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              How to add a new user?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              To Add a new user go to Settings &gt; Add new user. Then check our manual
+              <a
+                class="hash-link"
+                href="#add-new-user"
+                id="add-new-user-link"
+                style="margin-left: 3px; marrgin-right: 3px"
+              >
+                Adding new user
+              </a>
+              .
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              Where can I find the created 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+              ?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              You can find created 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+              s in Settings &gt; Users.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              What are the View or Edit permissions? 
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              <b>
+                “View”
+              </b>
+               permission gives the user opportunity to view some permitted tabs, 
+              <b>
+                “Edit”
+              </b>
+               permission gives access to view and edit some allowed tabs in our system.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              How can I change the settings?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Go to Settings &gt; Users &gt; desired user,  then you can change any field that you want and you have to save your changes. Check our manual
+              <a
+                href="#edit-user"
+                style="margin-left: 3px; marrgin-right: 3px"
+              >
+                edit user
+              </a>
+               .
+            </span>
+          </span>
+        </li>
+      </ul>
+    </li>
+    <li
+      class="main-list-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow rotateArrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            Departments
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <ul
+        class="secondary-list"
+      >
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              What is a department?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Department is the way you can group users and
+              <a
+                href="#v-number"
+                style="margin-left: 3px; marrgin-right: 3px"
+              >
+                V-numbers
+              </a>
+              . Also managers can manage these departments if they have such permissions and add other managers to do that.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              How to add a new department?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Go to Settings &gt; Departments. Then check our manual
+              <a
+                href="#adding-department"
+                style="margin-left: 3px; marrgin-right: 3px"
+              >
+                Adding department
+              </a>
+               .
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              Can I add 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+              s to different departments at the same time?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Yes, 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+              s can be present in different departments at the same time.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              How to delete a department?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Check it in our manual
+              <a
+                href="#adding-department"
+                style="margin-left: 3px; marrgin-right: 3px"
+              >
+                Delete department
+              </a>
+               .
+            </span>
+          </span>
+        </li>
+      </ul>
+    </li>
+    <li
+      class="main-list-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow rotateArrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            Queue
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <ul
+        class="secondary-list"
+      >
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              What is a queue?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Queue is a specific list of 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+              s to configure incoming calls by order.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              Can 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+              s be in multiple queues at the same time?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Yes, 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+              s can be in multiple queues at the same time. Note that incoming calls are limited to 3 parallel calls per one 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+              , it means that the 4th call will go to the next person in queue (if ring in use will be yes) or if 4th call was directed to this person, it will be terminated.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              What is “strategy”?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Strategy is a specific set of rules for incoming calls.
+              <ul
+                style="padding-left: 20px"
+              >
+                <li
+                  style="margin-top:5px; list-style: circle"
+                >
+                  <b>
+                    Ring all
+                  </b>
+                   - calls all users at the same time.
+                </li>
+                <li
+                  style="margin-top:5px; list-style: circle"
+                >
+                  <b>
+                    Least recent
+                  </b>
+                   - call the user who did not receive calls for the longest time.
+                </li>
+                <li
+                  style="margin-top:5px; list-style: circle"
+                >
+                  <b>
+                    Fewest calls
+                  </b>
+                   - call the user who received the least number of calls.
+                </li>
+                <li
+                  style="margin-top:5px; list-style: circle"
+                >
+                  <b>
+                    Random
+                  </b>
+                   - randomly distribute calls.
+                </li>
+                <li
+                  style="margin-top:5px; list-style: circle"
+                >
+                  <b>
+                    RR memory
+                  </b>
+                   - calling in a circle , after the 
+                  <span
+                    style="background: var(--backlight)"
+                  >
+                    agent
+                  </span>
+                   who answered last.
+                </li>
+                <li
+                  style="margin-top:5px; list-style: circle"
+                >
+                  <b>
+                    Linear
+                  </b>
+                   - call starting from the first in the listed order.
+                </li>
+              </ul>
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              What is “timeout”?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Timeout is waiting time before the recall queue order again.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              What is “ring in use”?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Ring in use is settings that allow skip busy 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+              s and continue by the strategy. If 
+              <b>
+                yes
+              </b>
+               - call will go to busy users anyway, if 
+              <b>
+                no
+              </b>
+               - it will go to the next 
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+               in order.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              How to delete a queue?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Check it in our manual
+              <a
+                href="#queues"
+                style="margin-left: 3px; marrgin-right: 3px"
+              >
+                Delete queue
+              </a>
+               .
+            </span>
+          </span>
+        </li>
+      </ul>
+    </li>
+    <li
+      class="main-list-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            <span
+              id="v-number"
+            >
+              V-numbers
+            </span>
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <ul
+        class="secondary-list"
+        style="display: none;"
+      >
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              What is a V-number?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              V-number is (CLI&DID) a number that used to make or receive external calls
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              How to order a V-number?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              You can order a new V-number by contacting us.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              What is a description for V-number?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Description for V-number is a text row that is used to describe purposes of usage for these numbers.
+            </span>
+          </span>
+        </li>
+      </ul>
+    </li>
+    <li
+      class="main-list-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            Incoming route
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <ul
+        class="secondary-list"
+        style="display: none;"
+      >
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              What is the incoming route ?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Incoming route is a route that is needed for setting up a certain sequence of incoming calls. You can set it according to your wishes.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              Can I add one V-number to different routings?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              No, one V - number can be used only in one routing.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              Can I add new routing without adding V-number?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Yes, but you can use it only as a template. It will work for you if only V-number is added.
+            </span>
+          </span>
+        </li>
+      </ul>
+    </li>
+    <li
+      class="main-list-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            Сalls history
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <ul
+        class="secondary-list"
+        style="display: none;"
+      >
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              What is the Calls history?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Calls history is a report about all internal and external calls. You can search for necessary information by using filters.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              How do I export CDRs?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              You can export filtered reports by clicking on the export icon.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              What is Localdst?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              LocalDST is an internal calls from one user to another.
+            </span>
+          </span>
+        </li>
+      </ul>
+    </li>
+    <li
+      class="main-list-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            Billing
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <ul
+        class="secondary-list"
+        style="display: none;"
+      >
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              What is Billing?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              Billing is a report about all financial information.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              Where can I see billing statistics?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              To see some billing statistics go to Reports &gt; Billing report &gt; Statement.
+            </span>
+          </span>
+        </li>
+        <li
+          class="secondary-list-item"
+        >
+          <span
+            class="secondary-item-title"
+          >
+            <span>
+              How to increase deposit?
+            </span>
+             
+            <img
+              class="plus-img"
+              src="@/assets/img/icons/support-plus.svg"
+            />
+             
+            <!---->
+          </span>
+           
+          <span
+            class="secondary-item-value"
+            style="display: none;"
+          >
+            <span>
+              To increase your deposit you can ask us to form an invoice, you will be able to find out your invoices in Billing &gt; Payments.
+            </span>
+          </span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+   
+  <span
+    class="title manual-title"
+    id="manual"
+  >
+    Manual
+  </span>
+   
+  <ul
+    class="main-list"
+  >
+    <li
+      class="main-list-item manual-item open-manual-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow rotateArrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            <span
+              id="agent-panel"
+            >
+              Agent Panel
+            </span>
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <span
+        class="manual-item"
+      >
+        <span>
+          <p
+            style="margin-bottom: 20px"
+          >
+            <span
+              style="background: var(--backlight)"
+            >
+              Agent
+            </span>
+             Panel is the main page of the current user that shows 
+            <span
+              style="background: var(--backlight)"
+            >
+              Agent
+            </span>
+             number, status and actions.
+          </p>
+           
+          <p
+            style="margin-bottom: 10px"
+          >
+            <b>
+              <span
+                style="background: var(--backlight)"
+              >
+                Agent
+              </span>
+               number
+            </b>
+             is a number that is needed to connect to the software phone or other IP-phone and make calls (as a login name).
+          </p>
+          <b>
+            Status
+          </b>
+           is displaying the status in the system, there are 5 of them:
+          <ul
+            style="padding-left:20px; margin-bottom: 10px"
+          >
+            <li
+              style="list-style: circle"
+            >
+              <b>
+                Online
+              </b>
+               - means that the user has already logged in the app and can make and receive calls.
+            </li>
+            <li
+              style="list-style: circle"
+            >
+              <b>
+                Offline
+              </b>
+               - means that the user has not logged in the app yet.
+            </li>
+            <li
+              style="list-style: circle"
+            >
+              <b>
+                Calling
+              </b>
+               - means that the user's “phone” is calling.
+            </li>
+            <li
+              style="list-style: circle"
+            >
+              <b>
+                Talking
+              </b>
+               - means that user is talking now.
+            </li>
+            <li
+              style="list-style: circle"
+            >
+              <b>
+                Paused
+              </b>
+               - means that the user cannot receive or make external calls, but still can receive internal calls.
+            </li>
+            <li
+              style="list-style: circle"
+            >
+              <b>
+                Ready
+              </b>
+               - means that the user can receive or make internal and external calls.
+            </li>
+            <li
+              style="list-style: circle"
+            >
+              <b>
+                Unavailable 
+              </b>
+               - means that the user was not registered in IP telephony yet.
+            </li>
+            <li
+              style="list-style: circle"
+            >
+              <b>
+                Unreachable
+              </b>
+               - means that the user was not connected to IP telephony.
+            </li>
+          </ul>
+          To connect to a softphone or IP telephony you have to know three basic parameters:
+          <b>
+            <i>
+               
+              <span
+                style="background: var(--backlight)"
+              >
+                agent
+              </span>
+               number, sip password, DNS\\server IP
+            </i>
+          </b>
+           and register by them in any VOIP telephony-system (or softphone).
+        </span>
+      </span>
+    </li>
+    <li
+      class="main-list-item manual-item open-manual-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow rotateArrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            <span
+              id="agent-map"
+            >
+              Agent map
+            </span>
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <span
+        class="manual-item"
+      >
+        <span>
+          Dashboard contains 
+          <span
+            style="background: var(--backlight)"
+          >
+            Agent
+          </span>
+           Map. It may be displayed by list or cards. To turn on “Edit mode” use this icon   
+          <img
+            src=""
+            style="margin-left: 3px; margin-right: 3px"
+          />
+            after that,  you can move cards wherever you want, also you can add some empty space by using this icon  
+          <img
+            src=""
+            style="margin-left: 3px; margin-right: 3px"
+          />
+            . To save your customised 
+          <span
+            style="background: var(--backlight)"
+          >
+            Agent
+          </span>
+           Map click on  
+          <img
+            src=""
+            style="margin-left: 3px; margin-right: 3px"
+          />
+            . To return to your last saved customised 
+          <span
+            style="background: var(--backlight)"
+          >
+            Agent
+          </span>
+           Map use this  icon  
+          <img
+            src=""
+            style="margin-left: 3px; margin-right: 3px"
+          />
+            .
+        </span>
+      </span>
+    </li>
+    <li
+      class="main-list-item manual-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            <span
+              id="add-new-user"
+            >
+              Add new user
+            </span>
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <span
+        class="manual-item"
+        style="display: none;"
+      >
+        <span>
+          <p
+            style="margin-bottom: 10px;"
+          >
+            To Add new user go to Settings &gt;
+            <img
+              height="35"
+              src=""
+              style="margin-bottom:-10px; margin-left: 3px; margin-right: 3px"
+              width="45"
+            />
+             then enter all necessary information. Keep in mind that 
+            <span
+              style="background: var(--backlight)"
+            >
+              Agent
+            </span>
+             number may contain three random digits (except 100 or begins with 0 or 00).  Then choose the role: 
+            <span
+              style="background: var(--backlight)"
+            >
+              Agent
+            </span>
+             or Manager.
+          </p>
+           
+          <p
+            style="margin-bottom: 10px"
+          >
+            To add a new user you have to choose at least one department, default is Main department (you can change it after adding a new department in Settings &gt; Department &gt; Add new Department).
+          </p>
+          <p
+            style="margin-bottom: 10px"
+          >
+            IMPORTANT: to manage 
+            <span
+              style="background: var(--backlight)"
+            >
+              agent
+            </span>
+            s add them to your department
+            <a
+              href="#adding-department"
+              style="margin-left: 3px; marrgin-right: 3px"
+            >
+              (look how to add department)
+            </a>
+          </p>
+          <p
+            style="margin-bottom: 10px"
+          >
+            To add a new user you have to choose at least one queue, we have a Default queue (you can change it after adding a new Queue in Settings &gt; Queue &gt; Add new Queue).
+          </p>
+          <p
+            style="margin-bottom: 10px"
+          >
+            To add a manager you have to choose permissions. Keep in mind, that manager can create 
+            <span
+              style="background: var(--backlight)"
+            >
+              agent
+            </span>
+            s and managers only with listed permissions that he was given before.
+          </p>
+          All users displayed on Settings &gt; Users, you can change user status on this page:
+          <ul
+            style="list-style:disc outside; padding-left:20px; margin-bottom: 10px"
+          >
+            <li>
+              to block user click on “User account”,
+            </li>
+            <li>
+              to forbid receiving incoming calls click on “Incoming calls”
+            </li>
+            <li>
+              to forbid making calls click on “Outcoming calls”
+            </li>
+          </ul>
+        </span>
+      </span>
+    </li>
+    <li
+      class="main-list-item manual-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            <span
+              id="edit-user"
+            >
+              Edit user
+            </span>
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <span
+        class="manual-item"
+        style="display: none;"
+      >
+        <span>
+          <p
+            style="margin-bottom: 10px"
+          >
+            If you want to edit some information about the user click on his line (Settings &gt; Users &gt; desired user line ).
+          </p>
+          <p
+            style="margin-bottom: 10px"
+          >
+            Permissions are used to limit the access to some pages and editing settings. Keep in mind that a SIP password is needed to login into a softphone.
+          </p>
+          <p
+            style="margin-bottom: 10px"
+          >
+            Don't forget to save your changes by clicking this button 
+            <span
+              style="height: 30px;background: none;color: #34B53A;border: 2px solid #34B53A;box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);border-radius: 8px; margin-left: 3px; margin-right: 3px"
+            >
+              Apply Changes
+            </span>
+              or discard them by click on this button  
+            <img
+              src=""
+              style="margin-left: 3px; margin-right: 3px; height: 20px"
+            />
+              . 
+          </p>
+          <p
+            style="margin-bottom: 10px"
+          >
+            Also you can edit departments where users are or which of them they can manage. By clicking  
+            <img
+              src=""
+              style="margin-left: 3px; margin-right: 3px"
+            />
+              turns on edit mode where you can enter the name of the department or search it from the list.
+          </p>
+          <p
+            style="margin-bottom: 10px"
+          >
+            You can edit queues list for user in “Using” clicking there  
+            <img
+              src=""
+              style="margin-left: 3px; margin-right: 3px"
+            />
+              you move queues from Available till Selected. Also you can move them back  
+            <img
+              src=""
+              style="margin-left: 3px; margin-right: 3px"
+            />
+              ,  
+            <img
+              src=""
+              style="margin-left: 3px; margin-right: 3px"
+            />
+          </p>
+          <p
+            style="margin-bottom: 10px"
+          >
+            “Managing” - is a page where you can give permissions: View or Edit queue for the selected user.
+          </p>
+          <p
+            style="margin-bottom: 10px"
+          >
+            On settings overview you can see what you've selected.
+          </p>
+        </span>
+      </span>
+    </li>
+    <li
+      class="main-list-item manual-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            <span
+              id="adding-department"
+            >
+              Departments
+            </span>
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <span
+        class="manual-item"
+        style="display: none;"
+      >
+        <span>
+          To add new department go to Settings &gt; Departments and use this icon  
+          <img
+            src=""
+            style="margin-left: 3px; margin-right: 3px"
+          />
+            . Don't forget to save your changes by clicking
+          <span
+            style="height: 30px;background: none;color: #34B53A;border: 2px solid #34B53A;box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);border-radius: 8px; margin-left: 3px; margin-right: 3px"
+          >
+            Apply Changes
+          </span>
+           down below. Remember that a manager can give such permissions that he already has. You can change your settings by clicking on
+          <img
+            src=""
+            style="margin-left: 3px; margin-right: 3px"
+          />
+          on the Departments tab. Also they may be displayed by list or cards for your convenience.
+          <div
+            style="text-decoration: underline; padding-top: 15px"
+          >
+            
+      Delete department:
+          </div>
+          to delete department go to Config &gt; Departments &gt; click on desired Department (
+          <img
+            src=""
+            style="margin-left: 3px; margin-right: 3px"
+          />
+          or 3 dots) and then click on this icon  
+          <img
+            class="trash"
+            src=""
+            style="margin-left: 3px; margin-right: 3px; height: 26px"
+          />
+            . After deletion all 
+          <span
+            style="background: var(--backlight)"
+          >
+            agent
+          </span>
+          s and managers will be removed to the default Main department
+        </span>
+      </span>
+    </li>
+    <li
+      class="main-list-item manual-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            <span
+              id="queues"
+            >
+              Queues
+            </span>
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <span
+        class="manual-item"
+        style="display: none;"
+      >
+        <span>
+          <p
+            style="margin-bottom: 10px"
+          >
+            To add new queue go to Settings &gt; Queues and use this icon  
+            <img
+              src=""
+              style="margin-left: 3px; height: 20px"
+            />
+              , 
+          </p>
+          <p
+            style="margin-bottom: 10px"
+          >
+            icon Don't forget to save your changes by clicking
+            <span
+              style="height: 30px;background: none;color: #34B53A;border: 2px solid #34B53A;box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);border-radius: 8px; margin-left: 3px; margin-right: 3px"
+            >
+              Apply Changes
+            </span>
+             down below.
+          </p>
+          <p
+            style="margin-bottom: 10px"
+          >
+            <b>
+              Strategy
+            </b>
+             is used to organise how requests are spread out to 
+            <span
+              style="background: var(--backlight)"
+            >
+              agent
+            </span>
+            s in a specified call waiting line.
+          </p>
+          <p
+            style="margin-bottom: 10px"
+          >
+            <b>
+              Timeout (Retry)
+            </b>
+             - waiting time before queue will order again
+          </p>
+          <p
+            style="margin-bottom: 10px"
+          >
+            <b>
+              Ring in use
+            </b>
+             - settings that allow skip busy 
+            <span
+              style="background: var(--backlight)"
+            >
+              agent
+            </span>
+            s and continue by the strategy yes\\no
+          </p>
+          <p
+            style="margin-bottom: 10px"
+          >
+            You can change your queue settings by clicking
+            <img
+              src=""
+              style="margin-left: 3px; margin-right: 3px"
+            />
+            on the Queue tab. Also they may be displayed by list or cards for your convenience.
+          </p>
+          <div
+            style="text-decoration: underline; padding-top: 15px"
+          >
+            Delete queue:
+          </div>
+          to delete queue go to Settings &gt; Queue &gt; click on  
+          <img
+            class="trash"
+            src=""
+            style="margin-left: 3px; margin-right: 3px; height: 26px"
+          />
+            . After deletion all 
+          <span
+            style="background: var(--backlight)"
+          >
+            agent
+          </span>
+          s and managers will be removed to the default queue.
+        </span>
+      </span>
+    </li>
+    <li
+      class="main-list-item manual-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            <span
+              id="incoming-route"
+            >
+              Incoming route
+            </span>
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <span
+        class="manual-item"
+        style="display: none;"
+      >
+        <span>
+          To add a new incoming route go to Settings &gt; Incoming route and click on the icon
+          <img
+            src=""
+            style="margin-left: 5px; margin-right: 3px"
+          />
+          <p
+            style="margin-bottom: 10px;"
+          >
+            Then you have to choose V-number, remember you can use each V-number only once in each “Incoming routing”.
+          </p>
+          <p
+            style="margin-bottom: 10px;"
+          >
+            Used V-numbers are displayed with
+            <img
+              src=""
+              style="margin-left: 3px; margin-right: 3px"
+            />
+            but if they are used in other routes they are displayed as
+            <img
+              src=""
+              style="margin-left: 3px; margin-right: 3px"
+            />
+          </p>
+          <p
+            style="margin-bottom: 10px;"
+          >
+            You can add unused V-numbers by clicking (plus)
+            <img
+              src=""
+              style="margin-left: 3px; margin-right: 3px"
+            />
+            .
+          </p>
+          <p
+            style="margin-bottom: 10px;"
+          >
+            Then you can continue the route with next application by click on
+            <span
+              class="add-btn"
+              id="add-btn"
+              style="display: inline-block;width: 150px;padding: 5px 50px;height: 35px;border-radius: 8px;background: var(--paginator-bg);border: 2px solid #276899;margin-left: 5px;margin-right: 5px;"
+            >
+              Add +
+            </span>
+            ,menu at the bottom will give you an opportunity to choose the Dial type  “Dial 
+            <span
+              style="background: var(--backlight)"
+            >
+              agent
+            </span>
+            ” or Dial queue.
+          </p>
+          <p
+            style="margin-bottom: 10px;"
+          >
+            To delete routing press the “Add icon” and then delete routing by clicking on the red cross near the name.
+          </p>
+          <p
+            style="margin-bottom: 10px;"
+          >
+            To delete specific “application” click on it and then press the “trash” button to delete it
+            <img
+              src=""
+              style="margin-left: 5px; margin-right: 3px; width: 185px; margin-bottom: -5px"
+            />
+            .
+          </p>
+        </span>
+      </span>
+    </li>
+    <li
+      class="main-list-item manual-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            <span
+              id="calls-history"
+            >
+              Calls history
+            </span>
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <span
+        class="manual-item"
+        style="display: none;"
+      >
+        <span>
+          To see Calls history go to Reports &gt; Сalls history and choose needed filters to get information about the calls. In Calls history you can listen or download the recordings if you have permissions to do that. Also you can export the results of calls history. Also there is a permission to see the cost of each call. 
+        </span>
+      </span>
+    </li>
+    <li
+      class="main-list-item manual-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            <span
+              id="billing"
+            >
+              Billing
+            </span>
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <span
+        class="manual-item"
+        style="display: none;"
+      >
+        <span>
+          To get some billing statistics  go to Reports &gt; Billing &gt; Statement. To get an invoice and increase your deposit - 
+          <a
+            href="#contact-us"
+            style="margin-left: 3px; marrgin-right: 3px"
+          >
+            contact us
+          </a>
+          . You can see your payment status and deposit level on Reports &gt; Billing &gt; Payments.
+        </span>
+      </span>
+    </li>
+    <li
+      class="main-list-item manual-item"
+    >
+      <div
+        class="main-list-title"
+      >
+        <span
+          class="main-list-title-text"
+        >
+          <img
+            class="title-arrow"
+            height="11"
+            src="../../assets/img/icons/arrow-down-white.svg"
+            width="22"
+          />
+           
+          <span>
+            <span
+              id="phoneAndCalls"
+            >
+              Phone and calls
+            </span>
+          </span>
+        </span>
+         
+        <span
+          class="hr"
+        />
+      </div>
+       
+      <span
+        class="manual-item"
+        style="display: none;"
+      >
+        <span>
+          <p
+            style="margin-bottom: 10px;"
+          >
+            For 
+            <b>
+              External calls
+            </b>
+             or any international call please dial the number starting with the country code, without + or 00.
+          </p>
+          <p
+            style="margin-bottom: 10px;"
+          >
+            For 
+            <b>
+              Internal calls
+            </b>
+             (to some 
+            <span
+              style="background: var(--backlight)"
+            >
+              agent
+            </span>
+             or queue) please add 
+            <b>
+              *
+            </b>
+             then 
+            <span
+              style="background: var(--backlight)"
+            >
+              agent
+            </span>
+             number or queue.
+          </p>
+          <p
+            style="margin-bottom: 10px;"
+          >
+            You can also test your phone by call 
+            <b>
+              *50
+            </b>
+             for 
+            <b>
+               Echo test
+            </b>
+          </p>
+        </span>
+      </span>
+    </li>
+  </ul>
+   
+  <span
+    class="title manual-title"
+    id="contact-us"
+  >
+    Contact us
+  </span>
+   
+  <div
+    class="contact-us-block"
+  >
+    <span
+      class="contact-us-title"
+    >
+      
+      Still Have Questions?
+    
+    </span>
+     
+    <div
+      class="links-block"
+    >
+      <div
+        class="link-item"
+      >
+        <span
+          class="link-title"
+        >
+          <img
+            class="support-img"
+            src="@/assets/img/icons/billing-support.svg"
+          />
+           
+          <!---->
+          
+          Billing
+        
+        </span>
+         
+        <a
+          class="link"
+          href="mailto:billing@voxonics.com"
+        >
+          billing@voxonics.com
+        </a>
+      </div>
+       
+      <div
+        class="link-item"
+      >
+        <span
+          class="link-title"
+        >
+          <img
+            class="support-img"
+            src="@/assets/img/icons/support-vox.svg"
+          />
+           
+          <!---->
+          
+          Support
+        
+        </span>
+         
+        <a
+          class="link"
+          href="mailto:support@voxonics.com"
+        >
+          support@voxonics.com
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

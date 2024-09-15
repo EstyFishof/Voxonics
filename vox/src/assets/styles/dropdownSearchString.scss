@@ -1,0 +1,16 @@
+.list-related-input {
+  display: block;
+  padding: 5px 16px;
+  background: var(--input-bg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  color: var(--font-panel);
+  border: none;
+  width: 100%;
+  height: 18px;
+  margin: 0;
+  background-image: url('../../assets/img/icons/search-blue.svg');
+  background-size: 12px;
+  background-position: 95% 50%;
+  background-repeat: no-repeat;
+}

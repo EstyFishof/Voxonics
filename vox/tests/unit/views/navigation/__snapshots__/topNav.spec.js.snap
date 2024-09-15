@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopNav Check snapshot 1`] = `
+<nav
+  class="top-nav"
+>
+  <ul
+    class="main-list"
+  >
+    <li
+      class="main-list__item"
+    >
+      <router-link-stub
+        to="/config/users"
+      >
+        Users
+      </router-link-stub>
+       
+      <!---->
+    </li>
+     
+    <li
+      class="main-list__item"
+    >
+      <router-link-stub
+        to="/config/departments"
+      >
+        Departments
+      </router-link-stub>
+       
+      <!---->
+    </li>
+     
+    <li
+      class="main-list__item"
+    >
+      <router-link-stub
+        to="/config/queues"
+      >
+        Queues
+      </router-link-stub>
+       
+      <!---->
+    </li>
+     
+    <li
+      class="main-list__item"
+    >
+      <router-link-stub
+        to="/config/external-numbers/info"
+      >
+        V-number
+      
+      </router-link-stub>
+    </li>
+     
+    <li
+      class="main-list__item"
+    >
+      <router-link-stub
+        class=""
+        to="/config/incoming-route"
+      >
+        Incoming Routing
+      
+      </router-link-stub>
+    </li>
+     
+    <!---->
+  </ul>
+</nav>
+`;

@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`support Check snapshot 1`] = `
+<section
+  class="content-wrapp"
+>
+  <div
+    class="toolbar"
+  >
+    <div>
+      <div
+        class="btn-img"
+      >
+        <svg
+          class="switch-view switch-list"
+          content="List mode"
+          fill="none"
+          height="16"
+          tabindex="0"
+          viewBox="0 0 19 15"
+          width="23"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            height="1.76923"
+            rx="0.884615"
+            width="14.2305"
+            x="4.76953"
+            y="0.5"
+          />
+           
+          <rect
+            height="1.76923"
+            rx="0.884615"
+            width="14.2305"
+            x="4.76953"
+            y="6.26953"
+          />
+           
+          <rect
+            height="1.76923"
+            rx="0.884615"
+            width="14.2305"
+            x="4.76953"
+            y="12.0391"
+          />
+           
+          <circle
+            cx="1.5"
+            cy="1.5"
+            r="1.5"
+          />
+           
+          <circle
+            cx="1.5"
+            cy="7.19922"
+            r="1.5"
+          />
+           
+          <circle
+            cx="1.5"
+            cy="13"
+            r="1.5"
+          />
+        </svg>
+      </div>
+       
+      <div
+        class="top-btn"
+      >
+        <div
+          class="edit-map"
+        >
+          <img
+            content="Edit mode"
+            src="@/assets/img/icons/edit-map.svg"
+            tabindex="0"
+          />
+        </div>
+         
+        <div
+          class="mini-card "
+        >
+          <img
+            content="Reset"
+            src="@/assets/img/icons/to-back-map.svg"
+            tabindex="0"
+          />
+        </div>
+         
+        <!---->
+         
+        <!---->
+      </div>
+       
+      <ul
+        class="tabs-sort"
+      >
+        <li
+          class="toolbar-text"
+        >
+          Sort by:
+        </li>
+         
+        <li>
+          <label
+            class="options-label"
+          >
+            <input
+              class="input-field num"
+              readonly="readonly"
+              type="text"
+            />
+             
+            <span
+              class="triangle"
+            >
+              <svg
+                fill="none"
+                height="7"
+                viewBox="0 0 12 7"
+                width="12"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 1L6 6L11 1"
+                  opacity="0.9"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+             
+            <ul
+              class="list-related-numbers"
+              style="display: none;"
+            >
+              <li>
+                Name
+              </li>
+               
+              <li>
+                Agent number
+              </li>
+               
+              <li>
+                Location
+              </li>
+               
+              <li>
+                Time in status
+              </li>
+               
+              <li>
+                Talking to
+              </li>
+            </ul>
+          </label>
+        </li>
+      </ul>
+    </div>
+  </div>
+   
+  <!---->
+   
+  <div
+    class="drag-row"
+  >
+    <div
+      style="width: 100%;"
+    >
+      <div
+        class="list"
+      >
+        <drop-list-stub
+          acceptsdata="function () { return true; }"
+          acceptstype="function () { return true; }"
+          class=""
+          dragimageopacity="0.7"
+          items=""
+          mode="cut"
+          tag="div"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+`;

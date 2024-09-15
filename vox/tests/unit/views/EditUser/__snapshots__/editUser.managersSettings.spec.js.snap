@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Managers settings ==> AvailableQueues should snapshot 1`] = `
+<section
+  class="table-container"
+>
+  <div
+    class="table-title"
+  >
+    Available Queues
+  </div>
+   
+  <div
+    class="wrap-table"
+  >
+    <ul
+      class="table-header"
+    >
+      <li
+        class="header-item header-name"
+      >
+        Name of Queue
+      </li>
+       
+      <li
+        class="header-item header-number"
+      >
+        Queue Number
+      </li>
+       
+      <li
+        class="header-item header-length"
+      >
+        Agents in Queue
+      </li>
+       
+      <li
+        class="header-item-action"
+      >
+        Actions
+      </li>
+    </ul>
+     
+    <div>
+      <div
+        class="list-group"
+      />
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Managers settings ==> Departments / edit check snapshot dep 1`] = `
+<section
+  class="table-container"
+>
+  <div
+    class="table-title"
+  >
+    Departments to be managed
+  </div>
+   
+  <div
+    class="wrap-table"
+  >
+    <ul
+      class="table-header"
+    >
+      <li
+        class="header-item"
+      >
+        Name of Department
+      </li>
+       
+      <li
+        class="header-item-action"
+      >
+        Actions
+      </li>
+    </ul>
+     
+    <div>
+      <div
+        class="list-group"
+      />
+    </div>
+  </div>
+</section>
+`;
+
+exports[`Managers settings Check snapshot 1`] = `<!---->`;

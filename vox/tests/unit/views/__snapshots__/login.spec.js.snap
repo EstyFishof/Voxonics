@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login Check snapshot 1`] = `
+<section
+  class="container-form"
+>
+  <form
+    class="form"
+  >
+    <div
+      class="form-wrap"
+    >
+      <div
+        class="logo"
+      >
+        <img
+          alt="logo"
+          src="../assets/img/logo.svg"
+        />
+      </div>
+       
+      <h4>
+        Enter your credentials to access your account
+      </h4>
+       
+      <div
+        class="form-group"
+      >
+        <input
+          class="login-field"
+          placeholder="Internal Number"
+          required="required"
+        />
+         
+        <input
+          class="password-field"
+          placeholder="Enter password"
+          required="required"
+          type="password"
+        />
+         
+        <div
+          class="btn-container"
+        >
+          <button
+            class="btn-login"
+          >
+            Sign in
+          </button>
+           
+          <!---->
+        </div>
+      </div>
+    </div>
+  </form>
+   
+  <switchtheme-stub
+    class="theme"
+  />
+</section>
+`;

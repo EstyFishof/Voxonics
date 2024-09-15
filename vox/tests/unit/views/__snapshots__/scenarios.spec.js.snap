@@ -1,0 +1,769 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item Scenario Check snapshot 1`] = `<!---->`;
+
+exports[`Scenario Check snapshot 1`] = `
+<div
+  class="wrapper"
+>
+  <div
+    class="header"
+  >
+    <ul
+      class="top-tabs"
+    >
+      <li
+        class="new"
+      >
+        <span
+          class="new-scenario"
+          content="Add new scenario"
+          tabindex="0"
+        >
+          <img
+            alt="new"
+            src="@/assets/img/icons/new-scenario.svg"
+          />
+        </span>
+      </li>
+       
+      <li
+        class="parent-tab active"
+      >
+        <input
+          class="item-input"
+          readonly="readonly"
+          type="text"
+        />
+         
+        <!---->
+         
+        <div
+          class="bottom-tabs-block"
+        >
+          <ul
+            class="bottom-tabs"
+          >
+             
+            <!---->
+          </ul>
+        </div>
+      </li>
+       
+      <!---->
+    </ul>
+     
+    <!---->
+     
+    <div
+      class="secondary-header"
+    />
+  </div>
+   
+  <div
+    class="body"
+  >
+    <div
+      class="list-items"
+    >
+      <item-stub
+        counter="0"
+        link="[object Object]"
+      />
+    </div>
+     
+    <queueconfiguration-stub
+      class="configuration"
+    />
+  </div>
+</div>
+`;
+
+exports[`dialConfiguration Scenario Check snapshot 1`] = `
+<div
+  class="configuration-block"
+>
+  <div
+    class="header"
+  >
+    <div
+      class="left-sector"
+    >
+      <img
+        class="arrow"
+        src="@/assets/img/icons/configuration-arrow.svg"
+      />
+       
+      <span
+        class="header-title"
+      >
+        Dial Configuration
+      </span>
+       
+      <img
+        class="delete-item"
+        content="Delete"
+        src="@/assets/img/icons/detele-item-scenario.svg"
+        tabindex="0"
+      />
+    </div>
+  </div>
+   
+  <div
+    class="body"
+  >
+    <span
+      style="display: flex;"
+    >
+      <div
+        class="options-block"
+      >
+        <label
+          class="options-label"
+        >
+          <span
+            class="options-title"
+          >
+            Select dial type
+          </span>
+           
+          <input
+            class="input-field num"
+            readonly="readonly"
+            type="text"
+          />
+           
+          <span
+            class="triangle"
+          >
+            <img
+              alt="select"
+              src="../../../../assets/img/icons/queues-select-arrow.png"
+            />
+          </span>
+           
+          <ul
+            class="list-related-numbers"
+            style="display: none;"
+          >
+            <li>
+              Queue
+            </li>
+             
+            <li
+              class="active-item"
+            >
+              Agent
+            </li>
+          </ul>
+        </label>
+      </div>
+       
+      <div
+        class="options-block"
+      >
+        <label
+          class="options-label"
+        >
+          <span
+            class="options-title"
+          >
+            Select Agent/Queue
+          </span>
+           
+          <input
+            class="input-field num"
+            readonly="readonly"
+            type="text"
+          />
+           
+          <span
+            class="triangle"
+          >
+            <img
+              alt="select"
+              src="../../../../assets/img/icons/queues-select-arrow.png"
+            />
+          </span>
+           
+          <ul
+            class="list-related-numbers"
+            style="display: none;"
+          >
+            <li
+              class="active-item"
+            >
+              AAA 123
+            </li>
+          </ul>
+        </label>
+      </div>
+    </span>
+  </div>
+</div>
+`;
+
+exports[`queueConfiguration Scenario Check snapshot 1`] = `
+<div
+  class="configuration-block"
+>
+  <div
+    class="header"
+  >
+    <div
+      class="left-sector"
+    >
+      <img
+        class="arrow"
+        src="@/assets/img/icons/configuration-arrow.svg"
+      />
+       
+      <span
+        class="header-title"
+      >
+        Queue Configuration
+      </span>
+       
+      <img
+        class="delete-item"
+        content="Delete"
+        src="@/assets/img/icons/detele-item-scenario.svg"
+        tabindex="0"
+      />
+    </div>
+  </div>
+   
+  <div
+    class="body"
+  >
+    <div
+      class="options-block"
+    >
+      <label
+        class="options-label"
+      >
+        <span
+          class="options-title"
+        >
+          Select dial type
+        </span>
+         
+        <input
+          class="input-field num"
+          readonly="readonly"
+          type="text"
+        />
+         
+        <span
+          class="triangle"
+        >
+          <img
+            alt="select"
+            src="../../../../assets/img/icons/queues-select-arrow.png"
+          />
+        </span>
+         
+        <ul
+          class="list-related-numbers"
+          style="display: none;"
+        >
+          <li
+            class="active-item"
+          >
+            Queue
+          </li>
+           
+          <li>
+            Agent
+          </li>
+        </ul>
+      </label>
+    </div>
+     
+    <div
+      class="options-block"
+    >
+      <label
+        class="options-label"
+      >
+        <span
+          class="options-title"
+        >
+          Please select a queue
+        </span>
+         
+        <input
+          class="input-field num"
+          readonly="readonly"
+          type="text"
+        />
+         
+        <span
+          class="triangle"
+        >
+          <img
+            alt="select"
+            src="../../../../assets/img/icons/queues-select-arrow.png"
+          />
+        </span>
+         
+        <ul
+          class="list-related-numbers"
+          style="display: none;"
+        >
+          <li
+            class="active-item"
+          >
+            AAA ( 1569 )
+          </li>
+        </ul>
+      </label>
+    </div>
+     
+    <div
+      class="options-block"
+    >
+      <label
+        class="options-label"
+      >
+        <span
+          class="options-title"
+        >
+          Please select a dial time
+        </span>
+         
+        <span
+          class="time-block"
+        >
+          <input
+            class="input-field time"
+            maxlength="3"
+            type="text"
+          />
+           
+          <span
+            class="minSec"
+          >
+            min
+          </span>
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`vNumberConfiguration Scenario Check snapshot 1`] = `
+<div
+  class="configuration-block"
+>
+  <div
+    class="header"
+  >
+    <div
+      class="left-sector"
+    >
+      <img
+        class="arrow"
+        src="@/assets/img/icons/configuration-arrow.svg"
+      />
+       
+      <span
+        class="header-title"
+      >
+        V-Number Configuration
+      </span>
+    </div>
+     
+    <!---->
+  </div>
+   
+  <div
+    class="body"
+  >
+    <div
+      class="left-sector sector"
+    >
+      <div
+        class="filters"
+      >
+        <div
+          class="options-block"
+        >
+          <label
+            class="options-label"
+          >
+            <span
+              class="options-title"
+            >
+              V-Number
+            </span>
+             
+            <div
+              class="vnumber-block"
+            >
+              <input
+                class="input-field type-vnumber"
+                readonly="readonly"
+                type="text"
+              />
+               
+              <span
+                class="triangle"
+              >
+                <img
+                  alt="select"
+                  src="../../../../assets/img/icons/queues-select-arrow.png"
+                />
+              </span>
+               
+              <ul
+                class="list-related-numbers vnumber-list"
+                style="display: none;"
+              >
+                <li>
+                  
+                    begin
+                  
+                </li>
+                <li>
+                  
+                    contain
+                  
+                </li>
+                <li>
+                  
+                    end
+                  
+                </li>
+                <li>
+                  
+                    equal
+                  
+                </li>
+              </ul>
+               
+              <input
+                class="input-field enter-vnumber"
+                placeholder="Enter numbers"
+                type="text"
+              />
+            </div>
+          </label>
+        </div>
+         
+        <div
+          class="options-block country-block"
+        >
+          <label
+            class="options-label"
+          >
+            Countries:
+              
+            <input
+              class="input-field"
+              placeholder="Enter Country"
+              type="text"
+            />
+             
+            <span
+              class="triangle"
+            >
+              <img
+                alt="select"
+                src="@/assets/img/icons/queues-select-arrow.png"
+              />
+            </span>
+             
+            <ul
+              class="list-related-numbers"
+              style="display: none;"
+            >
+              <li>
+                All
+              </li>
+               
+              <li
+                class=""
+              >
+                Afghanistan
+                
+              </li>
+            </ul>
+          </label>
+        </div>
+         
+        <div
+          class="options-block description-block"
+        >
+          <label
+            class="options-label"
+          >
+            <span
+              class="options-title"
+            >
+              Description
+            </span>
+             
+            <input
+              class="input-field"
+              placeholder="Enter Description"
+              type="text"
+            />
+          </label>
+        </div>
+         
+        <div
+          class="options-block status-block"
+        >
+          <label
+            class="options-label"
+          >
+            <span
+              class="options-title"
+            >
+              Status
+            </span>
+             
+            <input
+              class="input-field"
+              placeholder="Used"
+              readonly="readonly"
+              type="text"
+            />
+             
+            <span
+              class="triangle"
+            >
+              <img
+                alt="select"
+                src="../../../../assets/img/icons/queues-select-arrow.png"
+              />
+            </span>
+             
+            <ul
+              class="list-related-numbers status-list"
+              style="display: none;"
+            >
+              <li
+                class=""
+              >
+                Used
+              </li>
+               
+              <li
+                class=""
+              >
+                Not user
+              </li>
+            </ul>
+          </label>
+        </div>
+         
+        <span
+          class="clear-btn"
+        >
+          <img
+            src="@/assets/img/icons/blue-broom.svg"
+          />
+        </span>
+      </div>
+       
+      <div
+        class="vnumbers"
+      >
+        <ul
+          class="vnumbers-list"
+        >
+          <li
+            class="vnumber-item"
+          >
+            <img
+              class="flag"
+              src="http://23.88.11.75/country/iso2/AF.svg"
+            />
+             
+            <span
+              class="vnumber-number"
+            >
+              
+                380443640000
+                
+              <span
+                class="vnumber-description"
+              >
+                test
+              </span>
+            </span>
+             
+            <img
+              class="vnumber-btn"
+              src="@/assets/img/icons/plus-numbers.svg"
+            />
+          </li>
+        </ul>
+      </div>
+    </div>
+     
+    <span
+      class="arrows"
+    >
+      <img
+        alt="arrows"
+        src="@/assets/img/icons/arrows-scenario.svg"
+      />
+    </span>
+     
+    <div
+      class="right-sector sector"
+    >
+      <div
+        class="vnumbers"
+      >
+        <ul
+          class="vnumbers-list"
+        />
+      </div>
+       
+      <div
+        class="filters right-filters"
+      >
+        <div
+          class="options-block"
+        >
+          <label
+            class="options-label"
+          >
+            <span
+              class="options-title"
+            >
+              V-Number
+            </span>
+             
+            <div
+              class="vnumber-block"
+            >
+              <input
+                class="input-field type-vnumber"
+                readonly="readonly"
+                type="text"
+              />
+               
+              <span
+                class="triangle"
+              >
+                <img
+                  alt="select"
+                  src="../../../../assets/img/icons/queues-select-arrow.png"
+                />
+              </span>
+               
+              <ul
+                class="list-related-numbers vnumber-list"
+                style="display: none;"
+              >
+                <li>
+                  begin
+                  
+                </li>
+                <li>
+                  contain
+                  
+                </li>
+                <li>
+                  end
+                  
+                </li>
+                <li>
+                  equal
+                  
+                </li>
+              </ul>
+               
+              <input
+                class="input-field enter-vnumber"
+                placeholder="Enter numbers"
+                type="text"
+              />
+            </div>
+          </label>
+        </div>
+         
+        <div
+          class="options-block country-block"
+        >
+          <label
+            class="options-label"
+          >
+            Countries:
+              
+            <input
+              class="input-field"
+              placeholder="Enter Country"
+              type="text"
+            />
+             
+            <span
+              class="triangle"
+            >
+              <img
+                alt="select"
+                src="@/assets/img/icons/queues-select-arrow.png"
+              />
+            </span>
+             
+            <ul
+              class="list-related-numbers"
+              style="display: none;"
+            >
+              <li>
+                All
+              </li>
+               
+              <li
+                class=""
+              >
+                Afghanistan
+                
+              </li>
+            </ul>
+          </label>
+        </div>
+         
+        <div
+          class="options-block description-block"
+        >
+          <label
+            class="options-label"
+          >
+            <span
+              class="options-title"
+            >
+              Description
+            </span>
+             
+            <input
+              class="input-field"
+              placeholder="Enter Description"
+              type="text"
+            />
+          </label>
+        </div>
+         
+        <span
+          class="clear-btn"
+        >
+          <img
+            src="@/assets/img/icons/blue-broom.svg"
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+   
+  <confirmation-stub
+    confirmbtntext="Confirm"
+    textconfirmation="This number is used in the \\"<b>undefined</b>\\" route. V-number can be used only in one incoming routing. Are you sure you want to use this V-number here?"
+  />
+</div>
+`;

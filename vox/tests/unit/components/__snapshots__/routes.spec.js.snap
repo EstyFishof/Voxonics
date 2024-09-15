@@ -1,0 +1,257 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`routes routes snapshot 1`] = `
+Array [
+  Object {
+    "component": [Function],
+    "meta": Object {
+      "layout": "login",
+    },
+    "name": "Login",
+    "path": "/",
+  },
+  Object {
+    "component": [Function],
+    "meta": Object {
+      "icon": "",
+      "title": "Agent Panel",
+    },
+    "name": "AgentPanel",
+    "path": "/agent-panel",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Reports",
+        },
+        "name": "CDR",
+        "path": "call-history",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Reports",
+        },
+        "name": "Charges",
+        "path": "billing/charges",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Reports",
+        },
+        "name": "Statement",
+        "path": "billing",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Reports",
+        },
+        "name": "Payments",
+        "path": "billing/payments",
+      },
+    ],
+    "component": [Function],
+    "name": "Reports",
+    "path": "/reports",
+    "redirect": "/reports/call-history",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Settings",
+        },
+        "name": "Users",
+        "path": "users",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Settings",
+        },
+        "name": "CreateUser",
+        "path": "users/create-user",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Settings",
+        },
+        "name": "AccountInfo",
+        "path": "users/account-info/:id",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Settings",
+        },
+        "name": "EditUser",
+        "path": "users/edit-user/:id",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Settings",
+        },
+        "name": "Departments",
+        "path": "departments",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Settings",
+        },
+        "name": "CreateDepartment",
+        "path": "departments/create-department",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Settings",
+        },
+        "name": "DepartmentSettings",
+        "path": "departments/department-setting/:id",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "component": [Function],
+            "meta": Object {
+              "icon": "",
+              "title": "Settings",
+            },
+            "name": "Numbers",
+            "path": "info",
+          },
+          Object {
+            "component": [Function],
+            "meta": Object {
+              "icon": "",
+              "title": "Settings",
+            },
+            "name": "NumbersOfDepartments",
+            "path": "departments",
+          },
+        ],
+        "component": [Function],
+        "name": "WrapNumbers",
+        "path": "external-numbers",
+        "redirect": "external-numbers/info",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Settings",
+        },
+        "name": "Queues",
+        "path": "queues",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Settings",
+        },
+        "name": "CreateQueue",
+        "path": "queues/create-queue",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Settings",
+        },
+        "name": "QueueSetting",
+        "path": "queues/queue-setting/:id",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Incoming Routing",
+        },
+        "name": "ParentScenario",
+        "path": "incoming-route",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Settings",
+        },
+        "name": "whitelistIP",
+        "path": "whitelistIP",
+      },
+    ],
+    "component": [Function],
+    "name": "Config",
+    "path": "/config",
+    "redirect": "/config/users",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Dashboard",
+        },
+        "name": "AgentsMap",
+        "path": "agents-map",
+      },
+    ],
+    "component": [Function],
+    "name": "Dashboard",
+    "path": "/dashboard",
+    "redirect": "dashboard/agents-map",
+  },
+  Object {
+    "component": [Function],
+    "name": "Dialer",
+    "path": "/dialer",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Support",
+        },
+        "name": "Manual",
+        "path": "manual",
+      },
+      Object {
+        "component": [Function],
+        "meta": Object {
+          "icon": "",
+          "title": "Support",
+        },
+        "name": "ContactUs",
+        "path": "contact-us",
+      },
+    ],
+    "component": [Function],
+    "name": "Support",
+    "path": "/support",
+    "redirect": "/support/manual",
+  },
+]
+`;

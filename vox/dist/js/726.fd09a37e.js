@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkVoxonics"]=self["webpackChunkVoxonics"]||[]).push([[726],{87726:function(n,e,u){u.r(e),u.d(e,{default:function(){return i}});var r=function(){var n=this,e=n._self._c;return e("router-view")},t=[],o={name:"Config"},s=o,c=u(1001),f=(0,c.Z)(s,r,t,!1,null,"6aa0fb86",null),i=f.exports}}]);

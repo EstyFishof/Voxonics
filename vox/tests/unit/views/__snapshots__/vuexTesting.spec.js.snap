@@ -1,0 +1,837 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateDepartment Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "getNumbers": [Function],
+    "getStaff": [Function],
+    "resetCreateDep": [Function],
+    "transferAgentsDepartment": [Function],
+    "transferManagersDepartment": [Function],
+    "transferNameDepartment": [Function],
+    "transferNumberDepartment": [Function],
+  },
+  "getters": Object {
+    "agents": [Function],
+    "managers": [Function],
+    "newDepartment": [Function],
+    "newDepartmentAgents": [Function],
+    "newDepartmentManagers": [Function],
+    "newDepartmentName": [Function],
+    "newDepartmentNumbers": [Function],
+    "numbers": [Function],
+  },
+  "mutations": Object {
+    "clearDep": [Function],
+    "setAgents": [Function],
+    "setAgentsDepartment": [Function],
+    "setManagers": [Function],
+    "setManagersDepartment": [Function],
+    "setNameDepartment": [Function],
+    "setNumberDepartment": [Function],
+    "setNumbers": [Function],
+  },
+  "state": Object {
+    "agents": Array [],
+    "errors": Array [],
+    "managers": Array [],
+    "newDepartment": Object {
+      "belongTo": Array [],
+      "name": "",
+      "relatedWith": Object {
+        "externalNumberUid": Array [],
+        "userUid": Array [],
+      },
+    },
+    "numbers": Array [],
+  },
+}
+`;
+
+exports[`api Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "emitClearError": [Function],
+    "emitClearSuccess": [Function],
+    "emitError": [Function],
+    "emitSuccess": [Function],
+  },
+  "getters": Object {
+    "errorMsg": [Function],
+    "successMsg": [Function],
+  },
+  "mutations": Object {
+    "clearError": [Function],
+    "clearSuccess": [Function],
+    "writeError": [Function],
+    "writeSuccess": [Function],
+  },
+  "state": Object {
+    "errorMessage": "",
+    "successMessage": "",
+  },
+}
+`;
+
+exports[`auth Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "logged": [Function],
+    "pushLogout": [Function],
+    "pushUserInfo": [Function],
+    "sendReqLogin": [Function],
+  },
+  "getters": Object {
+    "authStatus": [Function],
+    "getToken": [Function],
+    "roleAgent": [Function],
+    "userInfo": [Function],
+    "userInfoComponent": [Function],
+  },
+  "mutations": Object {
+    "isLogin": [Function],
+    "loadLogin": [Function],
+    "logout": [Function],
+    "writeUserInfo": [Function],
+  },
+  "state": Object {
+    "authStatus": "",
+    "roleAgent": undefined,
+    "token": "",
+    "userInfo": Object {},
+  },
+}
+`;
+
+exports[`billing Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "setCharges": [Function],
+    "setLastCharges": [Function],
+    "setLastPayments": [Function],
+    "setPayments": [Function],
+    "setStatement": [Function],
+  },
+  "getters": Object {
+    "getCharges": [Function],
+    "getLastCharges": [Function],
+    "getLastPayments": [Function],
+    "getPayments": [Function],
+    "getStatement": [Function],
+  },
+  "mutations": Object {
+    "chargesMutation": [Function],
+    "lastChargesMutation": [Function],
+    "lastPaymentsMutation": [Function],
+    "paymentsMutation": [Function],
+    "statementMutation": [Function],
+  },
+  "state": Object {
+    "charges": Array [],
+    "lastCharges": Array [],
+    "lastPayments": Array [],
+    "payments": Array [],
+    "statement": Object {},
+  },
+}
+`;
+
+exports[`createQueue Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "getStaffQueue": [Function],
+    "resetCreateQueue": [Function],
+    "setBelongToQueue": [Function],
+    "setInternalNumberQueue": [Function],
+    "setNameQueue": [Function],
+    "setRelatedWithQueue": [Function],
+    "setRingQueue": [Function],
+    "setStrategyQueue": [Function],
+    "setTimeoutQueue": [Function],
+  },
+  "getters": Object {
+    "agentsQueue": [Function],
+    "managersQueue": [Function],
+    "newQueue": [Function],
+    "newQueueAgents": [Function],
+    "newQueueInternalNumber": [Function],
+    "newQueueManagers": [Function],
+    "newQueueName": [Function],
+    "newQueueRing": [Function],
+    "newQueueStrategy": [Function],
+    "newQueueTimeout": [Function],
+  },
+  "mutations": Object {
+    "agentsMutation": [Function],
+    "clearQueue": [Function],
+    "internalNumberMutation": [Function],
+    "managersMutation": [Function],
+    "nameMutation": [Function],
+    "relatedWithMutation": [Function],
+    "ringMutation": [Function],
+    "setBelongToMutation": [Function],
+    "strategyMutation": [Function],
+    "timeoutMutation": [Function],
+  },
+  "state": Object {
+    "agents": Array [],
+    "managers": Array [],
+    "newQueue": Object {
+      "belongTo": Array [],
+      "internalNumber": "",
+      "name": "",
+      "relatedWith": Object {
+        "userUid": Array [],
+      },
+      "ringinuse": "",
+      "strategy": "",
+      "timeout": "",
+    },
+  },
+}
+`;
+
+exports[`createUser Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "depManagerSelected": [Function],
+    "departmentsRelated": [Function],
+    "departmentsSelected": [Function],
+    "listSearchUsers": [Function],
+    "queueManagerSelected": [Function],
+    "queuesRelated": [Function],
+    "queuesSelected": [Function],
+    "reset": [Function],
+    "setAvatar": [Function],
+    "setCreatePermissionBilling": [Function],
+    "setCreatePermissionCDR": [Function],
+    "setOutInfo": [Function],
+    "setOutboundDirection": [Function],
+    "setRole": [Function],
+    "setUserInfo": [Function],
+    "setVNumber": [Function],
+  },
+  "getters": Object {
+    "VNumber": [Function],
+    "getAvatar": [Function],
+    "getDepManaged": [Function],
+    "getForm": [Function],
+    "getOutboundDirection": [Function],
+    "getQueueManaged": [Function],
+    "getRelatedDepartments": [Function],
+    "getRelatedQueues": [Function],
+    "getRole": [Function],
+    "getSearchUsers": [Function],
+    "getSelectedDepartments": [Function],
+    "getSelectedQueues": [Function],
+    "outInfo": [Function],
+  },
+  "mutations": Object {
+    "createPermissionBillingMutation": [Function],
+    "pushAvatar": [Function],
+    "pushDepManaged": [Function],
+    "pushField": [Function],
+    "pushOutInfo": [Function],
+    "pushOutboundDirection": [Function],
+    "pushQueueManaged": [Function],
+    "pushRelatedDepartments": [Function],
+    "pushRelatedQueues": [Function],
+    "pushRole": [Function],
+    "pushSearchUsers": [Function],
+    "pushSelectedDepartments": [Function],
+    "pushSelectedQueues": [Function],
+    "pushVNumber": [Function],
+    "setCreatePermissionCDRMutation": [Function],
+    "setInitialState": [Function],
+  },
+  "state": Object {
+    "form": Object {
+      "avatar": "",
+      "confirm": "",
+      "email": "",
+      "internalNumber": "",
+      "location": "",
+      "manage": Object {
+        "department": Array [],
+        "queue": Array [],
+      },
+      "name": "",
+      "password": "",
+      "permission": Object {
+        "cdr": Object {
+          "billing": "",
+          "export": "",
+          "listen": "",
+          "view": "",
+        },
+        "role": "",
+        "view": Object {
+          "billing": false,
+        },
+      },
+      "phone": "",
+      "position": "",
+      "relatedWith": Object {
+        "department": Array [],
+        "departmentUid": Array [],
+        "queue": Array [],
+        "queueUid": Array [],
+      },
+      "route": Array [
+        Object {
+          "allowed": true,
+          "directionId": "",
+          "externalNumberUid": "",
+          "priority": 1,
+        },
+      ],
+      "secret": "",
+    },
+    "listManageDepartments": Array [],
+    "listManageQueues": Array [],
+    "listOutboundDirection": Array [],
+    "listRelatedDepartments": Array [],
+    "listRelatedQueues": Array [],
+    "listSelectedDepartments": Array [],
+    "listSelectedQueues": Array [],
+    "listUsers": Array [],
+    "outInfo": Array [],
+  },
+}
+`;
+
+exports[`departmentInfo Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "changeAgentsDepartment": [Function],
+    "changeManagersDepartment": [Function],
+    "changeNameDepartment": [Function],
+    "changeNumbersDepartment": [Function],
+    "getDepartmentInfo": [Function],
+    "setDeleteDep": [Function],
+    "setInitialDep": [Function],
+  },
+  "getters": Object {
+    "agentsDep": [Function],
+    "departmentInfo": [Function],
+    "departmentInfoName": [Function],
+    "getDeleteDep": [Function],
+    "getInitialDep": [Function],
+    "managersDep": [Function],
+    "numbersDep": [Function],
+  },
+  "mutations": Object {
+    "deleteDepMutation": [Function],
+    "initialDepMutation": [Function],
+    "pushAgentsDepartment": [Function],
+    "pushDepartment": [Function],
+    "pushManagersDepartment": [Function],
+    "pushNameDepartment": [Function],
+    "pushNumbersDepartment": [Function],
+  },
+  "state": Object {
+    "delete": false,
+    "department": Object {
+      "belongTo": Object {
+        "user": Array [],
+      },
+      "name": "",
+      "relatedWith": Object {
+        "externalNumber": Array [],
+        "user": Array [],
+      },
+    },
+    "initialDep": null,
+  },
+}
+`;
+
+exports[`firewall Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "setAddNewFirewallIP": [Function],
+    "setDeleteFirewallIP": [Function],
+    "setInitialListFirewall": [Function],
+    "setListFirewall": [Function],
+    "setSortListFirewall": [Function],
+    "setUpdateFirewallIP": [Function],
+  },
+  "getters": Object {
+    "getInitialListFirewall": [Function],
+    "getListFirewall": [Function],
+  },
+  "mutations": Object {
+    "addNewFirewallIPMutation": [Function],
+    "deleteFirewallIPMutation": [Function],
+    "initialListFirewallMutation": [Function],
+    "listFirewallMutation": [Function],
+    "sortListFirewallMutation": [Function],
+    "updateFirewallIPMutation": [Function],
+  },
+  "state": Object {
+    "initialList": Array [],
+    "list": Array [],
+  },
+}
+`;
+
+exports[`global Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "setActiveLinkSupport": [Function],
+    "setGlobalSearch": [Function],
+    "setSearchWithoutObservables": [Function],
+  },
+  "getters": Object {
+    "getActiveLinkSupport": [Function],
+    "getGlobalSearch": [Function],
+  },
+  "mutations": Object {
+    "activeLinkSupportMutation": [Function],
+    "globalSearch": [Function],
+    "globalSearchMutation": [Function],
+  },
+  "state": Object {
+    "activeLink": "",
+    "globalSearch": Object {},
+  },
+}
+`;
+
+exports[`navigation Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "getIsPage": [Function],
+    "getPath": [Function],
+  },
+  "getters": Object {
+    "icon": [Function],
+    "isPage": [Function],
+    "pathLocation": [Function],
+    "theme": [Function],
+    "title": [Function],
+  },
+  "mutations": Object {
+    "setIsPage": [Function],
+    "setMeta": [Function],
+    "setPath": [Function],
+    "setTheme": [Function],
+  },
+  "state": Object {
+    "icon": "",
+    "isPage": false,
+    "path": Array [],
+    "theme": "dark",
+    "title": "",
+  },
+}
+`;
+
+exports[`numbers Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "addNumbers": [Function],
+    "removeNumber": [Function],
+    "setInitialAvaibleNumbers": [Function],
+    "setinitialNumbers": [Function],
+  },
+  "getters": Object {
+    "departmentsForNum": [Function],
+    "getInitialAvaibleNumbers": [Function],
+    "getInitialNumbers": [Function],
+    "numbersForView": [Function],
+    "uidForWrite": [Function],
+  },
+  "mutations": Object {
+    "clearDepForWrite": [Function],
+    "deleteNumber": [Function],
+    "getDepartmentsForNumbers": [Function],
+    "getNumbersForView": [Function],
+    "initialAvaibleNumbersMutation": [Function],
+    "initialNumbersMutation": [Function],
+    "setNumbers": [Function],
+  },
+  "state": Object {
+    "departmentsForNumbers": Array [],
+    "departmentsForWrite": Array [],
+    "initialAvaibleNumbers": null,
+    "inititalNumbers": null,
+    "numbersForView": Array [],
+  },
+}
+`;
+
+exports[`queueInfo Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "setAgentsQueueInfo": [Function],
+    "setDeleteQueueInfo": [Function],
+    "setInitialQueue": [Function],
+    "setMagagersQueueInfo": [Function],
+    "setMaxWaitInfo": [Function],
+    "setQueueInfo": [Function],
+    "setQueueNameInfo": [Function],
+    "setRingInUseInfo": [Function],
+    "setStrategyInfo": [Function],
+    "setTimeoutInfo": [Function],
+  },
+  "getters": Object {
+    "getAgentsLength": [Function],
+    "getAgentsQueueInfo": [Function],
+    "getDeleteQueueInfo": [Function],
+    "getInitialQueue": [Function],
+    "getManagersQueueInfo": [Function],
+    "getMaxWaitInfo": [Function],
+    "getQueueInfo": [Function],
+    "getQueueNameInfo": [Function],
+    "getRingInUseInfo": [Function],
+    "getStrategyInfo": [Function],
+    "getTimeoutInfo": [Function],
+  },
+  "mutations": Object {
+    "agentsQueueInfoMutation": [Function],
+    "deleteQueueInfoMutation": [Function],
+    "initialQueueMutation": [Function],
+    "managersQueueInfoMutation": [Function],
+    "maxWaitInfoMutation": [Function],
+    "queueInfoMutation": [Function],
+    "queueNameInfoMutation": [Function],
+    "ringInUseInfoMutation": [Function],
+    "strategyInfoMutaion": [Function],
+    "timeoutInfoMutation": [Function],
+  },
+  "state": Object {
+    "delete": false,
+    "initialQueue": null,
+    "queue": Object {
+      "belongTo": Object {
+        "user": Array [],
+      },
+      "maxwait": "",
+      "name": "",
+      "relatedWith": Object {
+        "user": Array [],
+      },
+      "ringinuse": "",
+      "strategy": "",
+      "timeout": "",
+    },
+  },
+}
+`;
+
+exports[`queues Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "setInitialQueues": [Function],
+    "setPaginator": [Function],
+    "setQueues": [Function],
+    "setRinginuse": [Function],
+    "setStrategy": [Function],
+    "setTimeout": [Function],
+    "setWait": [Function],
+  },
+  "getters": Object {
+    "getInitialQueues": [Function],
+    "paginatorListManage": [Function],
+    "queuesListManage": [Function],
+  },
+  "mutations": Object {
+    "initialQueuesMutation": [Function],
+    "paginatorMutation": [Function],
+    "queuesMutation": [Function],
+    "ringinuseMutation": [Function],
+    "strategyMutation": [Function],
+    "timeoutMutation": [Function],
+    "waitMutation": [Function],
+  },
+  "state": Object {
+    "initialQueues": null,
+    "manage": Array [],
+    "paginator": Array [],
+  },
+}
+`;
+
+exports[`report Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "setCDR": [Function],
+    "setCountry": [Function],
+    "setPageCDR": [Function],
+    "setPaginatorCDR": [Function],
+    "setPeerPageCDR": [Function],
+    "setUsersCDR": [Function],
+  },
+  "getters": Object {
+    "getCDR": [Function],
+    "getCountry": [Function],
+    "getPageCDR": [Function],
+    "getPaginatorCDR": [Function],
+    "getPeerPageCDR": [Function],
+    "getUsersCDR": [Function],
+  },
+  "mutations": Object {
+    "cdrMutation": [Function],
+    "pageCDRMutation": [Function],
+    "paginatorCDRMutation": [Function],
+    "peerPageCDRMutation": [Function],
+    "setCountryMutation": [Function],
+    "userCDRMutation": [Function],
+  },
+  "state": Object {
+    "cdr": Array [],
+    "country": Array [],
+    "page": "1",
+    "paginator": Object {},
+    "per-page": "12",
+    "users": Array [],
+  },
+}
+`;
+
+exports[`scenario Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "addItemScen": [Function],
+    "changeItemScenarios": [Function],
+    "setChangeNameScenario": [Function],
+    "setCountriesScenario": [Function],
+    "setDeleteItem": [Function],
+    "setExternalNumbers": [Function],
+    "setInitialList": [Function],
+    "setInitialScenario": [Function],
+    "setItemScenario": [Function],
+    "setListScenarios": [Function],
+    "setNewScenario": [Function],
+    "setQueuesScenarios": [Function],
+    "setScenario": [Function],
+    "setShowConfig": [Function],
+    "setUserScenario": [Function],
+  },
+  "getters": Object {
+    "getCountriesScenario": [Function],
+    "getExternalNumbers": [Function],
+    "getInitialList": [Function],
+    "getInitialScenario": [Function],
+    "getItemScenario": [Function],
+    "getListScenarios": [Function],
+    "getQueuesScenarios": [Function],
+    "getScenario": [Function],
+    "getShowConfig": [Function],
+    "getUserScenario": [Function],
+  },
+  "mutations": Object {
+    "addItemScenMutation": [Function],
+    "changeNameScenarioMutation": [Function],
+    "changeScenarioAfterUpdate": [Function],
+    "countriesScenarioMutation": [Function],
+    "deleteItemMutation": [Function],
+    "externalNumbersMutation": [Function],
+    "initialListMutation": [Function],
+    "initialScenarioMutation": [Function],
+    "itemScenariosMutation": [Function],
+    "listScenariosMutation": [Function],
+    "newScenarioMutation": [Function],
+    "queuesMutationScenarios": [Function],
+    "scenarioMutation": [Function],
+    "setItemMutation": [Function],
+    "showConfigMutation": [Function],
+    "userScenarioMutation": [Function],
+  },
+  "state": Object {
+    "changeArray": Array [],
+    "changeMode": "",
+    "countries": Array [],
+    "externalnumbers": Array [],
+    "initialList": Array [],
+    "initialScenario": Object {},
+    "item": null,
+    "listScenarios": Array [],
+    "listToBack": Array [],
+    "queues": Object {},
+    "scenario": Object {},
+    "showConfiguration": "",
+    "user": Object {},
+  },
+}
+`;
+
+exports[`userInfo Check snapshot 1`] = `
+Object {
+  "actions": Object {
+    "changeDeps": [Function],
+    "changeRole": [Function],
+    "changeUserInfo": [Function],
+    "changeVNumber": [Function],
+    "setAva": [Function],
+    "setCDRBilling": [Function],
+    "setCDRExport": [Function],
+    "setCDRListen": [Function],
+    "setCDRView": [Function],
+    "setDeleteUser": [Function],
+    "setInitialUser": [Function],
+    "setPermissionCDR": [Function],
+    "setUserDepsManaged": [Function],
+    "setUserQueuesManaged": [Function],
+    "setViewBillingReports": [Function],
+    "setViewUser": [Function],
+    "successUserUpdate": [Function],
+    "toggleEditMode": [Function],
+    "usersQueuesSelected": [Function],
+  },
+  "getters": Object {
+    "changeFields": [Function],
+    "departments": [Function],
+    "editMode": [Function],
+    "getDeleteUser": [Function],
+    "getInitialUser": [Function],
+    "getPermissionBilling": [Function],
+    "getPermissionCDR": [Function],
+    "getSecret": [Function],
+    "number": [Function],
+    "queues": [Function],
+    "userAva": [Function],
+    "userInfoVuex": [Function],
+    "userManageDeps": [Function],
+    "userManageQueues": [Function],
+    "userQueues": [Function],
+    "userRole": [Function],
+    "userUid": [Function],
+  },
+  "mutations": Object {
+    "addSelectedQueues": [Function],
+    "deleteUserMutation": [Function],
+    "initialUserMutation": [Function],
+    "pushAva": [Function],
+    "pushField": [Function],
+    "resetChanges": [Function],
+    "setCDRBillingMutation": [Function],
+    "setCDRExportMutation": [Function],
+    "setCDRListenMutation": [Function],
+    "setCDRViewMutation": [Function],
+    "setDeps": [Function],
+    "setEditMode": [Function],
+    "setNewRole": [Function],
+    "setPermissionCDRMutation": [Function],
+    "setUserInfo": [Function],
+    "setVNumber": [Function],
+    "userDepsManaged": [Function],
+    "userQueuesManaged": [Function],
+    "viewBillingReportsMutatution": [Function],
+    "writeChanges": [Function],
+  },
+  "state": Object {
+    "changedFields": Array [],
+    "delete": false,
+    "editMode": false,
+    "fields": Object {
+      "addSelectedQueues": "relatedWith",
+      "pushAva": "avatar",
+      "pushField": Array [
+        "name",
+        "phone",
+        "location",
+        "position",
+        "email",
+        "internalNumber",
+        "password",
+        "confirm",
+      ],
+      "setDeps": "relatedWith",
+      "setNewRole": "permission",
+      "setPermissionCDRMutation": "permission",
+      "setVNumber": "extra",
+      "userDepsManaged": "manage",
+      "userQueuesManaged": "manage",
+      "viewBillingReportsMutatution": "permission",
+    },
+    "initialUser": Object {
+      "avatar": "",
+      "confirm": "",
+      "email": "",
+      "internalNumber": "",
+      "location": "",
+      "manage": Object {
+        "department": Array [],
+        "queue": Array [],
+      },
+      "name": "",
+      "password": "",
+      "permission": Object {
+        "cdr": Object {
+          "billing": "",
+          "export": "",
+          "listen": "",
+          "view": "",
+        },
+        "role": "",
+        "view": Object {
+          "billing": false,
+        },
+      },
+      "phone": "",
+      "position": "",
+      "relatedWith": Object {
+        "department": Array [],
+        "departmentUid": Array [],
+        "queue": Array [],
+        "queueUid": Array [],
+      },
+      "route": Array [
+        Object {
+          "allowed": true,
+          "directionId": "",
+          "externalNumberUid": "",
+          "priority": 1,
+        },
+      ],
+      "secret": "",
+    },
+    "uid": "",
+    "updateSuccess": false,
+    "user": Object {
+      "avatar": "",
+      "confirm": "",
+      "email": "",
+      "internalNumber": "",
+      "location": "",
+      "manage": Object {
+        "department": Array [],
+        "queue": Array [],
+      },
+      "name": "",
+      "password": "",
+      "permission": Object {
+        "cdr": Object {
+          "billing": "",
+          "export": "",
+          "listen": "",
+          "view": "",
+        },
+        "role": "",
+        "view": Object {
+          "billing": false,
+        },
+      },
+      "phone": "",
+      "position": "",
+      "relatedWith": Object {
+        "department": Array [],
+        "departmentUid": Array [],
+        "queue": Array [],
+        "queueUid": Array [],
+      },
+      "route": Array [
+        Object {
+          "allowed": true,
+          "directionId": "",
+          "externalNumberUid": "",
+          "priority": 1,
+        },
+      ],
+      "secret": "",
+    },
+  },
+}
+`;

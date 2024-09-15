@@ -1,0 +1,318 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`View Check snapshot 1`] = `
+<div>
+  <div
+    class="wrap-table"
+  >
+    <table>
+      <thead>
+        <tr
+          class="header"
+        >
+          <th>
+            Date & Time
+          </th>
+           
+          <th>
+            Agent Name
+          </th>
+           
+          <th>
+            Agent Number
+          </th>
+           
+          <th>
+            LocalDST
+          </th>
+           
+          <th>
+            Сall Status
+          </th>
+           
+          <th>
+            V-Number (DID)
+          </th>
+           
+          <th>
+            Call Type
+          </th>
+           
+          <th>
+            Phone Number
+          </th>
+           
+          <th>
+            Duration
+          </th>
+           
+          <th>
+            Bill Sec
+          </th>
+           
+          <th>
+            Cost
+          </th>
+           
+          <th>
+            Call.ID
+          </th>
+           
+          <th>
+            Listen
+          </th>
+           
+          <th>
+            Export
+          </th>
+        </tr>
+      </thead>
+       
+      <tbody>
+        <tr>
+          <td>
+            
+          </td>
+           
+          <td>
+            
+          </td>
+           
+          <td>
+            
+          </td>
+           
+          <td>
+            
+          </td>
+           
+          <td>
+            
+          </td>
+           
+          <td>
+            <img
+              class="flag"
+              src=""
+            />
+             
+        
+          </td>
+           
+          <td>
+            <img
+              content=""
+              tabindex="0"
+            />
+          </td>
+           
+          <td>
+            <span
+              class="phone"
+            >
+              
+            </span>
+            <img
+              class="flag"
+              src=""
+            />
+          </td>
+           
+          <td>
+            
+          </td>
+           
+          <td>
+            
+          </td>
+           
+          <td>
+            
+          </td>
+           
+          <td
+            content="Copy"
+            tabindex="0"
+          >
+            <input
+              class="invisible"
+              type="text"
+            />
+             
+            <img
+              class="cursor"
+              src="@/assets/img/icons/copy.svg"
+            />
+          </td>
+           
+          <td>
+            <div>
+              <audio />
+               
+              <img
+                class="cursor disabled"
+                content="Play"
+                src="@/assets/img/icons/play.svg"
+                tabindex="0"
+              />
+               
+              <img
+                class="cursor"
+                content="Pause"
+                src="@/assets/img/icons/pause.svg"
+                style="display: none;"
+                tabindex="0"
+              />
+            </div>
+          </td>
+           
+          <td
+            content="Download"
+            tabindex="0"
+          >
+            <a>
+              <img
+                class="cursor disabled"
+                src="@/assets/img/icons/download.svg"
+              />
+            </a>
+          </td>
+        </tr>
+         
+        <tr
+          style="display: none;"
+        >
+          <td
+            colspan="13"
+          >
+            <span
+              class="player"
+            >
+              <span
+                class="step-timer"
+              >
+                <img
+                  class="cursor step"
+                  content="-10 sec"
+                  src="@/assets/img/icons/back-step.svg"
+                  tabindex="0"
+                  width="50"
+                />
+                 
+                <img
+                  class="cursor"
+                  content="Play"
+                  src="@/assets/img/icons/playBig-black.svg"
+                  style="display: none;"
+                  tabindex="0"
+                  width="24"
+                />
+                 
+                <!---->
+                 
+                <img
+                  class="cursor"
+                  content="Pause"
+                  src="@/assets/img/icons/pauseBig.svg"
+                  style="display: none;"
+                  tabindex="0"
+                  width="20"
+                />
+                 
+                <img
+                  class="cursor step"
+                  content="+10 sec"
+                  src="@/assets/img/icons/forward-step.svg"
+                  tabindex="0"
+                  width="50"
+                />
+              </span>
+               
+              <span
+                class="timer"
+              >
+                <span>
+                  0:00
+                </span>
+                 
+                <span
+                  class="range-wrapper timer-width"
+                >
+                  <input
+                    class="time"
+                    max="100"
+                    step="1"
+                    type="range"
+                  />
+                </span>
+                 
+                <span>
+                  0:00
+                </span>
+              </span>
+               
+              <span
+                class="volume-wrapper"
+              >
+                <img
+                  alt=""
+                  class="hover"
+                  src="@/assets/img/icons/quiet.svg"
+                />
+                 
+                <img
+                  alt=""
+                  class="mute hover"
+                  src="@/assets/img/icons/mute.svg"
+                  style="display: none;"
+                />
+                 
+                <span
+                  class="range-wrapper"
+                >
+                  <input
+                    class="volume"
+                    max="1"
+                    step="0.01"
+                    type="range"
+                  />
+                </span>
+                 
+                <img
+                  alt=""
+                  class="hover"
+                  height="24"
+                  src="@/assets/img/icons/volumeUp.svg"
+                />
+              </span>
+            </span>
+          </td>
+           
+          <td>
+            <span
+              class="up"
+              content="Close player"
+              tabindex="0"
+            >
+              <svg
+                fill="none"
+                height="15"
+                viewBox="0 0 13 13"
+                width="15"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  clip-rule="evenodd"
+                  d="M8.03177 6.50013L12.6823 1.84948C13.1059 1.42591 13.1059 0.741255 12.6823 0.317681C12.2588 -0.105894 11.5741 -0.105894 11.1506 0.317681L6.5 4.96833L1.84944 0.317681C1.42588 -0.105894 0.74124 -0.105894 0.317674 0.317681C-0.105891 0.741255 -0.105891 1.42591 0.317674 1.84948L4.96823 6.50013L0.317674 11.1508C-0.105891 11.5744 -0.105891 12.259 0.317674 12.6826C0.528915 12.8938 0.806237 13 1.08356 13C1.36088 13 1.6382 12.8938 1.84944 12.6826L6.5 8.03194L11.1506 12.6826C11.3618 12.8938 11.6391 13 11.9164 13C12.1938 13 12.4711 12.8938 12.6823 12.6826C13.1059 12.259 13.1059 11.5744 12.6823 11.1508L8.03177 6.50013Z"
+                  fill="#515960"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

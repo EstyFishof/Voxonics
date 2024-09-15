@@ -1,0 +1,507 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddAgent Check snapshot 1`] = `
+<div
+  class="personal-info-wrap"
+>
+  <div
+    class="wrap-head"
+  >
+    <h2>
+      ADD AGENTS
+    </h2>
+     
+    <span
+      class="hr"
+    />
+  </div>
+   
+  <div
+    class="top"
+  >
+    <div
+      class="left"
+    >
+      Add agent
+      
+    </div>
+     
+    <div
+      class="agents users"
+    >
+      <!---->
+       
+      <!---->
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="personal-info"
+    >
+      <div
+        class="personal-info__first-part"
+      >
+        <div
+          class="item-container with-err"
+        >
+          <div
+            class="label"
+          >
+            <input
+              class="input-field"
+              placeholder="Enter name or Agent Number"
+            />
+             
+            <span
+              class="list"
+              style="display: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="agents users"
+    />
+  </div>
+</div>
+`;
+
+exports[`AddManagers Check snapshot 1`] = `
+<div
+  class="personal-info-wrap"
+>
+  <div
+    class="wrap-head"
+  >
+    <h2>
+      ADD MANAGERS
+    </h2>
+     
+    <span
+      class="hr"
+    />
+  </div>
+   
+  <div
+    class="top"
+  >
+    <div
+      class="left"
+    >
+      Add manager
+      
+    </div>
+     
+    <div
+      class="managers users"
+    >
+      <div
+        class="manager user"
+      >
+        <div
+          class="block"
+        >
+          <div
+            class="round"
+          >
+            Name
+          </div>
+           
+          <span
+            class="name"
+          />
+        </div>
+         
+        <span
+          class="name"
+        >
+          Agent Number
+        </span>
+         
+        <span
+          class="union"
+        />
+      </div>
+       
+      <!---->
+    </div>
+  </div>
+   
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="personal-info"
+    >
+      <div
+        class="personal-info__first-part"
+      >
+        <div
+          class="item-container with-err"
+        >
+          <div
+            class="label"
+          >
+            <input
+              class="input-field"
+              placeholder="Enter name or Agent Number"
+            />
+             
+            <span
+              class="list"
+              style="display: none;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <div
+      class="managers users"
+    >
+      <div
+        class="manager user"
+      >
+        <div
+          class="block"
+        >
+          <div
+            class="round"
+          >
+            <img
+              alt="avatar"
+              src=""
+            />
+          </div>
+           
+          <span
+            class="name"
+          >
+            
+          </span>
+        </div>
+         
+        <span
+          class="name"
+        >
+          
+        </span>
+         
+        <div
+          class="action"
+        >
+          <label
+            class="label-container"
+          >
+            <input
+              checked="checked"
+              class="view"
+              disabled="disabled"
+              type="checkbox"
+            />
+             
+            <span
+              class="check"
+            />
+             
+            <span
+              class="text"
+            >
+              View
+            </span>
+          </label>
+           
+          <label
+            class="label-container"
+          >
+            <input
+              class="edit"
+              type="checkbox"
+            />
+             
+            <span
+              class="check"
+            />
+             
+            <span
+              class="text"
+            >
+              Edit
+            </span>
+          </label>
+        </div>
+         
+        <img
+          alt=""
+          class="union"
+          src="@/assets/img/icons/union.svg"
+          width="19"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CreateQueue Check snapshot 1`] = `
+<div
+  class="wrap-main"
+>
+  <div
+    class="wrap-form"
+  >
+    <form>
+      <queueinfo-stub
+        requiredfields="[object Object]"
+      />
+       
+      <addagent-stub />
+       
+      <addmanager-stub />
+       
+      <div
+        class="btn-container"
+      >
+        <button
+          class="btn-submit"
+        >
+          Apply Changes
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`QueueInfo Check snapshot 1`] = `
+<div
+  class="personal-info-wrap"
+>
+  <div
+    class="wrap-head"
+  >
+    <h2>
+      QUEUE INFO
+    </h2>
+     
+    <span
+      class="hr"
+    />
+  </div>
+   
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="personal-info"
+    >
+      <div
+        class="personal-info__first-part"
+      >
+        <div
+          class="item-container with-err"
+        >
+          <label>
+            
+              Name
+ 
+            <input
+              class="input-field error"
+              maxlength="12"
+              placeholder="Enter name of Queue"
+              required="required"
+            />
+          </label>
+           
+          <label>
+            
+              Number of Queue
+ 
+            <input
+              class="input-field"
+              placeholder="Enter number of Queue"
+              required="required"
+            />
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    class="wrap-head options-title"
+  >
+    <h2>
+      Call Settings
+    </h2>
+     
+    <span
+      class="hr"
+    />
+  </div>
+   
+  <div
+    class="wrap-body"
+  >
+    <div
+      class="personal-info"
+    >
+      <div
+        class="personal-info__first-part"
+      >
+        <div
+          class="item-container with-err"
+        >
+          <label
+            class="strategy-label options-label"
+          >
+            
+              Strategy
+ 
+            <input
+              class="input-field num"
+              readonly="readonly"
+              type="text"
+            />
+             
+            <span
+              class="triangle"
+            >
+              <img
+                alt="select"
+                src="../../../../../assets/img/icons/queues-select-arrow.png"
+              />
+            </span>
+             
+            <ul
+              class="list-related-numbers"
+              style="display: none;"
+            >
+              <li>
+                Ring all
+              </li>
+               
+              <li>
+                Least recent
+              </li>
+               
+              <li>
+                Fewest calls
+              </li>
+               
+              <li>
+                Random
+              </li>
+               
+              <li>
+                RR memory
+              </li>
+               
+              <li>
+                Linear
+              </li>
+               
+              <li>
+                W random
+              </li>
+            </ul>
+          </label>
+           
+          <label
+            class="strategy-label options-label"
+          >
+            
+              Timeout
+ 
+            <input
+              class="input-field num"
+              readonly="readonly"
+              type="text"
+            />
+             
+            <span
+              class="triangle"
+            >
+              <img
+                alt="select"
+                src="../../../../../assets/img/icons/queues-select-arrow.png"
+              />
+            </span>
+             
+            <ul
+              class="list-related-numbers"
+              style="display: none;"
+            >
+              <li>
+                0
+              </li>
+               
+              <li>
+                1
+              </li>
+               
+              <li>
+                2
+              </li>
+               
+              <li>
+                3
+              </li>
+               
+              <li>
+                4
+              </li>
+               
+              <li>
+                5
+              </li>
+            </ul>
+          </label>
+           
+          <label
+            class="strategy-label options-label"
+          >
+            
+              Ring in use
+ 
+            <input
+              class="input-field num"
+              readonly="readonly"
+              type="text"
+            />
+             
+            <span
+              class="triangle"
+            >
+              <img
+                alt="select"
+                src="../../../../../assets/img/icons/queues-select-arrow.png"
+              />
+            </span>
+             
+            <ul
+              class="list-related-numbers"
+              style="display: none;"
+            >
+              <li>
+                Yes
+              </li>
+               
+              <li>
+                No
+              </li>
+            </ul>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
