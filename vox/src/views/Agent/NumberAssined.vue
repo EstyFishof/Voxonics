@@ -9,7 +9,7 @@
    
     <div class="divider-container">
       <div class="divider"></div> 
-      <span>Number assigned</span>
+      <span><div>Number assigned</div></span>
   
     </div>
     <div class="highlight-container">
@@ -72,8 +72,10 @@ font-size: medium;
 .divider {
 height: 1px;
 background-color: rgb(118, 117, 119);
-margin-left: 165px;
+margin-left: 150px;
 margin-right: 30px;
+margin-bottom: -10px;
+
 }
 .divider-container span {
 color: rgb(118, 117, 119);
@@ -81,14 +83,16 @@ margin-right: 1100px;
 padding: 0px;
 font-size: large;
 font-family: Avenir, Helvetica, Arial, sans-serif;
+margin-top: -30px;
 }
 .highlight-container {
 display: flex;
 justify-content: left;
 align-items: center;
 margin-top: 10px;
-margin-left: 20px;
+margin-left: 2px;
 font-family: Avenir, Helvetica, Arial, sans-serif;
+margin-bottom: 30px;
 }
 .highlight {
 font-weight: bold;
@@ -127,8 +131,9 @@ background-color: #4caf50;
 .divider2{
 height: 1px;
 background-color: rgb(118, 117, 119);
-margin-left: 100px;
+margin-left: 90px;
 margin-right: 30px;
+margin-top: 50px;
 }
 
 .sheduale{
@@ -137,6 +142,7 @@ margin-right: 1168px;
 padding: 0px;
 font-size: large;
 font-family: Avenir, Helvetica, Arial, sans-serif;
+margin-top: -10px;
 }
 </style>
 

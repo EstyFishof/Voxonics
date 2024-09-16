@@ -85,11 +85,11 @@
         </div>
       </div>
     </form>
-  
     
     <EmployeeTable/>
     <NumberAssined/>
     <DayClr/>
+    <DataCollector/>
 
   </div>
   <!-- <div class="divider-container">
@@ -110,6 +110,7 @@
 import EmployeeTable from './EmployeeTable.vue';
 import NumberAssined from  './NumberAssined.vue';
 import DayClr from './DayClr.vue';
+import DataCollector from './DataCollector.vue'
 
 export default {
   components: {
@@ -117,6 +118,7 @@ export default {
     EmployeeTable,
     NumberAssined,
     DayClr,
+    DataCollector,
   },
   name: 'CampaignForm',
   data() {
@@ -170,12 +172,14 @@ h1 {
   margin-right: 1000px;
   font-size: large;
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  white-space: nowrap;
+
 }
 .campaign-form {
   max-width: 100%;
   margin: 0 auto;
   padding: 20px;
-  background-color: #1c1d21;
+  /* background-color: #1c1d21; */
   color: #c7c2c2;
 }
 .form-row {
@@ -239,7 +243,7 @@ label.left-align {
   
 }
 .custom-file-input input[type="text"] {
-  width: 100%;
+  width: 98%;
   padding: 40px;
   box-sizing: border-box;
   background-color: rgb(140, 134, 146);

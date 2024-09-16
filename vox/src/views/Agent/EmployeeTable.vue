@@ -30,6 +30,7 @@
             </tr>
           </thead>
           <tbody>
+            
             <tr v-for="agent in filteredAgents" :key="agent.id">
               <td><img :src="customerServiceIcon" alt="Customer Service Icon" class="circular-image">{{ agent.name }}</td>
               <td>{{ agent.id }}</td>
@@ -68,6 +69,10 @@
                   <option value="support">Support</option>
                 </select>
               </th>
+
+
+ 
+
               <th class="select-header">
                 <div class="header-content"> Select All
                   <input type="checkbox" @click="toggleSelectAllSelectedAgents"/>
@@ -76,6 +81,7 @@
             </tr>
           </thead>
           <tbody>
+            <tr v-for="(agent, index) in filteredAgents" :key="agent.id + '-' + index">
             <tr v-for="agent in filteredSelectedAgents" :key="agent.id">
               <td><img :src="customerServiceIcon" alt="Customer Service Icon" class="circular-image">{{ agent.name }}</td>
               <td>{{ agent.id }}</td>
@@ -83,6 +89,7 @@
               <td>{{ agent.position }}</td>
               <td><input type="checkbox" v-model="selectedInSelectedTable" :value="agent" /></td>
             </tr>
+          </tr>
           </tbody>
         </table>
         <div class="button-container">
@@ -105,6 +112,9 @@ export default {
         { name: "Benny", id: 33, department: "Sales", position: "Manager" },
         { name: "Natan", id: 44, department: "Support", position: "Agent" }
       ],
+
+   
+
       filters: {
         name: "",
         id: "",
@@ -174,6 +184,14 @@ export default {
     }
   },
   methods: {
+    fetchEmployees() {
+    // דוגמה לפונקציה שמביאה נתונים מהשרת
+    axios.get('/api/employees').then(response => {
+      this.employees = response.data;
+      console.log('מפתחות העובדים:', this.employees.map(employee => employee.id));
+    });
+  },
+  
     sort(column, isAddedAgents = false) {
       if (this.sortConfig.column === column && this.sortConfig.table === (isAddedAgents ? 'addedAgents' : 'agents')) {
         this.sortConfig.direction = this.sortConfig.direction === 'asc' ? 'desc' : 'asc';
@@ -225,15 +243,23 @@ export default {
     }
   },
   created() {
-    this.loadAgentsFromLocalStorage();
+  this.loadAgentsFromLocalStorage();
+  
+  // בדיקה למזהים כפולים
+  const ids = this.agents.map(agent => agent.id);
+  const hasDuplicates = ids.some((id, index) => ids.indexOf(id) !== index);
+  
+  if (hasDuplicates) {
+    console.warn('Duplicate IDs detected in the agents list.');
   }
+}
+
 };
 </script>
 
 
 <style scoped>
 .container {
-  background-color: #1c1d21;
   color:#a3a9af;
   padding: 20px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -244,10 +270,16 @@ export default {
   justify-content: space-between;
 }
 
-.main-table,
+.main-table {
+  width: 48%;
+  position: relative;
+  left: -3px; /* הזזה שמאלה של הטבלה השמאלית */
+}
+
 .selected-table {
   width: 48%;
   position: relative;
+  right: 20px;
 }
 
 .agents-table,
@@ -255,7 +287,7 @@ export default {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
-  background-color: rgb(39, 40, 40);
+  background-color: rgb(34, 44, 54);
   
 }
 
@@ -268,7 +300,7 @@ export default {
   text-align: left;
 }
 .header-row {
-  background-color: #4f6e96; /* Header row background color */
+  background-color: rgb(39, 104, 153); /* Header row background color */
   color: rgb(194, 188, 188); /* Header row text color */
  
 }
@@ -280,12 +312,14 @@ export default {
 
 .header-content input[type="checkbox"] {
   margin-right: 8px; /* רווח בין ה-checkbox לטקסט */
+  opacity: 100%;
+
   
 }
 
 .filter-row th {
   padding: 0.1px;
-  color: rgb(85, 85, 87);
+  color: rgb(16, 18, 20);
   
 }
 
@@ -299,7 +333,7 @@ export default {
 }
 
 button {
-  background-color: #4f6e96;
+  background-color: rgb(123, 153, 39);
   color: black;
   border: none;
   padding: 10px 20px;
@@ -313,8 +347,9 @@ button:hover {
 }
 
 .agent-btn {
-  background-color: #4f6e96;
+  background-color:rgb(39, 104, 153);
 }
+
 
 .remove-agent-btn {
   background-color: red;
@@ -330,19 +365,25 @@ button:hover {
 .arrow-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 4%;
+  margin-left: -20px;
 }
 
 .arrow-right,
 .arrow-left {
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
+  margin-top: -9px;
+  font-weight: bold;
+  color: #fff7f6;
+  margin-left: 8px;
 }
 
 .arrow-right {
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .icon-user::before {
@@ -371,6 +412,7 @@ button:hover {
   content: ' ↓';
 }
 input[type="checkbox"] {
+  opacity: 100%;
   appearance: none;
   width: 20px;
   height: 20px;
@@ -458,7 +500,7 @@ input[type="checkbox"]:checked::before {
 }
 
 /* סטיילינג של checkbox בטבלה הימנית */
-.selected-table input[type="checkbox"] {
+ .selected-table input[type="checkbox"] {
   appearance: none;
   width: 20px;
   height: 20px;
@@ -466,18 +508,18 @@ input[type="checkbox"]:checked::before {
   border: 2px solid red;
   outline: none;
   cursor: pointer;
-  background-color: rgb(39, 40, 40); 
+  background-color: rgb(87, 92, 92); 
   position: relative;
 }
 
 /* סטיילינג של checkbox  בטבלה הימנית */
-.selected-table input[type="checkbox"]:checked {
-  background-color: #333;
-  border: 2px solid red;
-  
-}
+ .selected-table input[type="checkbox"]:checked {
+  background-color: #6f1e74;
+  border: 2px solid red; 
+ }
 
-.selected-table input[type="checkbox"]:checked::before {
+
+ .selected-table input[type="checkbox"]:checked::before {
   content: '✔';
   position: absolute;
   top: 50%;
@@ -488,6 +530,8 @@ input[type="checkbox"]:checked::before {
   background: none;
 
 }
+
+
 .select-header {
   display: flex;
   flex-direction: column;
@@ -499,6 +543,8 @@ input[type="checkbox"]:checked::before {
   border-radius: 50%;
   object-fit: cover;
 }
+
+
 
 </style>
 
