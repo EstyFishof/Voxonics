@@ -173,26 +173,26 @@
           <div v-if="formData.status === 'interested'" class="input-row">
             <div class="select-row">
               <div>
-                <label>Assign to: </label>
+                <!-- <label>Assign to: </label> -->
                 <select v-model="formData.assignTo" class="select-box">
-                  <option value="" disabled selected>Select</option>
+                  <option value="" disabled selected>Assign to</option>
                   <option value="">Avi</option>
                   <option value="">Dani</option>
                   <option value="">Eli</option>
                 </select>
               </div>
               <div>
-                <label>Department: </label>
+                <!-- <label>Department: </label> -->
                 <select v-model="formData.department" class="select-box">
-                  <option value="" disabled selected>Select</option>
+                  <option value="" disabled selected>Department</option>
                   <option value="">sales</option>
                   <option value="">products</option>
                 </select>
               </div>
               <div>
-                <label>Campaign Name: </label>
+                <!-- <label>Campaign Name: </label> -->
                 <select v-model="formData.campaignName" class="select-box">
-                  <option value="" disabled selected>Select</option>
+                  <option value="" disabled selected>Campaign Name</option>
                   <option value="">a</option>
                   <option value="">b</option>
                   <option value="">c</option>
@@ -201,28 +201,46 @@
             </div>
           </div>
           <div class="input-row">
-            <label id="call-back-label" >
-              <input id="call-back-label" type="radio" v-model="formData.callback" />
-              Call back in
-            </label>
-            <div class="select-row">
-              <select v-model="formData.callbackNumber" class="select-box" :disabled="!formData.callback">
-                <option value="" disabled selected>number</option>
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-              </select>
-              <select v-model="formData.callbackTimeframe" class="select-box" :disabled="!formData.callback">
-                <option value="" disabled selected>time</option>
-                <option value="day">Day</option>
-                <option value="week">Week</option>
-                <option value="month">Month</option>
-              </select>
-            </div>
-          </div>
+  <label id="call-back-label">
+    <input 
+      id="call-back-radio" 
+      type="radio" 
+      v-model="formData.callback" 
+      :value="true" 
+    />
+    Call back in
+  </label>
+  
+  <div class="select-row">
+    <!-- Select box for number, disabled when the radio button is not selected -->
+    <select 
+      v-model="formData.callbackNumber" 
+      class="select-box" 
+      :disabled="!formData.callback"
+    >
+      <option value="" disabled selected>number</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+
+    <!-- Select box for timeframe, disabled when the radio button is not selected -->
+    <select 
+      v-model="formData.callbackTimeframe" 
+      class="select-box" 
+      :disabled="!formData.callback"
+    >
+      <option value="" disabled selected>time</option>
+      <option value="day">Day</option>
+      <option value="week">Week</option>
+      <option value="month">Month</option>
+    </select>
+  </div>
+</div>
+
           <div class="input-row">
             <label class="comment-label">Leave your comment: </label>
-            <textarea v-model="formData.comment"></textarea>
+            <textarea id="text-area" v-model="formData.comment"></textarea>
           </div>
         </div>
         <div class="popup-footer">
@@ -253,7 +271,6 @@
             <th>Contact Status</th>
             <th>Comment</th>
             <th></th>
-            <!-- עמודה חדשה למחיקה -->
           </tr>
         </thead>
         <tbody>
@@ -270,7 +287,6 @@
             <td>
               <img src="../assets/img/delete.png" alt="Delete" class="delete-icon" @click="deleteRowFunc(entry.id)" />
             </td>
-            <!-- אייקון למחיקה -->
           </tr>
         </tbody>
       </table>
@@ -420,7 +436,6 @@ export default {
   
   
     updateComment(row) {
-      // שלח בקשת עדכון לשרת
       this.updateCommentOnServer(row);
     },
     deleteRowFunc(id) {
@@ -445,7 +460,6 @@ export default {
         console.log('Comment updated successfully');
       } catch (error) {
         console.error('Error updating comment:', error);
-        // אפשר לטפל בטעויות כמו הצגת הודעה למשתמש
       }
     },
 
@@ -457,7 +471,6 @@ export default {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log('Fetched data:', data); // הדפס את הנתונים
         this.tableData = data;
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -467,7 +480,7 @@ export default {
 
     saveData() {
       this.tableData.push({ ...this.formData });
-      this.saveToFile(); // שמירה בשרת בלבד
+      this.saveToFile();
       this.resetForm();
       this.showPopup = false;
     },
@@ -528,7 +541,6 @@ export default {
         console.log(this.tableData)
       } catch (error) {
         console.error('Error deleting row:', error);
-        // אפשר להציג הודעת שגיאה למשתמש
       }
     },
   
@@ -895,7 +907,7 @@ export default {
   color: #fff;
   padding: 20px;
   border-radius: 8px;
-  width: 23%;
+  width: 25%;
   max-width: 90%;
   font-weight: 300;
   z-index: 1001; /* Ensure the popup is on top of the overlay */
@@ -969,8 +981,10 @@ export default {
 }
 
 .select-row {
+  justify-content: center;
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
+  gap: 10px;
 }
 
 .select-box {
@@ -1135,5 +1149,7 @@ export default {
   font-weight: 300;
   color:#797979;
 }
-
+#text-area{
+  height:25px;
+}
 </style>

@@ -113,7 +113,6 @@ app.put('/update-comment', (req, res) => {
             return res.status(500).send('Error parsing JSON data');
         }
 
-        // עדכן את ה-comment עבור ה-ID המתאים
         const entryIndex = jsonData.findIndex(entry => entry.id === updatedEntry.id);
         if (entryIndex !== -1) {
             jsonData[entryIndex].comment = updatedEntry.comment;
