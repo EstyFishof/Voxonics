@@ -2,18 +2,14 @@
   <div id="contanet1">
     <button class="top-buttons" id="dayS" @click="showDaySetting">Day Setting</button>
     <button class="top-buttons" id="weekP" @click="showWeekPreferenceFunc">Week Preference</button>
-    <!-- Date inputs for Day Settings -->
-    <!-- <div v-if="isDaySetting"> -->
     <label id="fromL" for="from">From: </label>
     <input type="date" id="from" v-model="fromDate" />
 
     <label id="toL" for="to">To: </label>
     <input type="date" id="to" v-model="toDate" />
 
-    <!-- פה יש--------------------------------------------- -->
     <div v-if="showCalendar && !showWeekPreference" class="calendar-time-container">
       <div class="calendar">
-        <!-- לוח שנה (כפי שהיה קודם) -->
         <div class="calendar-header">
           <button id="btNext1" @click="previousMonth">←</button>
           <span>{{ monthNames[leftMonth] }} {{ year }}</span>
@@ -30,7 +26,6 @@
       </div>
 
       <div class="calendar">
-        <!-- לוח שנה (כפי שהיה קודם) -->
         <div class="calendar-header">
           <span>{{ monthNames[rightMonth] }} {{ year }}</span>
           <button id="btNext1" @click="nextMonth">→</button>
@@ -68,23 +63,10 @@
           <label>To: <input type="time" v-model="timeTo2" /></label>
           <button @click="saveTimeSettings">Save</button>
         </div>
-      </div>
-
-
-      <!-- <div class="toggle-settings">
-  <label>
-    <input type="radio" v-model="toggle" value="enable" /> Enable
-  </label>
-  <label>
-    <input type="radio" v-model="toggle" value="disable" /> Disable
-  </label>
-</div> -->
-
+      </div>>
     </div>
 
 
-
-    <!-- <div v-if="isWeekPreference" class="week-settings"> -->
     <div v-if="showWeekPreference && !showCalendar" class="week-preferences-settings">
       
    <div class="time-container"> 
@@ -128,7 +110,6 @@
         
       </div>
 
-
       <!-- Week Settings Section -->
       <div id="weekSettings" v-if="(this.showWeekPreference)">
   <div v-for="(day, index) in weekDays" :key="index" class="day-row">
@@ -159,14 +140,10 @@
 export default {
   data() {
     return {
-
       allDatesInRange: [],     // המערך שיכיל את כל התאריכים בטווח
-
-
       fromDate: '',
       toDate: '',
       showCalendar: false,
-      // <!-- פה יש--------------------------------------------- -->
       showWeekPreference: false,
       year: new Date().getFullYear(),
       leftMonth: new Date().getMonth(),
@@ -181,7 +158,6 @@ export default {
       timeTo2: '',
       monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
       // WeekPreferences: [],
-
       // Week Preferences Data
       isDaySetting: true,
       isWeekPreference: false,
@@ -204,17 +180,7 @@ export default {
 
     };
   },
-  // computed: {
-  //   leftMonthDays() {
-  //     return this.generateDays(this.year, this.leftMonth);
-  //   },
-  //   rightMonthDays() {
-  //     return this.generateDays(this.year, this.rightMonth);
-  //   },
-  //   filteredInRangeDates() {
-  //     return this.selectedDates.filter(day => this.isInRange(day) && !this.isExcluded(day));
-  //   }
-  // },
+
   methods: {
     // Toggle Views
     // showDaySetting() {
@@ -243,9 +209,6 @@ export default {
         this.allDatesInRange = this.generateDateRange(this.fromDate, this.toDate);
       }
     },
-
-
-
 
     showDaySetting() {
       this.showCalendar = true;
@@ -282,8 +245,6 @@ export default {
       const selectedPreferences = this.WeekPreferences.filter(row => row.selected);
       console.log('Selected week Preferences: ', selectedPreferences);
     },
-
-
 
     previousMonth() {
       if (this.leftMonth > 0) {
@@ -324,7 +285,6 @@ export default {
       if (index === -1) {
         // הוספת תאריך שנבחר
         this.selectedDates.push(day);
-
         // הסרתו מהמערך של תאריכים בטווח
         this.allDatesInRange = this.allDatesInRange.filter(date =>
           !(date.getDate() === day.getDate() &&
@@ -390,7 +350,6 @@ export default {
       return {day,month,dayName}
       
       // `${day} ${month} ${dayName}`;
-      // return `${day} ${month} ${year} ${dayName}`;
 
     },
     selectTimeSetting(date) {
@@ -419,7 +378,6 @@ export default {
         console.log('Time settings saved for', this.formatDate(this.selectedTimeSettingDate), ':', this.timeSettings[this.selectedTimeSettingDate]);
       }
     },
-
 
     // Week Preference Methods
     // addTimeSlot(day) {
@@ -534,7 +492,6 @@ export default {
   font-family: cursive;
 } */
 
-/* חדש */
 #saveDays{
     margin: 20px 0;
     margin-top: 32%;
@@ -569,11 +526,7 @@ export default {
   margin-left: 1%;
 }
 
-/* #contanet1 > div:not(#from):not(#to):not(#save) {
-  margin-top: 2%;
-  background-color: #202933;
-  display: inline-flex;
-}  */
+
 #contanet1 {
   margin-top: 2%;
 }
@@ -616,7 +569,6 @@ html {
   /* חדש */
   /* background-color: #121a22; */
 
-  /* חדש */
   background: linear-gradient(to bottom, rgb(26,35,45), rgb(59,71,85));  
   border: 1px solid #17272fa8;
   margin: 1%;
@@ -686,19 +638,6 @@ h4 {
   margin-bottom: 10px;
 }
 
-/* button {
-  margin: 5px;
-} */
- 
-/* חדש */
-/* .active-button{
-  background-color: #276899;
-}
-.inactive-button{
-  background-color: var(--substrate);
-} */
-
-
 input[type="time"],
 #addT {
   /* חדש */
@@ -714,7 +653,6 @@ input[type="time"],
   /* margin-top: -22px; */
   /* padding: 16px 18px 0 18px; */
   
-  /* חדש */
   width: 80px;
   height: 28px;
   box-sizing: border-box;
@@ -911,18 +849,6 @@ input[type="time"] {
   border-radius: 5px;
   width: 80px;
 }
-
-/* button {
-  background-color: #1e88e5;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-} */
-
-
 
 /* Toggle Settings (Enable/Disable) */
 .toggle-settings {

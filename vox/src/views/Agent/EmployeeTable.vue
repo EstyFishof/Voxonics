@@ -305,9 +305,11 @@ export default {
  
 }
 .header-content {
+  color: #2d363f;
   display: flex;
   align-items: center;
   margin-right:-88px
+  
 }
 
 .header-content input[type="checkbox"] {
@@ -326,7 +328,7 @@ export default {
 .filter-row input,
 .filter-row select {
   width:90px;
-  background-color: #2b2626; /* New background color */
+  background-color: rgb(35, 44, 54);
   color: #bbb3b3; /* Text color */
   border: 1px solid #555; /* Input border */
   padding: 1px; /* Internal padding */
@@ -340,6 +342,7 @@ button {
   cursor: pointer;
   display: flex;
   align-items: center;
+
 }
 
 button:hover {

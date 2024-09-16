@@ -92,17 +92,7 @@
     <DataCollector/>
 
   </div>
-  <!-- <div class="divider-container">
-    <div class="divider"></div>
-    <span>Agent assigned</span>
-  </div>
-  <div class="highlight-container">
-    <span :class="{'highlight': !isRight, 'unhighlight': isRight}">Real agent</span>
-    <div class="slider" @click="togglePosition">
-      <div class="slider-circle" :class="{'right': isRight}"></div>
-    </div>
-    <span :class="{'highlight': isRight, 'unhighlight': !isRight}">Virtual agent</span>
-  </div> -->
+
 </template>
 
 <script>
@@ -212,8 +202,11 @@ label.left-align {
   height: 35px;
   padding: 10px 30px 10px 10px; /* Adjust padding to make space for the icon */
   box-sizing: border-box;
-  background-color: rgb(47, 43, 50);
+  /* background-color: rgb(47, 43, 50); */
+  background-color: #2d363f;
   color: #ffffff;
+  border: none;
+    border-radius: 5%;
 }
 .icon-pencil1{
   position: absolute;
@@ -246,10 +239,13 @@ label.left-align {
   width: 98%;
   padding: 40px;
   box-sizing: border-box;
-  background-color: rgb(140, 134, 146);
+  /* background-color: rgb(140, 134, 146); */
+  background-color: #2d363f;
   cursor: pointer;
   text-align: center;
   font-size: medium;
+  border: none;
+    border-radius: 1%;
 }
 .divider {
   height: 1px;

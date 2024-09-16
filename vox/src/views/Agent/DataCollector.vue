@@ -60,10 +60,14 @@ export default {
 
 <style scoped>
 button {
-  padding: 10px 20px;
-  background-color: rgb(39, 104, 153);
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 2%;
+    padding: 10px 45px;
+    background-color: #2d363f;
+    margin-left: 50%;
+    margin-top: 3%;
+
 }
 </style>
