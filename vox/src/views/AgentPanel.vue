@@ -112,6 +112,171 @@
             </tbody>
           </table>
         </div>
+        <div class="sh">
+          <div class="main-container">
+          <!-- הצגת ה pop up לסיכום שיחה -->
+    <button @click="showPopup = true" class="open-popup-button">
+      Open Popup
+    </button>
+
+    <div v-if="showPopup" class="popup-overlay">
+      <div class="popup-content">
+        <div class="popup-header">
+          <div>To continue, please leave a comment and status about the call</div>
+        </div>
+        <div class="popup-body">
+          <div class="info-row">
+            <div class="info-pair">
+              <div class="label">ID:</div>
+              <div class="value">{{ formData.id }}</div>
+            </div>
+            <div class="info-pair">
+              <div class="label">First Name:</div>
+              <div class="value">{{ formData.firstName }}</div>
+            </div>
+            <div class="info-pair">
+              <div class="label">Last Name:</div>
+              <div class="value">{{ formData.lastName }}</div>
+            </div>
+            <div class="info-pair">
+              <div class="label">Phone Number:</div>
+              <div class="value">{{ formData.phoneNumber }}</div>
+            </div>
+          </div>
+
+
+          <div class="input-row">
+            <div class="contact-status">Select Contact Status</div>
+            <div class="checkbox-row">
+              <label>
+                <input type="radio" value="sale made" v-model="formData.status" />
+                Sale Made
+              </label>
+              <label>
+                <input type="radio" value="not interested" v-model="formData.status" />
+                Not Interested
+              </label>
+              <label>
+                <input type="radio" value="follow up" v-model="formData.status" />
+                Follow Up
+              </label>
+              <label>
+                <input type="radio" value="dnc" v-model="formData.status" />
+                DNC
+              </label>
+              <label>
+                <input type="radio" value="interested" v-model="formData.status" />
+                Interested
+              </label>
+            </div>
+          </div>
+          <div v-if="formData.status === 'interested'" class="input-row">
+            <div class="select-row">
+              <div>
+                <label>Assign to: </label>
+                <select v-model="formData.assignTo" class="select-box">
+                  <option value="" disabled selected>Select</option>
+                  <option value="">Avi</option>
+                  <option value="">Dani</option>
+                  <option value="">Eli</option>
+                </select>
+              </div>
+              <div>
+                <label>Department: </label>
+                <select v-model="formData.department" class="select-box">
+                  <option value="" disabled selected>Select</option>
+                  <option value="">sales</option>
+                  <option value="">products</option>
+                </select>
+              </div>
+              <div>
+                <label>Campaign Name: </label>
+                <select v-model="formData.campaignName" class="select-box">
+                  <option value="" disabled selected>Select</option>
+                  <option value="">a</option>
+                  <option value="">b</option>
+                  <option value="">c</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="input-row">
+            <label id="call-back-label" >
+              <input id="call-back-label" type="radio" v-model="formData.callback" />
+              Call back in
+            </label>
+            <div class="select-row">
+              <select v-model="formData.callbackNumber" class="select-box" :disabled="!formData.callback">
+                <option value="" disabled selected>number</option>
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+              </select>
+              <select v-model="formData.callbackTimeframe" class="select-box" :disabled="!formData.callback">
+                <option value="" disabled selected>time</option>
+                <option value="day">Day</option>
+                <option value="week">Week</option>
+                <option value="month">Month</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-row">
+            <label class="comment-label">Leave your comment: </label>
+            <textarea v-model="formData.comment"></textarea>
+          </div>
+        </div>
+        <div class="popup-footer">
+          <button @click="saveData">Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="agent-panel">
+      <div class="title">Agent Panel</div>
+      <div class="filter">
+  <div class="filter-label">Filter by:</div>
+  <div class="filter-row">
+    <input v-model="filters.firstName" placeholder="First Name" />
+    <input v-model="filters.lastName" placeholder="Last Name" />
+    <input v-model="filters.status" placeholder="Status" />
+    <input v-model="filters.comment" placeholder="Comment" />
+  </div>
+</div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+            <th>Contact Status</th>
+            <th>Comment</th>
+            <th></th>
+            <!-- עמודה חדשה למחיקה -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(entry) in filteredData" :key="entry.id">
+            <td>{{ entry.id }}</td>
+            <td>{{ entry.firstName }}</td>
+            <td>{{ entry.lastName }}</td>
+            <td>{{ entry.phoneNumber }}</td>
+            <td>{{ entry.status }}</td>
+            <td>
+              <input class="comment-input" v-model="entry.comment" @input="updateComment(entry)" />
+
+            </td>
+            <td>
+              <img src="../assets/img/delete.png" alt="Delete" class="delete-icon" @click="deleteRowFunc(entry.id)" />
+            </td>
+            <!-- אייקון למחיקה -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+        </div>
       </div>
     </section>
   </section>
@@ -147,11 +312,46 @@ export default {
       OfflineIcon: OfflineIcon,
       TalkingIcon: TalkingIcon,
       UnreachableIcon: UnreachableIcon,
-      CallingIcon: CallingIcon
+      CallingIcon: CallingIcon,
+      showPopup: false,
+      filters: {
+        firstName: "",
+        lastName: "",
+        status: "",
+        comment: "",
+      },
+      formData: {
+        id: Math.floor(Math.random() * 1000000),
+        firstName: "John",
+        lastName: "Doe",
+        phoneNumber: "123-456-7890",
+        status: "",
+        assignTo: "",
+        department: "",
+        campaignName: "",
+        callback: false,
+        callbackNumber: "",
+        callbackTimeframe: "",
+        comment: "",
+      },
+      tableData: [],
     }
   },
   computed: {
     ...mapGetters(['userAgentPanel', 'phoneWindowMode', 'getTimeAgentPanel', 'getColorAndIconAgentPanel']),
+    filteredData() {
+      if (!Array.isArray(this.tableData)) {
+        return [];
+      }
+      return this.tableData.filter((entry) => {
+        return (
+          (entry.firstName || "").toLowerCase().includes(this.filters.firstName.toLowerCase()) &&
+          (entry.lastName || "").toLowerCase().includes(this.filters.lastName.toLowerCase()) &&
+          (entry.status || "").toLowerCase().includes(this.filters.status.toLowerCase()) &&
+          (entry.comment || "").toLowerCase().includes(this.filters.comment.toLowerCase())
+        );
+      });
+    },
     // elapsed: function() {
     //   const days = this.days < 10 ? `0${this.days}` : this.days
     //   const minutes = this.minutes < 10 ? `0${this.minutes}` : this.minutes
@@ -212,6 +412,133 @@ export default {
     //       } else return { color: "#636D75", icon: this.UnreachableIcon }
     //   }
     // }
+  
+  
+  
+  
+  
+  
+  
+    updateComment(row) {
+      // שלח בקשת עדכון לשרת
+      this.updateCommentOnServer(row);
+    },
+    deleteRowFunc(id) {
+      console.log('func delete')
+      this.deleteRow(id)
+    },
+
+    async updateCommentOnServer(row) {
+      try {
+        const response = await fetch('http://localhost:3000/update-comment', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(row),
+        });
+
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+
+        console.log('Comment updated successfully');
+      } catch (error) {
+        console.error('Error updating comment:', error);
+        // אפשר לטפל בטעויות כמו הצגת הודעה למשתמש
+      }
+    },
+
+
+    async fetchData() {
+      try {
+        const response = await fetch('http://localhost:3000/load-data');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        console.log('Fetched data:', data); // הדפס את הנתונים
+        this.tableData = data;
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    },
+
+
+    saveData() {
+      this.tableData.push({ ...this.formData });
+      this.saveToFile(); // שמירה בשרת בלבד
+      this.resetForm();
+      this.showPopup = false;
+    },
+    saveToFile() {
+      const data = {
+        id: this.formData.id,
+        firstName: this.formData.firstName,
+        lastName: this.formData.lastName,
+        phoneNumber: this.formData.phoneNumber,
+        status: this.formData.status,
+        comment: this.formData.comment,
+      };
+
+      fetch('http://localhost:3000/save-data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+        .then(response => {
+          if (response.ok) {
+            console.log('Data saved successfully');
+          } else {
+            console.error('Error saving data');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    },
+
+    resetForm() {
+      this.formData = {
+        id: Math.floor(Math.random() * 1000000),
+        firstName: "John",
+        lastName: "Doe",
+        phoneNumber: "123-456-7890",
+        status: "",
+        assignTo: "",
+        department: "",
+        campaignName: "",
+        callback: false,
+        callbackNumber: "",
+        callbackTimeframe: "",
+        comment: "",
+      };
+    },
+    async deleteRow(id) {
+      try {
+        // מחיקת השורה מהשרת והקובץ
+        await fetch(`http://localhost:3000/delete-row/${id}`, {
+          method: 'DELETE',
+        });
+
+        // עדכון מערך השורות המקומי
+        this.tableData = this.tableData.filter(row => row.id !== id);
+        console.log(this.tableData)
+      } catch (error) {
+        console.error('Error deleting row:', error);
+        // אפשר להציג הודעת שגיאה למשתמש
+      }
+    },
+  
+  
+  
+  
+  
+  
+  
+  
   },
   mounted() {
     // this.unsubscribe = this.$store.subscribeAction(action => {
@@ -221,6 +548,9 @@ export default {
     // })
 
     // this.$store.dispatch("startConnection")
+    console.log("mounted")
+    // פונקציה לטעינת הנתונים מהשרת לאחר שהרכיב נטען
+    this.fetchData();
   },
   beforeDestroy() {
     // this.$store.dispatch("closeConnection")
@@ -238,7 +568,7 @@ export default {
 }
 
 .container {
-  height: 75vh;
+  height: 100%;
   padding: 0;
   border: 2px solid var(--main-border);
   border-radius: 0 0 8px 8px;
@@ -516,4 +846,294 @@ export default {
 //     margin-right: 0;
 //   }
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+.main-container{
+  z-index: 1;
+}
+.open-popup-button {
+  background:rgb(15,29,40);
+  color: #fff;
+  border:rgb(32,41,51) solid 1px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.open-popup-button:hover {
+  background:rgb(32,41,51);
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 7, 7, 0.7);
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  z-index: 1000; /* Ensure the overlay is on top of the content */
+}
+
+.popup-content {
+  border:rgb(43, 48, 51) 0.5px solid;
+  background: rgb(15, 29, 40);
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 23%;
+  max-width: 90%;
+  font-weight: 300;
+  z-index: 1001; /* Ensure the popup is on top of the overlay */
+  /* margin-left: 15%; */
+}
+
+.popup-header {
+  margin: 10px;
+  padding: 0;
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-pair {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* ממרכז את התווית והערך */
+  margin-bottom: 10px;
+  /* רווח בין כל זוג תווית-ערך */
+}
+
+.label {
+  font-size: 12px;
+  /* גודל כתב קטן */
+  font-weight: 10;
+  color:#797979
+  /* כתב דק */
+}
+.comment-label{
+  font-size: 12px;
+  /* גודל כתב קטן */
+  font-weight: 10;
+  color:#797979,
+  
+}
+
+.value {
+  font-size: 14px;
+  /* גודל כתב עבור הערכים, ניתן לשנות לפי הצורך */
+}
+
+/* .labels div {
+  font-size: 12px;
+  font-weight: 300;
+} */
+
+.input-row {
+  margin-bottom: 15px;
+}
+
+.contact-status {
+  margin: 10px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.checkbox-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 300;
+  color:#797979;
+
+}
+
+.select-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.select-box {
+  background: rgb(35, 44, 54);
+  color: #fff;
+  padding: 5px;
+  margin-top: 5px;
+  border: none;
+}
+
+.input-row label {
+  display: block;
+}
+
+.input-row textarea {
+  width: 40%;
+  padding: 5px;
+  margin-top: 5px;
+  height: 25px;
+  background: rgb(35, 44, 54);
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+}
+
+.popup-footer {
+  text-align: center;
+}
+
+.popup-footer button {
+  background: #ffffff;
+  color: rgb(15, 29, 40);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.popup-footer button:hover {
+  background: rgb(35, 44, 54);
+  color: #fff;
+}
+.agent-panel{
+  width: 50%;
+  margin-left: 40%;
+  background-color: rgb(14,25,34);
+  padding:10px ;
+}
+.title{
+  color: #ffffff;
+  text-align: left;
+  padding-top:10px ;
+  padding-bottom:10px ;
+  padding-left: 8px;
+}
+.filter {
+
+  color:#fff;
+  display: flex; /* Make the container a flex container */
+  align-items: center; /* Center align items vertically */
+  gap: 20px; /* Space between the two divs */
+  background-color: rgb(32,41,51);
+
+}
+
+.filter-label{
+  padding: 7px;
+  font-size: 12px;
+}
+.filter-row {
+  
+  display: flex; /* Make the inputs align in a row */
+  gap: 10px; /* Space between input fields */
+}
+
+/* Optional: styling for inputs */
+.filter-row input {
+  color: #ffffff;
+  padding: 1px;
+  font-size: 12px;
+  border: 1px solid rgb(43,52,61);
+  border-radius: 4px;
+  background-color: rgb(43,52,61);
+  max-width:100px ;
+}
+
+
+/* .filter-row {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.filter-row input {
+  padding: 10px;
+  border-radius: 4px;
+  border: solid  rgb(35,44,54);
+  background: rgb(35,44,54);
+  color: #fff;
+} */
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgb(15,29,40);
+  color: #fff;
+}
+
+.data-table th,
+.data-table td {
+  padding: 10px;
+  text-align: left;
+  /* border: 1px solid #444; */
+}
+.data-table td {
+  font-weight: 30;
+  font-size: 13px;
+  border-bottom: 0.08px solid #4f4f4f; /* גבול תחתון בין השורות */
+
+
+}
+.data-table th {
+  font-size: 12px;
+  /* גודל כתב קטן */
+  font-weight: 10;
+  color:#797979;
+
+  background:rgb(15,29,40);
+}
+.comment-input{
+  background-color: rgb(43,52,61);
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  padding: 5px;
+  font-weight: 30;
+  font-size: 13px;
+
+
+}
+
+.delete-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.delete-icon:hover {
+  opacity: 0.7;
+}
+.sh{
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+  font-weight: 300;
+}
+#call-back-label{
+  font-size: 12px;
+  font-weight: 300;
+  color:#797979;
+}
+
 </style>

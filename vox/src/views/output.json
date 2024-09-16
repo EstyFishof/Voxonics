@@ -1,0 +1,42 @@
+[
+  {
+    "id": 766257,
+    "firstName": "John",
+    "lastName": "Doe",
+    "phoneNumber": "123-456-7890",
+    "status": "interested",
+    "comment": "want to buy"
+  },
+  {
+    "id": 341753,
+    "firstName": "John",
+    "lastName": "Doe",
+    "phoneNumber": "123-456-7890",
+    "status": "follow up",
+    "comment": "next year"
+  },
+  {
+    "id": 993485,
+    "firstName": "John",
+    "lastName": "Doe",
+    "phoneNumber": "123-456-7890",
+    "status": "not interested",
+    "comment": "didnt want to lister"
+  },
+  {
+    "id": 977124,
+    "firstName": "John",
+    "lastName": "Doe",
+    "phoneNumber": "123-456-7890",
+    "status": "sale made",
+    "comment": "flowers"
+  },
+  {
+    "id": 937732,
+    "firstName": "John",
+    "lastName": "Doe",
+    "phoneNumber": "123-456-7890",
+    "status": "dnc",
+    "comment": ""
+  }
+]
