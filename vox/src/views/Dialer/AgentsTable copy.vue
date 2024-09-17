@@ -269,12 +269,12 @@ export default {
   },
   methods: {
     calculateDuration(statusTime) {
-      const parsedTime = new Date(statusTime); // המרה ל- Date
-      const currentTime = new Date(); // זמן נוכחי
-      const duration = currentTime - parsedTime; // חישוב הפרש הזמן במילישניות
-      const totalMinutes = Math.floor(duration / (1000 * 60)); // חישוב סך כל הדקות שהצטברו
-      const remainingMinutes = (totalMinutes % 1440) + 180; // תיקון ההכנסה השגויה לדאטה בייס +חישוב הדקות שלא הצטברו ליום שלם
-      const remainingSeconds = Math.floor((duration % (1000 * 60)) / 1000); // חישוב השניות הנוספות
+      const parsedTime = new Date(statusTime); // convert to Date
+      const currentTime = new Date(); // current time
+      const duration = currentTime - parsedTime; // Calculate the time difference in milliseconds
+      const totalMinutes = Math.floor(duration / (1000 * 60)); // Calculate the total accumulated minutes
+      const remainingMinutes = (totalMinutes % 1440) + 180; // Fix the incorrect entry in the database + calculate the remaining minutes that haven't accumulated into a full day
+      const remainingSeconds = Math.floor((duration % (1000 * 60)) / 1000); // Calculate the additional seconds
 
       return ` ${remainingMinutes} m, ${remainingSeconds} s`;
     },
@@ -293,8 +293,6 @@ export default {
           Object.keys(users).forEach((key) => {
             const user = users[key];
             console.log("user is: ", user);
-            // const calls = this.rows.find((row) => row.ID === user.internalNumber)?.Calls || 0;
-
             this.rows.push({
               AgentName: user.name,
               Role: user.permission.role,
@@ -329,7 +327,7 @@ export default {
         }
       };
     },
-    async fetchDataCalls() { 
+    async fetchDataCalls() {
       try {
         const response = await CDRGettersApi.getCDR("page=1&per-page=20");
         const callsData = response.data;
