@@ -9,7 +9,7 @@
     "start": "http-server -c-1 -p 8080 ./dist"
   },
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.8.3",
     "core-js": "^3.6.5",
     "jssip": "^3.9.0",
     "lodash": "^4.17.21",
